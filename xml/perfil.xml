@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<chart caption='Perfil do Investidor' showPercentageValues='1'>
+  <set label='Conservador' value='200' />
+  <set label='Moderado' value='190' />
+  <set label='Agressivo' value='110' />
+</chart>

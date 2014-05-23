@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<chart caption='Semestre dos Alunos' showPercentageValues='1'>
+  <set label='Primeiro' value='200' />
+  <set label='Segundo' value='190' />
+  <set label='Terceiro' value='110' />
+  <set label='Quarto' value='50' />
+  <set label='Quinto' value='70' />
+  <set label='Sexto' value='11' />
+</chart>

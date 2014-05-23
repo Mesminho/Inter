@@ -1,0 +1,114 @@
+﻿@charset "UTF-8";
+
+body {
+}
+
+lable {
+}
+
+.titulo {
+    font-family: Calibri;
+    font-size: 20px;
+    color: rgb(56, 55, 55);
+    font-weight: bolder;
+    margin: 15px 20px 15px 15px;
+}
+
+.alternativa {
+    font-family: Calibri;
+    color: rgb(118, 114, 114);
+    font-size: 15px;
+    margin: 15px 20px 15px 15px;
+}
+
+.tituloQuestao {
+    font-family: Calibri;
+    font-weight: bold;
+    color: rgb(118, 114, 114);
+    font-size: 18px;
+    margin: 15px 20px 15px 15px;
+}
+
+.botao {
+    font-size: 15px;
+    margin: 15px 10px 10px 10px;
+    font-family: Calibri;
+    color: rgb(105, 105, 105);
+    font-size: 15px;
+}
+
+.texto {
+    font-family: Calibri;
+    font-weight: bold;
+    color: rgb(105, 105, 105);
+    font-size: 18px;
+    margin: 15px 10px 10px 5px;
+}
+
+.textoAlerta {
+    font-family: Calibri;
+    font-weight: bold;
+    color: rgb(255, 0, 0);
+    font-size: 18px;
+    margin: 15px 10px 10px 10px;
+}
+
+.caixaTexto {
+    font-family: Calibri;
+    color: rgb(105, 105, 105);
+    font-size: 15px;
+}
+
+.caixaTextoObs {
+    font-family: Calibri;
+    color: rgb(100, 100, 100);
+    font-size: 15px;
+    width:200px;
+    height:80px;
+}
+
+
+.caixaAlternativa {
+    font-family: Calibri;
+    color: rgb(105, 105, 105);
+    font-size: 15px;
+    width: 207px;
+    padding: 20px 20px 20px 20px;
+}
+
+div#TextBoxContainer {
+    font-family: Calibri;
+    font-weight: bold;
+    color: rgb(105, 105, 105);
+    font-size: 16px;
+    margin: 15px 10px 10px 10px;
+}
+
+    div#TextBoxContainer input {
+        font-family: Calibri;
+        color: rgb(105, 105, 105);
+        font-size: 15px;
+        width: 148px;
+    }
+
+div#grafico{
+    width: 800px;
+    height: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.imgperfil
+{
+    margin:5px 5px 5px 5px;
+}
+
+
+div#perfil
+{
+    text-align:justify;
+    padding-left: 100px;
+    padding-right: 100px;  
+    margin-top: 20px;
+    margin-bottom:20px;
+}
