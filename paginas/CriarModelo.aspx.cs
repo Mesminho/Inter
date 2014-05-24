@@ -22,4 +22,8 @@ public partial class paginas_CriarQuestionario : System.Web.UI.Page
         Session["modelo"] = modelo; //Passa o obj Questionario para sessao
         Response.Redirect("CriarPerguntas.aspx"); //Redireciona para pagina de criar alternativas
     }
+    protected void btn_cancelar_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("Home.aspx");
+    }
 }
