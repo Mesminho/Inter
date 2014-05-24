@@ -43,12 +43,14 @@ lable {
     font-size: 15px;
     margin: 15px 10px 10px 10px;
     font-family: Calibri;
-    color: rgb(105, 105, 105);
+    color: #000;
     font-size: 15px;
+    border-radius: 2px 2px;
 }
 
     .botao:hover {
-        color: rgb(0, 0, 0);
+        color:  rgb(18,95,110);
+        cursor:pointer;
     }
 
 .texto {

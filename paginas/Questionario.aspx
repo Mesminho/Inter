@@ -5,9 +5,9 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <script src="../script/funcoes.js"></script>
 
-    <div style="margin-left: 400px">
-        <asp:Label ID="lbl_nomeQuestionario" runat="server" Text="ANÁLISE DO PERFIL DO INVERSTIDOR" CssClass="titulo"></asp:Label>
-    </div>
+   
+        <asp:Label ID="lbl_nomeQuestionario" runat="server" Text="ANÁLISE DO PERFIL DO INVERSTIDOR" CssClass="h1"></asp:Label>
+  
     <br />
     <br />
     <asp:Label ID="lbl_nomeQuestao0" runat="server" Text="1. Qual a sua faixa de idade?" Class="tituloQuestao"></asp:Label>
