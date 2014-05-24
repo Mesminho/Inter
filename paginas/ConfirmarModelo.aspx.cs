@@ -166,4 +166,9 @@ public partial class paginas_ConfirmarQuestionario : System.Web.UI.Page
     {
         modificarPergunta(14);
     }
+    protected void bnt_cancelar_Click(object sender, EventArgs e)
+    {
+        Session["modelo"] = null;
+        Response.Redirect("Home.aspx");
+    }
 }
