@@ -4,7 +4,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>Educação Financeira</title>
+    <title>Viva no Azul</title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 
@@ -48,7 +48,7 @@
 
             <p>Av. Prof. João Rodrigues Alckmin, 1501, Jd. Esperança, Guaratinguetá - SP, CEP 12517- 475<br/>
             (12) 3126-2643 / 3125-6905 / 3126-4849<br />               
-                 Copyleft© Análise e Desenvolvimento de Sistemas</p>
+                 Copyleft© Análise e Desenvolvimento de Sistemas<br /></p>
              
 
         </footer>

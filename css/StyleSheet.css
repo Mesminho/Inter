@@ -46,7 +46,8 @@ footer#rodape
 
     footer#rodape p
     {
-        text-align: center;
+        text-align:center;
+  
     }
 
 .fatec
@@ -160,7 +161,7 @@ select
 
     .button:hover, .buttonI:hover
     {
-        cursor: pointer;
+       
     }
 
 .buttonI

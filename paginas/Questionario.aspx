@@ -21,7 +21,6 @@
 
     <h4>
         <asp:RequiredFieldValidator ID="RequiredFieldValidator1" CssClass="textoAlerta" runat="server" SetFocusOnError="true" ControlToValidate="rbl_alternativas0" ErrorMessage="Faltou responder essa questão." ForeColor="Red"></asp:RequiredFieldValidator></h4>
-    <br />
 
 
     <asp:Label ID="lbl_nomeQuestao1" runat="server" Text="2. Qual o seu grau de escolaridade?" Class="tituloQuestao"></asp:Label>
@@ -34,7 +33,6 @@
     </asp:RadioButtonList>
     <h4>
         <asp:RequiredFieldValidator ID="RequiredFieldValidator2" CssClass="textoAlerta" runat="server" SetFocusOnError="true" ControlToValidate="rbl_alternativas1" ErrorMessage="Faltou responder essa questão." ForeColor="Red"></asp:RequiredFieldValidator></h4>
-    <br />
 
 
     <asp:Label ID="lbl_nomeQuestao2" runat="server" Text="3. Possui dependentes?" CssClass="tituloQuestao"></asp:Label>
@@ -45,7 +43,6 @@
     </asp:RadioButtonList>
     <h4>
         <asp:RequiredFieldValidator ID="RequiredFieldValidator3" CssClass="textoAlerta" runat="server" SetFocusOnError="true" ControlToValidate="rbl_alternativas2" ErrorMessage="Faltou responder essa questão." ForeColor="Red"></asp:RequiredFieldValidator></h4>
-    <br />
 
 
     <asp:Label ID="lbl_nomeQuestao3" runat="server" Text="4. Assinale a alternativa que representa o percentual do total dos seus recursos a serem aplicados em investimentos." CssClass="tituloQuestao"></asp:Label>
@@ -57,7 +54,6 @@
     </asp:RadioButtonList>
     <h4>
         <asp:RequiredFieldValidator ID="RequiredFieldValidator4" CssClass="textoAlerta" runat="server" SetFocusOnError="true" ControlToValidate="rbl_alternativas3" ErrorMessage="Faltou responder essa questão." ForeColor="Red"></asp:RequiredFieldValidator></h4>
-    <br />
 
 
     <asp:Label ID="lbl_nomeQuestao4" runat="server" CssClass="tituloQuestao" Text="5. Qual a estimativa de permanência no investimento?"></asp:Label>
@@ -68,7 +64,6 @@
     </asp:RadioButtonList>
     <h4>
         <asp:RequiredFieldValidator ID="RequiredFieldValidator5" CssClass="textoAlerta" runat="server" SetFocusOnError="true" ControlToValidate="rbl_alternativas4" ErrorMessage="Faltou responder essa questão." ForeColor="Red"></asp:RequiredFieldValidator></h4>
-    <br />
 
 
     <asp:Label ID="lbl_nomeQuestao5" runat="server" Text="6. Qual o principal objetivo com relação aos investimentos?" CssClass="tituloQuestao"></asp:Label>
@@ -79,7 +74,6 @@
     </asp:RadioButtonList>
     <h4>
         <asp:RequiredFieldValidator ID="RequiredFieldValidator6" CssClass="textoAlerta" runat="server" SetFocusOnError="true" ControlToValidate="rbl_alternativas5" ErrorMessage="Faltou responder essa questão." ForeColor="Red"></asp:RequiredFieldValidator></h4>
-    <br />
 
 
     <asp:Label ID="lbl_nomeQuestao6" runat="server" Text="7. Com relação aos riscos envolvidos nos investimentos, como reagiria ao verificar que determinado investimento, após certo período, apresentou retorno negativo?" CssClass="tituloQuestao"></asp:Label>
@@ -90,7 +84,6 @@
     </asp:RadioButtonList>
     <h4>
         <asp:RequiredFieldValidator ID="RequiredFieldValidator7" CssClass="textoAlerta" runat="server" SetFocusOnError="true" ControlToValidate="rbl_alternativas6" ErrorMessage="Faltou responder essa questão." ForeColor="Red"></asp:RequiredFieldValidator></h4>
-    <br />
 
 
     <asp:Label ID="lbl_nomeQuestao7" runat="server" Text="8. Há quanto tempo mantém recursos em investimentos ou em portfólio de investimentos?" CssClass="tituloQuestao"></asp:Label>
@@ -101,7 +94,6 @@
     </asp:RadioButtonList>
     <h4>
         <asp:RequiredFieldValidator ID="RequiredFieldValidator8" CssClass="textoAlerta" runat="server" SetFocusOnError="true" ControlToValidate="rbl_alternativas7" ErrorMessage="Faltou responder essa questão." ForeColor="Red"></asp:RequiredFieldValidator></h4>
-    <br />
 
 
     <asp:Label ID="lbl_nomeQuestao8" runat="server" Text="9. Como se considera em relação aos diversos tipos de investimentos existentes no mercado financeiro?" CssClass="tituloQuestao"></asp:Label>
@@ -112,7 +104,6 @@
     </asp:RadioButtonList>
     <h4>
         <asp:RequiredFieldValidator ID="RequiredFieldValidator9" CssClass="textoAlerta" runat="server" SetFocusOnError="true" ControlToValidate="rbl_alternativas8" ErrorMessage="Faltou responder essa questão." ForeColor="Red"></asp:RequiredFieldValidator></h4>
-    <br />
 
 
     <asp:Label ID="lbl_nomeQuestao9" runat="server" Text="10. Como diversifica a alocação dos seus recursos?" CssClass="tituloQuestao"></asp:Label>
@@ -125,7 +116,6 @@
     </asp:RadioButtonList>
     <h4>
         <asp:RequiredFieldValidator ID="RequiredFieldValidator10" CssClass="textoAlerta" runat="server" SetFocusOnError="true" ControlToValidate="rbl_alternativas9" ErrorMessage="Faltou responder essa questão." ForeColor="Red"></asp:RequiredFieldValidator></h4>
-    <br />
 
 
     <asp:Label ID="lbl_nomeQuestao10" runat="server" Text="11. Assinale a alternativa que melhor representa a sua opção ao adquirir um seguro:" CssClass="tituloQuestao"></asp:Label>
