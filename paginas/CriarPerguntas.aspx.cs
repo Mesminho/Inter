@@ -14,6 +14,7 @@ public partial class paginas_CriarQuestao : System.Web.UI.Page
     Per_perguntas pergunta; //Cria variavel tipa questao
     int valor = 0; //Instancia o contador de alternativas
     string Values; //Instancia variavel para valores dos campos dinamicos
+    int contador = 0; //Verifica a quandtidade de questões.
 
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -47,7 +48,7 @@ public partial class paginas_CriarQuestao : System.Web.UI.Page
         if (txb_alter1.Text != String.Empty && txb_pontos1.Text != String.Empty)
         {
             nomeAlternativa = txb_alter1.Text;
-            Double.TryParse(txb_pontos1.Text, out pontos);
+            pontos = Convert.ToDouble(txb_pontos1.Text);
             alternativa = new Alt_alternativas(nomeAlternativa, pontos);
             pergunta.Alternativa.Add(alternativa);
         }
@@ -55,7 +56,7 @@ public partial class paginas_CriarQuestao : System.Web.UI.Page
         if (txb_alter2.Text != String.Empty && txb_pontos2.Text != String.Empty)
         {
             nomeAlternativa = txb_alter2.Text;
-            Double.TryParse(txb_pontos2.Text, out pontos);
+            pontos = Convert.ToDouble(txb_pontos2.Text);
             alternativa = new Alt_alternativas(nomeAlternativa, pontos);
             pergunta.Alternativa.Add(alternativa);
         }
@@ -63,7 +64,7 @@ public partial class paginas_CriarQuestao : System.Web.UI.Page
         if (txb_alter3.Text != String.Empty && txb_pontos3.Text != String.Empty)
         {
             nomeAlternativa = txb_alter3.Text;
-            Double.TryParse(txb_pontos3.Text, out pontos);
+            pontos = Convert.ToDouble(txb_pontos3.Text);
             alternativa = new Alt_alternativas(nomeAlternativa, pontos);
             pergunta.Alternativa.Add(alternativa);
         }
@@ -71,7 +72,7 @@ public partial class paginas_CriarQuestao : System.Web.UI.Page
         if (txb_alter4.Text != String.Empty && txb_pontos4.Text != String.Empty)
         {
             nomeAlternativa = txb_alter4.Text;
-            Double.TryParse(txb_pontos4.Text, out pontos);
+            pontos = Convert.ToDouble(txb_pontos4.Text);
             alternativa = new Alt_alternativas(nomeAlternativa, pontos);
             pergunta.Alternativa.Add(alternativa);
         }
@@ -79,7 +80,7 @@ public partial class paginas_CriarQuestao : System.Web.UI.Page
         if (txb_alter5.Text != String.Empty && txb_pontos5.Text != String.Empty)
         {
             nomeAlternativa = txb_alter5.Text;
-            Double.TryParse(txb_pontos5.Text, out pontos);
+            pontos = Convert.ToDouble(txb_pontos5.Text);
             alternativa = new Alt_alternativas(nomeAlternativa, pontos);
             pergunta.Alternativa.Add(alternativa);
         }
@@ -87,7 +88,7 @@ public partial class paginas_CriarQuestao : System.Web.UI.Page
         if (txb_alter6.Text != String.Empty && txb_pontos6.Text != String.Empty)
         {
             nomeAlternativa = txb_alter6.Text;
-            Double.TryParse(txb_pontos6.Text, out pontos);
+            pontos = Convert.ToDouble(txb_pontos6.Text);
             alternativa = new Alt_alternativas(nomeAlternativa, pontos);
             pergunta.Alternativa.Add(alternativa);
         }
@@ -95,7 +96,7 @@ public partial class paginas_CriarQuestao : System.Web.UI.Page
         if (txb_alter7.Text != String.Empty && txb_pontos7.Text != String.Empty)
         {
             nomeAlternativa = txb_alter7.Text;
-            Double.TryParse(txb_pontos7.Text, out pontos);
+            pontos = Convert.ToDouble(txb_pontos7.Text);
             alternativa = new Alt_alternativas(nomeAlternativa, pontos);
             pergunta.Alternativa.Add(alternativa);
         }
