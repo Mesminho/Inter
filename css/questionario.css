@@ -15,12 +15,12 @@ lable {
 }
 
 .DDList {
-    font-family:Calibri;
+    font-family: Calibri;
     color: rgb(105, 105, 105);
     font-size: 18px;
-
 }
-.tabela{
+
+.tabela {
     margin: 10px 10px 10px 10px;
 }
 
@@ -49,8 +49,8 @@ lable {
 }
 
     .botao:hover {
-        color:  rgb(18,95,110);
-        cursor:pointer;
+        color: rgb(18,95,110);
+        cursor: pointer;
     }
 
 .texto {
@@ -66,7 +66,6 @@ lable {
     color: rgb(105, 105, 105);
     font-size: 16px;
     margin: 15px 10px 10px 5px;
- 
 }
 
 
@@ -84,7 +83,7 @@ lable {
     font-size: 15px;
 }
 
-.txtArea{
+.txtArea {
     font-family: Calibri;
     color: rgb(100, 100, 100);
     font-size: 15px;
@@ -121,5 +120,28 @@ div#grafico {
     height: 600px;
     margin-left: auto;
     margin-right: auto;
+}
+
+img#investidor {
+    border: 1px solid #fff;
+    height: 120px;
+    width: 120px;
+    border-radius: 3px 3px;
+}
+
+img#educacao {
+    border: 1px solid #fff;
+    width: 180px;
+    height: 130px;
+}
+
+.tipoQuestionario:hover {
+    border: 1px solid #000;
+}
+
+div#lista {
+    text-align:center;
+    margin: 20px;
+   
 }
 

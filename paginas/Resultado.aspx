@@ -3,34 +3,14 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 
 
-    <style type="text/css">
-        .auto-style1 {
-            margin: 10px 10px 10px 10px;
-            width: 106px;
-        }
-        .auto-style2 {
-            width: 88px;
-        }
-        .auto-style3 {
-            margin: 10px 10px 10px 10px;
-            width: 41px;
-        }
-        .auto-style4 {
-        }
-    </style>
+
 
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
 
-    <br />
-    <br />
-    <br />
-
-
-    <br />
-    &nbsp;<table class="auto-style1">
+    <table class="tabela">
         <tr>
             <td>
 
@@ -78,7 +58,7 @@
     </table>
     <br />
     <asp:Button ID="btn_sair" runat="server" Text="Sair" CssClass="botao" />
-    <asp:Button ID="btn_email" runat="server" Text="Enviar Por email" CssClass="botao" />
+    <asp:Button ID="btn_email" runat="server" Text="Enviar por e-mail" CssClass="botao" />
 
 
 </asp:Content>

@@ -6,6 +6,7 @@
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
+    <asp:Label ID="lblInfo" runat="server" Text="Crie um novo modelo de questionário:" CssClass="textoCorrido"></asp:Label>
     <table class="tabela">
     <tr>
         <td class="auto-style2">
@@ -31,7 +32,18 @@
         <asp:ListItem>2014</asp:ListItem>
     </asp:DropDownList>
         </td>
-        <td class="auto-style6"></td>
+        <td class="auto-style6">&nbsp;</td>
+    </tr>
+    <tr>
+        <td>
+            <asp:Label ID="lblPontuacaoMax" runat="server" Text="Pontuação Máxima: " CssClass="texto"></asp:Label>
+
+        </td>
+        <td class="auto-style3">
+
+            <asp:TextBox ID="txtPontuacaoMax" runat="server" Width="48px" CssClass="caixaTexto"></asp:TextBox>
+        </td>
+        <td>&nbsp;</td>
     </tr>
     <tr>
         <td class="auto-style2">
