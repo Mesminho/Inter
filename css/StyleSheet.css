@@ -1,41 +1,34 @@
-﻿body
-{
+﻿body {
     background-color: #d6d6d6;
     font-family: Tahoma;
 }
 
-#header
-{
+#header {
     border-radius: 2px 2px;
     background-color: #fff;
 }
 
-.img
-{
+.img {
     margin: 10px;
 }
 
-#painel
-{
+#painel {
     border-bottom-left-radius: 10px;
 }
 
-#slider
-{
+#slider {
     width: 100%;
     height: auto;
 }
 
-#content
-{
+#content {
     margin: 10px 0px 10px 0px;
     border-radius: 2px 2px;
     background: #ffffff;
     padding: 10px;
 }
 
-footer#rodape
-{
+footer#rodape {
     border-radius: 2px 2px;
     background-color: rgb(18,95,118);
     padding: 4px;
@@ -44,46 +37,39 @@ footer#rodape
     font-size: small;
 }
 
-    footer#rodape p
-    {
-        text-align:center;
-  
+    footer#rodape p {
+        text-align: center;
     }
 
-.fatec
-{
+.fatec {
     float: right;
     height: 90px;
     width: 245px;
-    margin-top:5px;
+    margin-top: 5px;
 }
 
-.cps
-{
+.cps {
     float: left;
-    margin-top:25px;
-    margin-left:30px;
+    margin-top: 25px;
+    margin-left: 30px;
     height: 40px;
     width: 300px;
 }
 
 
 
-.formulario
-{
+.formulario {
     border-radius: 2px 2px;
     margin: 0;
     padding: 0;
 }
 
-    .formulario p
-    {
+    .formulario p {
         margin: 0px;
         font-size: 11pt;
     }
 
-.h1
-{
+.h1 {
     color: rgb(56, 55, 55);
     margin: 10px;
     font-size: 20px;
@@ -92,8 +78,7 @@ footer#rodape
     border-radius: 2px 2px;
 }
 
-.label
-{
+.label {
     color: #808080;
     margin: 0;
     font-size: 14px;
@@ -103,8 +88,7 @@ footer#rodape
     border-bottom-left-radius: 4px;
 }
 
-.label2
-{
+.label2 {
     color: #fff;
     margin: 0;
     font-size: 14px;
@@ -115,8 +99,7 @@ footer#rodape
     background-color: #1e47a9;
 }
 
-input
-{
+input {
     margin: 0;
     border: solid 1px silver;
     padding: 2px;
@@ -125,8 +108,11 @@ input
     background-color: #f2f0ed;
 }
 
-textarea
-{
+    input:focus {
+        border: 1px solid rgb(18,95,118);
+    }
+
+textarea {
     margin: 0;
     font-size: 14px;
     border: solid 1px silver;
@@ -136,8 +122,11 @@ textarea
     background-color: #f2f0ed;
 }
 
-select
-{
+    textarea:focus {
+        border: 1px solid rgb(18,95,118);
+    }
+
+select {
     margin: 0;
     border: solid 1px silver;
     border-top-right-radius: 4px;
@@ -145,16 +134,14 @@ select
     background-color: #f2f0ed;
 }
 
-nav#menu
-{
+nav#menu {
     margin: 5px auto 5px auto;
     background-color: rgb(18,95,118);
     font-family: Calibri;
 }
 
 
-ul
-{
+ul {
     text-align: left;
     display: inline;
     margin: 0;
@@ -165,8 +152,7 @@ ul
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
 }
 
-    ul li
-    {
+    ul li {
         font: bold 12px/18px sans-serif;
         display: inline-block;
         margin-right: -4px;
@@ -185,14 +171,12 @@ ul
         color: #fff;
     }
 
-        ul li:hover
-        {
+        ul li:hover {
             background: rgb(12, 120, 152);
             color: #fff;
         }
 
-        ul li ul
-        {
+        ul li ul {
             padding: 0;
             margin: auto 15px 10px 10px;
             position: absolute;
@@ -211,34 +195,29 @@ ul
             -transition: opacity 0.2s;
         }
 
-            ul li ul li
-            {
+            ul li ul li {
                 background: rgb(18,95,118);
                 display: block;
                 color: #fff;
             }
 
-                ul li ul li:hover
-                {
+                ul li ul li:hover {
                     background: rgb(12, 120, 152);
                 }
 
-        ul li:hover ul
-        {
+        ul li:hover ul {
             display: block;
             opacity: 1;
             visibility: visible;
         }
 
-a
-{
+a {
     color: #fff;
     text-decoration: none;
     text-transform: capitalize;
 }
 
-   a:hover
-    {
+    a:hover {
         color: #ffffff;
         text-decoration: none;
     }

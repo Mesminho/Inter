@@ -2,12 +2,23 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
    
+    <style type="text/css">
+        .auto-style1 {
+            height: 26px;
+        }
+    </style>
+   
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
-    <asp:Label ID="lblInfo" runat="server" Text="Crie um novo modelo de questionário:" CssClass="textoCorrido"></asp:Label>
+    
     <table class="tabela">
+    <tr>
+        <td class="auto-style2" colspan="3">
+            <asp:Label ID="lblInfo" runat="server" CssClass="textoCorrido" Text="Crie um novo modelo de questionário:"></asp:Label>
+        </td>
+    </tr>
     <tr>
         <td class="auto-style2">
     <asp:Label ID="lbl_nomeModelo" runat="server" Text="Nome do Modelo: " CssClass="texto"></asp:Label>
@@ -35,27 +46,59 @@
         <td class="auto-style6">&nbsp;</td>
     </tr>
     <tr>
-        <td>
-            <asp:Label ID="lblPontuacaoMax" runat="server" Text="Pontuação Máxima: " CssClass="texto"></asp:Label>
-
-        </td>
-        <td class="auto-style3">
-
-            <asp:TextBox ID="txtPontuacaoMax" runat="server" Width="48px" CssClass="caixaTexto"></asp:TextBox>
-        </td>
-        <td>&nbsp;</td>
-    </tr>
-    <tr>
-        <td class="auto-style2">
+        <td class="auto-style4">
     <asp:Label ID="lbl_descricao" runat="server" CssClass="texto" Text="Descrição: "></asp:Label>
 
         </td>
-        <td class="auto-style3">
+        <td class="auto-style5">
 
     <textarea id="txt_descricao" cols="20" name="S1" rows="1" class="txtArea"></textarea></td>
-        <td>&nbsp;</td>
+        <td class="auto-style6">&nbsp;</td>
     </tr>
-</table>
+    <tr>
+        <td class="auto-style1" colspan="3">
+            &nbsp;</td>
+    </tr>
+    <tr>
+        <td class="auto-style1" colspan="3">
+            <asp:Label ID="lblPontuacaoMax" runat="server" Text="Informe a pontuação máxima para cada perfil de investidor: " CssClass="textoCorrido"></asp:Label>
+
+        </td>
+    </tr>
+    <tr>
+        <td >
+            <asp:Label ID="lblPontuacaoConservador" runat="server" Text="Perfil Conservador: " CssClass="texto"></asp:Label>
+
+        </td>
+        <td >
+
+            <asp:TextBox ID="txtPontuacaoConservador" runat="server" Width="48px" CssClass="caixaTexto"></asp:TextBox>
+        </td>
+        <td ></td>
+    </tr>
+    <tr>
+        <td >
+            <asp:Label ID="lblPontuacaoModerado" runat="server" Text="Perfil Moderado: " CssClass="texto"></asp:Label>
+
+        </td>
+        <td>
+
+            <asp:TextBox ID="txtPontuacaoModerado" runat="server" Width="48px" CssClass="caixaTexto"></asp:TextBox>
+        </td>
+        <td class="auto-style1">&nbsp;</td>
+    </tr>
+    <tr>
+        <td class="auto-style1">
+            <asp:Label ID="lblPontuacaoAgressivo" runat="server" Text="Perfil Agressivo: " CssClass="texto"></asp:Label>
+
+        </td>
+        <td class="auto-style1">
+
+            <asp:TextBox ID="txtPontuacaoAgressivo" runat="server" Width="48px" CssClass="caixaTexto"></asp:TextBox>
+        </td>
+        <td class="auto-style1">&nbsp;</td>
+    </tr>
+    </table>
     <br />
     <br />
     <br />
