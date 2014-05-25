@@ -28,7 +28,7 @@
                 <li><a href="home.aspx">Home</a></li>
                 <li>Questionário 
                 <ul>
-                    <li><a href="SelecionarQuestionario.aspx">Aplicar</a></li>
+                    <li><a href="SelecionarVisitante.aspx">Aplicar</a></li>
                     <li><a href="CriarModelo.aspx">Criar</a></li>
                 </ul>
                 </li>
