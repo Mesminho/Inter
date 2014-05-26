@@ -156,8 +156,8 @@
     <asp:Button ID="btn_modificar14" runat="server" Text="Modificar" Visible="false" OnClick="btn_modificar14_Click"/>
     <br /><br />
 
-    <asp:Button ID="bnt_cancelar" runat="server" Text="Cancelar" OnClick="bnt_cancelar_Click" />
+    <asp:Button ID="bnt_cancelar" runat="server" Text="Cancelar" OnClick="bnt_cancelar_Click" CssClass="botao" />
 
-    <asp:Button ID="bnt_confirmar" runat="server" Text="Confirmar" OnClick="bnt_confirmar_Click" />
+    <asp:Button ID="bnt_confirmar" runat="server" Text="Confirmar" OnClick="bnt_confirmar_Click" CssClass="botao" />
 </asp:Content>
 

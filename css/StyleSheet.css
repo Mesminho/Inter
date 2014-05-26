@@ -106,10 +106,15 @@ input {
     border-top-right-radius: 2px;
     border-bottom-right-radius: 2px;
     background-color: #f2f0ed;
+    padding: 5px;
+    margin:2px;
+
 }
 
-    input:focus {
+    input:hover{
         border: 1px solid rgb(18,95,118);
+        cursor:pointer;
+        color: rgb(18,95,118);
     }
 
 textarea {
@@ -120,10 +125,12 @@ textarea {
     border-top-right-radius: 4px;
     border-bottom-right-radius: 4px;
     background-color: #f2f0ed;
+
 }
 
     textarea:focus {
         border: 1px solid rgb(18,95,118);
+    
     }
 
 select {
@@ -177,6 +184,7 @@ ul {
         }
 
         ul li ul {
+            width:100px;
             padding: 0;
             margin: auto 15px 10px 10px;
             position: absolute;

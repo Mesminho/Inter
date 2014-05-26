@@ -9,7 +9,7 @@
                 <asp:Label ID="lbl_basePesquisa" runat="server" Text="Base da Pesquisa:" CssClass="texto"></asp:Label>
             </td>
             <td class="auto-style5" colspan="3">
-                <asp:DropDownList ID="ddl_tipoPesquisa" runat="server" CssClass="DDList" AutoPostBack="True" OnSelectedIndexChanged="ddl_tipoPesquisa_SelectedIndexChanged">
+                <asp:DropDownList ID="ddl_tipoPesquisa" runat="server" CssClass="DDList" AutoPostBack="True" OnSelectedIndexChanged="ddl_tipoPesquisa_SelectedIndexChanged" Width="182px">
                     <asp:ListItem Selected="True" Value="-1">Selecione</asp:ListItem>
                     <asp:ListItem Value="0">Respostas</asp:ListItem>
                     <asp:ListItem Value="1">Tipos de Investidor</asp:ListItem>
@@ -21,7 +21,7 @@
                 <asp:Label ID="lbl_comparacao" runat="server" Text="Comparação de dados:" CssClass="texto"></asp:Label>
             </td>
             <td class="auto-style5" colspan="3">
-                <asp:DropDownList ID="ddl_comparacao" runat="server" CssClass="DDList">
+                <asp:DropDownList ID="ddl_comparacao" runat="server" CssClass="DDList" Width="182px">
                     <asp:ListItem Selected="True" Value="-1">Selecione</asp:ListItem>
                     <asp:ListItem Value="0">Idade</asp:ListItem>
                     <asp:ListItem Value="1">Tipo de Visitante</asp:ListItem>
@@ -37,7 +37,7 @@
                 <asp:Label ID="lbl_evento" runat="server" Text="Período:" CssClass="texto"></asp:Label>
             </td>
             <td class="auto-style6">
-                <asp:DropDownList ID="ddl_eventoInicio" runat="server" CssClass="DDList">
+                <asp:DropDownList ID="ddl_eventoInicio" runat="server" CssClass="DDList" Width="73px">
                     <asp:ListItem>2010</asp:ListItem>
                     <asp:ListItem>2011</asp:ListItem>
                     <asp:ListItem>2012</asp:ListItem>
@@ -48,7 +48,7 @@
                 <asp:Label ID="lblA" runat="server" Text="a" CssClass="texto"></asp:Label>
             </td>
             <td class="auto-style5">
-                <asp:DropDownList ID="ddl_eventoFim" runat="server" CssClass="DDList">
+                <asp:DropDownList ID="ddl_eventoFim" runat="server" CssClass="DDList" Width="73px">
                     <asp:ListItem>2010</asp:ListItem>
                     <asp:ListItem>2011</asp:ListItem>
                     <asp:ListItem>2012</asp:ListItem>
@@ -61,7 +61,7 @@
                 <asp:Label ID="lbl_questionario" runat="server" Text="Questionário:" CssClass="texto" Visible ="false"></asp:Label>
             </td>
             <td class="auto-style5" colspan="3">
-                <asp:DropDownList ID="ddl_questionario" runat="server" CssClass="DDList" Visible ="false">
+                <asp:DropDownList ID="ddl_questionario" runat="server" CssClass="DDList" Visible ="false" Width="182px">
                     <asp:ListItem Selected="True" Value="-1">Selecione</asp:ListItem>
                     <asp:ListItem Value="0">Tipo de Investidor 01</asp:ListItem>
                     <asp:ListItem Value="1">Tipo de Investidor 02</asp:ListItem>

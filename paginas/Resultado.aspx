@@ -30,21 +30,16 @@
         </tr>
         <tr>
             <td class="auto-style2">
-                &nbsp;</td>
-            <td class="auto-style1">
     <asp:Image ID="imgPerfil" runat="server" ImageUrl="~/images/icones/agressivo.png" />
 
 
 
             </td>
+            <td class="auto-style1">
+                &nbsp;</td>
         </tr>
         <tr>
             <td class="auto-style4">
-
-
-
-                &nbsp;</td>
-            <td class="auto-style1">
 
 
 
@@ -53,6 +48,11 @@
 
 
             </td>
+            <td class="auto-style1">
+
+
+
+                &nbsp;</td>
         </tr>
         <tr>
             <td colspan="2" class="colunaResultado">
