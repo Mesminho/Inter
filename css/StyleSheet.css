@@ -227,11 +227,22 @@ div#box-toggle {
     margin: 20px;
     background-color: rgb(18,95,118);
     border-radius: 2px;
+    font-family: Calibri;
     color: #fff;
+    font-size:12px;
     padding: 10px;
+    text-align: center;
+   
 }
 
     div#box-toggle img {
-        height:30px;
-        width:40px;
+        height: 30px;
+        width: 30px;
+    }
+
+    div#box-toggle span {
+        cursor:pointer;
+        font-size:14px;
+        font-weight: bold;
+  
     }

@@ -124,21 +124,21 @@ div#grafico {
 }
 
 img#investidor {
-    border: 1px solid #fff;
-    height: 150px;
-    width: 150px;
+    height: 120px;
+    width: 120px;
     border-radius: 2px 2px;
 }
 
 img#educacao {
-    border: 1px solid #fff;
-    width: 150px;
-    height: 150px;
-    border-radius: 2px 2px;
+    width: 120px;
+    height: 120px;
+    border-radius: 3px 3px;
 }
 
 .tipoQuestionario:hover {
-    border: 1px solid #000;
+    transition:1s;
+    box-shadow: 2px 2px 5px rgba(0, 0, 1, 0.15);
+     
 }
 
 div#lista {

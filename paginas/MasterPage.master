@@ -20,7 +20,7 @@
         }
 
         $(document).ready(function () {
-            $('.tgl').before('<span>Mais</span>');
+            $('.tgl').before('<span>Usuário</span>');
             $('.tgl').css('display', 'none')
             $('span', '#box-toggle').click(function () {
                 $(this).next().slideToggle('slow')
@@ -44,7 +44,9 @@
                 <img src="../images/usuario.png" /><br />
                 <div class="tgl">
 
-                    testestestesteets
+                   <p>Nome<br />
+                     
+                   </p>
                 </div>
             </div>
 
