@@ -5,6 +5,16 @@
 
 
 
+    <style type="text/css">
+        .colunaResultado {
+          text-align:justify;
+           padding: 20px;
+        }
+   
+    </style>
+
+
+
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
@@ -12,7 +22,7 @@
 
     <table class="tabela">
         <tr>
-            <td>
+            <td colspan="2">
 
 
     <asp:Label ID="lbl_pontuacao" runat="server" Text="Label" CssClass="titulo"></asp:Label>
@@ -20,6 +30,8 @@
         </tr>
         <tr>
             <td class="auto-style2">
+                &nbsp;</td>
+            <td class="auto-style1">
     <asp:Image ID="imgPerfil" runat="server" ImageUrl="~/images/icones/agressivo.png" />
 
 
@@ -31,6 +43,11 @@
 
 
 
+                &nbsp;</td>
+            <td class="auto-style1">
+
+
+
     <asp:Label ID="lbl_resultado" runat="server" Text="Label" CssClass="texto"></asp:Label>
 
 
@@ -38,22 +55,27 @@
             </td>
         </tr>
         <tr>
-            <td>
+            <td colspan="2" class="colunaResultado">
     <asp:Label ID="lbl_descricao" runat="server" Text="Label" CssClass="textoCorrido"></asp:Label>
             </td>
         </tr>
         </table>
     <table class="tabela">
         <tr>
-            <td>
+            <td colspan="2">
 
 
-    <asp:Label ID="lbl_observacao" runat="server" Text="Observações: " CssClass="texto"></asp:Label>
+    <asp:Label ID="lbl_info" runat="server" Text="Adicione algum comentário ao resultado:" CssClass="textoCorrido"></asp:Label>
             </td>
         </tr>
         <tr>
             <td>
-    <textarea id="TextArea1" name="S1" class="txtArea"></textarea></td>
+
+
+    <asp:Label ID="lbl_observacao" runat="server" Text="Observações:" CssClass="texto"></asp:Label>
+            </td>
+            <td>
+    <textarea id="TextArea1" name="S1" class="txtArea" cols="20" rows="1"></textarea></td>
         </tr>
     </table>
     <br />

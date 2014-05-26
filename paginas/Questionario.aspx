@@ -129,7 +129,7 @@
         <asp:RequiredFieldValidator ID="RequiredFieldValidator11" CssClass="textoAlerta" runat="server" SetFocusOnError="true" ControlToValidate="rbl_alternativas10" ErrorMessage="Faltou responder essa questão." ForeColor="Red"></asp:RequiredFieldValidator></h4>
     <br />
 
-    <asp:Button ID="btn_cancelar" runat="server" Text="Cancelar" Visible="False" CssClass="botao" />
+    <asp:Button ID="btn_cancelar" runat="server" Text="Cancelar" CssClass="botao" OnClick="btn_cancelar_Click" />
     <asp:Button ID="btn_confirmar" runat="server" Text="Confirmar" OnClick="btn_enviar_Click" CssClass="botao" />
 
 

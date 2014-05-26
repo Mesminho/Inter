@@ -22,13 +22,14 @@
         <tr>
             <td>
                 <asp:Label ID="lblEmail" runat="server" CssClass="texto" Text="E-mail: "></asp:Label>
-               </td>
+            </td>
             <td>
                 <asp:TextBox ID="txtEmail" runat="server" CssClass="caixaTexto" Width="200"></asp:TextBox>
-                </td>
+            </td>
         </tr>
-        </table>
+    </table>
     <asp:Button ID="btnContinuar" runat="server" Text="Continuar" CssClass="botao" OnClick="btnContinuar_Click" />
+    
 
 </asp:Content>
 

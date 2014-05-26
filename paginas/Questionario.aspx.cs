@@ -40,4 +40,8 @@ public partial class paginas_Questionario : System.Web.UI.Page
     {
 
     }
+    protected void btn_cancelar_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("SelecionarQuestionario.aspx");
+    }
 }

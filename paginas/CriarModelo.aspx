@@ -16,7 +16,7 @@
     <table class="tabela">
     <tr>
         <td class="auto-style2" colspan="3">
-            <asp:Label ID="lblInfo" runat="server" CssClass="textoCorrido" Text="Crie um novo modelo de questionário:"></asp:Label>
+            <asp:Label ID="lblInfo" runat="server" CssClass="textoCorrido" Text="Crie um novo modelo de questionário para análise de perfil de investidor:"></asp:Label>
         </td>
     </tr>
     <tr>

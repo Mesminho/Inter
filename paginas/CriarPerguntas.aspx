@@ -1,15 +1,31 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/paginas/MasterPage.master" AutoEventWireup="true" CodeFile="CriarPerguntas.aspx.cs" Inherits="paginas_CriarQuestao" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
-</asp:Content>
+    </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <script src="../script/funcoes.js"></script>
+    <table class="tabela">
+        <tr>
+            <td>
     <asp:Label ID="lblModelo" runat="server" Text="Modelo: " CssClass="texto"></asp:Label>
-    <asp:Label ID="lbl_nomeQuestionario" runat="server" Font-Bold="true" CssClass="texto"></asp:Label>
-    <br />
-    <asp:Label ID="lbl_nomeQuestao" runat="server" Text="Titulo da Questão: " CssClass="texto"></asp:Label>
+            </td>
+            <td>
+    <asp:Label ID="lbl_nomeQuestionario" runat="server" CssClass="textoCorrido"></asp:Label>
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+    <asp:Label ID="lbl_nomeQuestao" runat="server" Text="Título da Questão: " CssClass="texto"></asp:Label>
+            </td>
+            <td>
     <asp:TextBox ID="txb_nomePergunta" runat="server" OnTextChanged="TextBox1_TextChanged" Width="147px" Font-Bold="False"></asp:TextBox>
+            </td>
+            <td>
     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="txb_nomePergunta" ErrorMessage="Preenchimento Obrigatório" ForeColor="Red" CssClass="textoAlerta"></asp:RequiredFieldValidator>
+            </td>
+        </tr>
+    </table>
     <br />
     <div id="TextBoxContainer">
         <asp:Label ID="lbl_alter1" runat="server" Text="Alternativa 1"></asp:Label>

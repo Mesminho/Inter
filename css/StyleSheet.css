@@ -221,3 +221,17 @@ a {
         color: #ffffff;
         text-decoration: none;
     }
+
+div#box-toggle {
+    float: right;
+    margin: 20px;
+    background-color: rgb(18,95,118);
+    border-radius: 2px;
+    color: #fff;
+    padding: 10px;
+}
+
+    div#box-toggle img {
+        height:30px;
+        width:40px;
+    }

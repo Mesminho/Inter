@@ -21,8 +21,9 @@ lable {
 }
 
 .tabela {
-    margin: 10px 10px 10px 10px;
-}
+    margin-top:10px;
+    margin-bottom:10px;
+   }
 
 .alternativa {
     font-family: Calibri;
@@ -124,15 +125,15 @@ div#grafico {
 
 img#investidor {
     border: 1px solid #fff;
-    height: 140px;
-    width: 140px;
+    height: 150px;
+    width: 150px;
     border-radius: 2px 2px;
 }
 
 img#educacao {
     border: 1px solid #fff;
-    width: 140px;
-    height: 140px;
+    width: 150px;
+    height: 150px;
     border-radius: 2px 2px;
 }
 

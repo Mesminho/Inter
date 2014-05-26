@@ -4,16 +4,34 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br">
 <head runat="server">
-    <title>Viva no Azul</title>
+    <title>Análise de Perfil</title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 
     <link href="../css/StyleSheet.css" rel="stylesheet" type="text/css" />
     <link href="../css/questionario.css" rel="stylesheet" type="text/css" />
-    
+
     <script src="../script/FusionCharts.js"></script>
+    <script src="../script/jquery.js"></script>
 
+    <script type="text/javascript">
+        jQuery.fn.toggleText = function (a, b) {
+            return this.html(this.html().replace(new RegExp("(" + a + "|" + b + ")"), function (x) { return (x == a) ? b : a; }));
+        }
 
+        $(document).ready(function () {
+            $('.tgl').before('<span>Mais</span>');
+            $('.tgl').css('display', 'none')
+            $('span', '#box-toggle').click(function () {
+                $(this).next().slideToggle('slow')
+                .siblings('.tgl:visible').slideToggle('fast');
+
+                $(this).toggleText('Mais', 'Menos')
+                .siblings('span').next('.tgl:visible').prev()
+                .toggleText('Mais', 'Menos')
+            });
+        })
+    </script>
 
 </head>
 <body>
@@ -22,14 +40,23 @@
 
             <asp:Image ID="LogotipoSistema" runat="server" AlternateText="Educação Financeira Fatec Guaratingueta" CssClass="img" Height="131px" ImageUrl="~/images/logo_educacao_financeira.png" ToolTip="Educação Financeira Fatec Guaratingueta" Width="384px" />
 
+            <div id="box-toggle">
+                <img src="../images/usuario.png" /><br />
+                <div class="tgl">
+
+                    testestestesteets
+                </div>
+            </div>
+
         </div>
+
         <nav id="menu">
             <ul>
                 <li><a href="home.aspx">Home</a></li>
                 <li>Questionário 
                 <ul>
                     <li><a href="SelecionarVisitante.aspx">Aplicar</a></li>
-                    <li><a href="CriarModelo.aspx">Criar</a></li>
+                    <li><a href="SelecionarModelo.aspx">Criar</a></li>
                 </ul>
                 </li>
                 <li><a href="SelecaoEstatistica.aspx">Estatísticas</a></li>
@@ -41,14 +68,17 @@
             </asp:ContentPlaceHolder>
         </div>
         <footer id="rodape">
-            <asp:Image ID="LogotipoSistema0" runat="server" AlternateText="Educação Financeira Fatec Guaratingueta" CssClass="cps" ImageUrl="~/images/LOGO_CPS_2010.png" ToolTip="Educação Financeira Fatec Guaratingueta"  />
+            <asp:Image ID="LogotipoSistema0" runat="server" AlternateText="Educação Financeira Fatec Guaratingueta" CssClass="cps" ImageUrl="~/images/LOGO_CPS_2010.png" ToolTip="Educação Financeira Fatec Guaratingueta" />
 
             <asp:Image ID="LogotipoSistema1" runat="server" AlternateText="Educação Financeira Fatec Guaratingueta" CssClass="fatec" ImageUrl="~/images/logo_fatec_branco.png" ToolTip="Educação Financeira Fatec Guaratingueta" />
             <br />
 
-            <p>Av. Prof. João Rodrigues Alckmin, 1501, Jd. Esperança, Guaratinguetá - SP, CEP 12517- 475<br/>
-            (12) 3126-2643 / 3125-6905 / 3126-4849<br />  <br /></p>
-             
+            <p>
+                Av. Prof. João Rodrigues Alckmin, 1501, Jd. Esperança, Guaratinguetá - SP, CEP 12517- 475<br />
+                (12) 3126-2643 / 3125-6905 / 3126-4849<br />
+                <br />
+            </p>
+
 
         </footer>
     </form>
