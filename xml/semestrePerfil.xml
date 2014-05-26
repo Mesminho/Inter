@@ -1,36 +1,40 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<chart caption='Business Results 2005 v 2006' xAxisName='Idade' yAxisName='Quantidade' showValues='0' numberPrefix=''>
+<chart caption='Análise de Perfil do Investidor por Semestre.' xAxisName='Idade' yAxisName='Quantidade' showValues='0' numberPrefix=''>
 
   <categories>
-    <category label='Até 25 anos' />
-    <category label='Entre 25 e 35 anos' />
-    <category label='Entre 35 e 45 anos' />
-    <category label='Entre 45 e 60 anos' />
-    <category label='Acima de 60 anos' />
+    <category label='Primeiro' />
+    <category label='Segundo' />
+    <category label='Terceiro' />
+    <category label='Quarto' />
+    <category label='Quinto' />
+    <category label='Sexto' />
   </categories>
 
-  <dataset seriesName='2012'>
+  <dataset seriesName='Conservador'>
     <set value='27' />
     <set value='29'/>
     <set value='25' />
     <set value='26' />
     <set value='29' />
+    <set value='29'/>
   </dataset>
 
-  <dataset seriesName='2013' renderAs='Area'>
+  <dataset seriesName='Moderado'>
     <set value='10'/>
     <set value='11'/>
     <set value='12'/>
     <set value='15'/>
     <set value='11' />
+    <set value='29'/>
   </dataset>
 
-  <dataset seriesName='2014' renderAs='Line'>
-    <set value='70'/>
-    <set value='105'/>
-    <set value='95'/>
-    <set value='100'/>
-    <set value='90' />
+  <dataset seriesName='Agressivo'>
+    <set value='20'/>
+    <set value='13'/>
+    <set value='11'/>
+    <set value='10'/>
+    <set value='9' />
+    <set value='29'/>
   </dataset>
 
   <trendlines>

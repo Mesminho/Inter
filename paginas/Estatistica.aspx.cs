@@ -11,7 +11,7 @@ public partial class paginas_Estatistica : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        carregaGraficos();
     }
     protected void Chart1_Load(object sender, EventArgs e)
     {

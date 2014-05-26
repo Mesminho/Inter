@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<chart caption='Análise de Perfil do Investidor por Tipo de Visitante.' xAxisName='Idade' yAxisName='Quantidade' showValues='0' numberPrefix=''>
+
+  <categories>
+    <category label='Visitante Interno' />
+    <category label='Visitante Externo' />
+  </categories>
+
+  <dataset seriesName='Conservador'>
+    <set value='27' />
+    <set value='29'/>
+  </dataset>
+
+  <dataset seriesName='Moderado'>
+    <set value='10'/>
+    <set value='11'/>
+  </dataset>
+
+  <dataset seriesName='Agressivo'>
+    <set value='20'/>
+    <set value='13'/>
+  </dataset>
+
+  <trendlines>
+    <line startValue='22000' color='91C728' displayValue='Target'/>
+  </trendlines>
+
+  <styles>
+
+    <definition>
+      <style name='bgAnim' type='animation' param='_xScale' start='0' duration='1' />
+    </definition>
+
+    <application>
+      <apply toObject='BACKGROUND' styles='bgAnim' />
+    </application>
+
+  </styles>
+
+</chart>

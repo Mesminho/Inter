@@ -13,23 +13,25 @@ public partial class paginas_SelecaoEstatistica : System.Web.UI.Page
     }
     protected void btnConfirmar_Click(object sender, EventArgs e)
     {
+        string pathChart = "../charts/";
+        string pathXml = "../xml/";
         int tipoPesquisa = Convert.ToInt32(ddl_tipoPesquisa.SelectedValue);
         int tipoComparacao = Convert.ToInt32(ddl_comparacao.SelectedValue);
         if (tipoPesquisa == 0)
         {
             switch (tipoComparacao)
             {
-                case 0: 
+                case 0:
                     break;
-                case 1: 
+                case 1:
                     break;
-                case 2: 
+                case 2:
                     break;
-                case 3: 
+                case 3:
                     break;
-                case 4: 
+                case 4:
                     break;
-                case 5: 
+                case 5:
                     break;
                 default:
                     break;
@@ -41,28 +43,48 @@ public partial class paginas_SelecaoEstatistica : System.Web.UI.Page
             {
                 case 0:
                     //Idade
+                    Session["chart"] = pathChart + "MSCombi3D.swf";
+                    Session["xml"] = pathXml + "idadePerfil.xml";
+                    Response.Redirect("Estatistica.aspx");
                     break;
                 case 1:
                     //Tipo de Visitante
+                    Session["chart"] = pathChart + "MSCombi3D.swf";
+                    Session["xml"] = pathXml + "tipoVisitantePerfil.xml";
+                    Response.Redirect("Estatistica.aspx");
                     break;
                 case 2:
                     //Semestre do Aluno
+                    Session["chart"] = pathChart + "MSCombi3D.swf";
+                    Session["xml"] = pathXml + "semestrePerfil.xml";
+                    Response.Redirect("Estatistica.aspx");
                     break;
                 case 3:
                     //Curso do Aluno
+                    Session["chart"] = pathChart + "MSCombi3D.swf";
+                    Session["xml"] = pathXml + "cursoPerfil.xml";
+                    Response.Redirect("Estatistica.aspx");
                     break;
                 case 4:
                     //Sexo
+                    Session["chart"] = pathChart + "MSCombi3D.swf";
+                    Session["xml"] = pathXml + "sexoPerfil.xml";
+                    Response.Redirect("Estatistica.aspx");
                     break;
                 case 5:
                     //Visitante Externo
+                    Session["chart"] = pathChart + "Doughnut3D.swf";
+                    Session["xml"] = pathXml + "perfil.xml";
+                    Response.Redirect("Estatistica.aspx");
                     break;
                 default:
+                    Session["chart"] = pathChart + "Doughnut3D.swf";
+                    Session["xml"] = pathXml + "perfil.xml";
+                    Response.Redirect("Estatistica.aspx");
                     break;
             }
         }
 
-        Response.Redirect("Estatistica.aspx");
     }
     protected void ddl_tipoPesquisa_SelectedIndexChanged(object sender, EventArgs e)
     {
