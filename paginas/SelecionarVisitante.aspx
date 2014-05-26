@@ -9,7 +9,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
-    <asp:Label ID="lbl" runat="server" Text="Informe o visitante que irá responder ao questionário: " CssClass="textoCorrido"></asp:Label>
+    <asp:Label ID="lbl" runat="server" Text="Informações do visitante que irá responder ao questionário: " CssClass="textoCorrido"></asp:Label>
     <table class="tabela">
         <tr>
             <td class="auto-style1">
