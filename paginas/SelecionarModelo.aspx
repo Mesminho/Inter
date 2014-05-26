@@ -8,7 +8,7 @@
         <ul>
             <li><a href="CriarModelo.aspx">
                 <img class="tipoQuestionario" id="investidor" alt="Perfil Investidor" src="../images/perfil_investidor.jpg" /><br />
-                Perfil Investidor</a>
+                Investidor</a>
             </li>
             <li>
                 <img class="tipoQuestionario" id="educacao" alt="Educação Financeira" src="../images/educacao_financeira.jpg" /><br />

@@ -10,9 +10,9 @@
             </td>
             <td class="auto-style5" colspan="3">
                 <asp:DropDownList ID="ddl_tipoPesquisa" runat="server" CssClass="DDList">
-                    <asp:ListItem>Pontuaçao</asp:ListItem>
-                    <asp:ListItem>Respostas</asp:ListItem>
-                    <asp:ListItem>Tipos de Investidor</asp:ListItem>
+                    <asp:ListItem Selected="True" Value="-1">Selecione</asp:ListItem>
+                    <asp:ListItem Value="0">Respostas</asp:ListItem>
+                    <asp:ListItem Value="1">Tipos de Investidor</asp:ListItem>
                 </asp:DropDownList>
             </td>
         </tr>
@@ -22,10 +22,13 @@
             </td>
             <td class="auto-style5" colspan="3">
                 <asp:DropDownList ID="ddl_comparacao" runat="server" CssClass="DDList">
-                    <asp:ListItem>Idade</asp:ListItem>
-                    <asp:ListItem>Tipo de Visitante</asp:ListItem>
-                    <asp:ListItem>Semestre do Aluno</asp:ListItem>
-                    <asp:ListItem>Semestre</asp:ListItem>
+                    <asp:ListItem Selected="True" Value="-1">Selecione</asp:ListItem>
+                    <asp:ListItem Value="0">Idade</asp:ListItem>
+                    <asp:ListItem Value="1">Tipo de Visitante</asp:ListItem>
+                    <asp:ListItem Value="2">Semestre do Aluno</asp:ListItem>
+                    <asp:ListItem Value="3">Curso do Aluno</asp:ListItem>
+                    <asp:ListItem Value="4">Sexo</asp:ListItem>
+                    <asp:ListItem Value="5">Visitante Externo</asp:ListItem>
                 </asp:DropDownList>
             </td>
         </tr>
