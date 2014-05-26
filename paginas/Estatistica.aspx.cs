@@ -23,6 +23,12 @@ public partial class paginas_Estatistica : System.Web.UI.Page
     }
     protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
     {
+        
+    }
+
+    private void carregaGraficos()
+    {
+
         FusionCharts.SetRenderer("javascript"); //Ativa renderizacao por JS
         string largura = "800";
         string altura = "600";

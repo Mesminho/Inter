@@ -7,17 +7,10 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
-    <asp:Label ID="lbl_selecao" runat="server" Text="Selecione o tipo de pesquisa" CssClass="texto"></asp:Label>
-    <asp:DropDownList ID="ddl_pesquisa" runat="server" AutoPostBack="True" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
-        <asp:ListItem Selected="True">None</asp:ListItem>
-        <asp:ListItem Value="0">Classificação</asp:ListItem>
-        <asp:ListItem Value="1">Idade</asp:ListItem>
-        <asp:ListItem Value="2">Semestre</asp:ListItem>
-    </asp:DropDownList>
     <br/>
     <div id="grafico">
-        <asp:Literal ID="ltl_chart" runat="server"></asp:Literal></div>
-
+        <asp:Literal ID="ltl_chart" runat="server"></asp:Literal>
+    </div>
 
 </asp:Content>
 
