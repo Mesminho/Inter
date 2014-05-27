@@ -26,4 +26,8 @@ public partial class paginas_CriarQuestionario : System.Web.UI.Page
     {
         Response.Redirect("Home.aspx");
     }
+    protected void CustomValidator1_ServerValidate(object source, ServerValidateEventArgs args)
+    {
+
+    }
 }

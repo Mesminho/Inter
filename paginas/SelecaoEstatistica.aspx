@@ -3,25 +3,27 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+
+    <asp:Label ID="Label1" runat="server" Text="Criação de Estatísticas " CssClass="texto"></asp:Label>
     <table class="tabela">
         <tr>
             <td class="tabela">
-                <asp:Label ID="lbl_basePesquisa" runat="server" Text="Base da Pesquisa:" CssClass="texto"></asp:Label>
+                <asp:Label ID="lbl_basePesquisa" runat="server" Text="Base da Pesquisa:" CssClass="texto" title="Fonte da pesquisa"></asp:Label>
             </td>
             <td class="auto-style5" colspan="3">
-                <asp:DropDownList ID="ddl_tipoPesquisa" runat="server" CssClass="DDList" AutoPostBack="True" OnSelectedIndexChanged="ddl_tipoPesquisa_SelectedIndexChanged" Width="182px">
+                <asp:DropDownList ID="ddl_tipoPesquisa" runat="server" CssClass="DDList" AutoPostBack="True" OnSelectedIndexChanged="ddl_tipoPesquisa_SelectedIndexChanged" Width="182px" title="Fonte da pesquisa">
                     <asp:ListItem Selected="True" Value="-1">Selecione</asp:ListItem>
                     <asp:ListItem Value="0">Respostas</asp:ListItem>
                     <asp:ListItem Value="1">Tipos de Investidor</asp:ListItem>
                 </asp:DropDownList>
-            </td>
+                *</td>
         </tr>
         <tr>
             <td class="tabela">
-                <asp:Label ID="lbl_comparacao" runat="server" Text="Comparação de dados:" CssClass="texto"></asp:Label>
+                <asp:Label ID="lbl_comparacao" runat="server" Text="Filtro da pesquisa:" CssClass="texto" title="Valores específicos para serem buscados"></asp:Label>
             </td>
             <td class="auto-style5" colspan="3">
-                <asp:DropDownList ID="ddl_comparacao" runat="server" CssClass="DDList" Width="182px">
+                <asp:DropDownList ID="ddl_comparacao" runat="server" CssClass="DDList" Width="182px" title="Valores específicos para serem buscados">
                     <asp:ListItem Selected="True" Value="-1">Selecione</asp:ListItem>
                     <asp:ListItem Value="0">Idade</asp:ListItem>
                     <asp:ListItem Value="1">Tipo de Visitante</asp:ListItem>
@@ -29,8 +31,9 @@
                     <asp:ListItem Value="3">Curso do Aluno</asp:ListItem>
                     <asp:ListItem Value="4">Sexo</asp:ListItem>
                     <asp:ListItem Value="5">Visitante Externo</asp:ListItem>
+                    <asp:ListItem Value="6">Visitante Interno</asp:ListItem>
                 </asp:DropDownList>
-            </td>
+                *</td>
         </tr>
         <tr>
             <td class="tabela">
@@ -54,7 +57,7 @@
                     <asp:ListItem>2012</asp:ListItem>
                     <asp:ListItem>2013</asp:ListItem>
                 </asp:DropDownList>
-            </td>
+                *</td>
         </tr>
         <tr>
             <td class="tabela">
@@ -66,7 +69,7 @@
                     <asp:ListItem Value="0">Tipo de Investidor 01</asp:ListItem>
                     <asp:ListItem Value="1">Tipo de Investidor 02</asp:ListItem>
                 </asp:DropDownList>
-            </td>
+                </td>
         </tr>
     </table>
     <br />

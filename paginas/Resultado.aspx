@@ -7,10 +7,22 @@
 
     <style type="text/css">
         .colunaResultado {
-          text-align:justify;
-           padding: 20px;
+            text-align: justify;
+            padding: 20px;
         }
-   
+
+        .resultado {
+            color: #fff;
+            background-color: rgb(18,95,118);
+            padding: 5px;
+            font-size: 16px;
+            border-radius: 2px 2px;
+            font-weight: bold;
+        }
+
+        .centro {
+            text-align: center;
+        }
     </style>
 
 
@@ -22,60 +34,55 @@
 
     <table class="tabela">
         <tr>
-            <td colspan="2">
+            <td class="centro">
 
 
-    <asp:Label ID="lbl_pontuacao" runat="server" Text="Label" CssClass="titulo"></asp:Label>
+                <asp:Label ID="lbl_pontuacao" runat="server" Text="Label" CssClass="resultado"></asp:Label>
             </td>
         </tr>
         <tr>
             <td class="auto-style2">
-    <asp:Image ID="imgPerfil" runat="server" ImageUrl="~/images/icones/agressivo.png" />
+                <asp:Image ID="imgPerfil" runat="server" ImageUrl="none" />
 
 
 
             </td>
-            <td class="auto-style1">
-                &nbsp;</td>
+            <td class="auto-style1">&nbsp;</td>
         </tr>
         <tr>
             <td class="auto-style4">
 
 
 
-    <asp:Label ID="lbl_resultado" runat="server" Text="Label" CssClass="texto"></asp:Label>
+                <asp:Label ID="lbl_resultado" runat="server" Text="Label" CssClass="texto"></asp:Label>
 
 
 
             </td>
-            <td class="auto-style1">
-
-
-
-                &nbsp;</td>
+            <td class="auto-style1">&nbsp;</td>
         </tr>
         <tr>
             <td colspan="2" class="colunaResultado">
-    <asp:Label ID="lbl_descricao" runat="server" Text="Label" CssClass="textoCorrido"></asp:Label>
+                <asp:Label ID="lbl_descricao" runat="server" Text="Label" CssClass="textoCorrido"></asp:Label>
             </td>
         </tr>
-        </table>
+    </table>
     <table class="tabela">
         <tr>
             <td colspan="2">
 
 
-    <asp:Label ID="lbl_info" runat="server" Text="Adicione algum comentário ao resultado:" CssClass="textoCorrido"></asp:Label>
+                <asp:Label ID="lbl_info" runat="server" Text="Adicione algum comentário ao resultado:" CssClass="textoCorrido"></asp:Label>
             </td>
         </tr>
         <tr>
             <td>
 
 
-    <asp:Label ID="lbl_observacao" runat="server" Text="Observações:" CssClass="texto"></asp:Label>
+                <asp:Label ID="lbl_observacao" runat="server" Text="Observações:" CssClass="texto"></asp:Label>
             </td>
             <td>
-    <textarea id="TextArea1" name="S1" class="txtArea" cols="20" rows="1"></textarea></td>
+                <textarea id="TextArea1" name="S1" class="txtArea" cols="20" rows="1"></textarea></td>
         </tr>
     </table>
     <br />

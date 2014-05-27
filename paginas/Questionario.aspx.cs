@@ -11,6 +11,7 @@ public partial class paginas_Questionario : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
+        lblNome.Text = Session["NomeVisitante"].ToString();
     }
     protected void rbl_alternativas2_SelectedIndexChanged(object sender, EventArgs e)
     {

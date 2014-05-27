@@ -1,16 +1,16 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/paginas/MasterPage.master" AutoEventWireup="true" CodeFile="SelecionarModelo.aspx.cs" Inherits="paginas_SelecionarModelo" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/paginas/MasterPage.master" AutoEventWireup="true" CodeFile="SelecionarEstatistica.aspx.cs" Inherits="paginas_SelecionarModelo" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
-    
-    <asp:Label ID="lblInfo" runat="server" Text="Escolha o tipo de questionário que deseja criar: " CssClass="textoCorrido"></asp:Label>
+    <asp:Label ID="lblInfo" runat="server" Text="Selecione o tipo de questionário para gerar as estatísticas: " CssClass="textoCorrido"></asp:Label>
 
     <div id="lista">
 
         <ul>
-            <li><a href="CriarModelo.aspx">
+            
+            <li><a href="SelecaoEstatistica.aspx">
                 <img class="tipoQuestionario" id="investidor" alt="Perfil Investidor" src="../images/perfil_investidor.jpg" /><br />
                 Investidor</a>
             </li>

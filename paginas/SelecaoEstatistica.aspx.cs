@@ -77,6 +77,12 @@ public partial class paginas_SelecaoEstatistica : System.Web.UI.Page
                     Session["xml"] = pathXml + "perfil.xml";
                     Response.Redirect("Estatistica.aspx");
                     break;
+                case 6:
+                    //Visitante Interno
+                    Session["chart"] = pathChart + "Doughnut3D.swf";
+                    Session["xml"] = pathXml + "perfil.xml";
+                    Response.Redirect("Estatistica.aspx");
+                    break;
                 default:
                     Session["chart"] = pathChart + "Doughnut3D.swf";
                     Session["xml"] = pathXml + "perfil.xml";

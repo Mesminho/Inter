@@ -2,6 +2,30 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
    
+    <style type="text/css">
+        .auto-style1 {
+            width: 100%;
+        }
+        .auto-style2 {
+            width: 5px;
+        }
+        .auto-style3 {
+            width: 358px;
+        }
+        .auto-style4 {
+            width: 391px;
+        }
+        .auto-style5 {
+            width: 38px;
+        }
+        .auto-style6 {
+            width: 568px;
+        }
+        .auto-style7 {
+            width: 387px;
+        }
+    </style>
+   
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
     <script type="text/javascript">
@@ -10,17 +34,24 @@
         }
 
         $(document).ready(function () {
-            $('.abrir').before('<span>Expandir</span>');
-            $('.abrir').css('display', 'none')
+            $('.abrir').before('<span>Esconder</span>');
+            $('.abrir').css('none', 'display')
             $('span', '#config').click(function () {
                 $(this).next().slideToggle('slow')
                 .siblings('.tgl:visible').slideToggle('fast');
                 // aqui começa o funcionamento do plugin
-                $(this).toggleText('Expandir', 'Esconder')
+                $(this).toggleText('Esconder', 'Mostrar')
                 .siblings('span').next('.abrir:visible').prev()
-                .toggleText('Expandir', 'Esconder')
+                .toggleText('Esconder', 'Mostrar')
             });
         })
+    </script>
+
+    <script language="javascript" type="text/javascript">
+        function msg() {
+            alert("O modelo foi habilitado/desabilitado com sucesso.");
+        }
+
     </script>
 
     <asp:Label ID="lblConfig" runat="server" Text="Configuração de questionários" CssClass="texto"></asp:Label>
@@ -28,8 +59,15 @@
     <div id="config">
     <p class="textoCorrido">Selecione um questionário para editar:</p>
         <div id="editar" class="abrir">
-            <p class="texto">Editar Questionários</p>
-            <br />
+
+            <table class="tabela">
+                <tr>
+                    <td>
+            <p class="texto">Editar Questionários:</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
             <asp:ListBox ID="ltb_questionarioEditar" runat="server" Height="74px" Width="516px" CssClass="">
                 <asp:ListItem Value="0">Questionário Análise do Perfil de investidor 01</asp:ListItem>
                 <asp:ListItem Value="1">Questionário Análise do Perfil de investidor 02</asp:ListItem>
@@ -38,8 +76,15 @@
                 <asp:ListItem Value="4">Questionário Análise do Perfil de investidor 05</asp:ListItem>
                 <asp:ListItem Value="5">Questionário Análise do Perfil de investidor 06</asp:ListItem>
             </asp:ListBox>
-            <br />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
             <asp:Button ID="Button3" runat="server" Text="Editar" CssClass="botao" />
+
+                    </td>
+                </tr>
+            </table>
 
         </div>
         <br />
@@ -47,63 +92,82 @@
         <div id="habilitar" class="abrir">
             <table class="tabela">
                 <tr>
-                    <td>
-                        <p class="texto">Habilitar/Desabilitar Questionários</p> 
+                    <td class="auto-style3">
+                        <p class="texto">Questionários Habilitados:</p> 
+                    </td>
+                    <td class="auto-style5">
+                        &nbsp;</td>
+                    <td class="auto-style4">
+                        <p class="texto">Questionários Desabilitados:</p> 
                     </td>
                 </tr>
                 <tr>
-                    <td>
-                        <asp:ListBox ID="ltb_questionarioDesab" runat="server" Height="141px" Width="358px" CssClass="">
-                            <asp:ListItem Value="0">Questionário Análise do Perfil de investidor 01</asp:ListItem>
-                            <asp:ListItem Value="1">Questionário Análise do Perfil de investidor 02</asp:ListItem>
-                            <asp:ListItem Value="2">Questionário Análise do Perfil de investidor 03</asp:ListItem>
-                            <asp:ListItem Value="3">Questionário Análise do Perfil de investidor 04</asp:ListItem>
-                            <asp:ListItem Value="4">Questionário Análise do Perfil de investidor 05</asp:ListItem>
-                            <asp:ListItem Value="5">Questionário Análise do Perfil de investidor 06</asp:ListItem>
+                    <td class="auto-style3">
+                        <asp:ListBox ID="ltb_questionarioHab" runat="server" Height="141px" Width="358px" CssClass="" OnSelectedIndexChanged="ltb_questionarioHab_SelectedIndexChanged" AutoPostBack="true">
+                            <asp:ListItem Value="Questionário Análise do Perfil de investidor 01">Questionário Análise do Perfil de investidor 01</asp:ListItem>
+                            <asp:ListItem Value="Questionário Análise do Perfil de investidor 02">Questionário Análise do Perfil de investidor 02</asp:ListItem>
+                            <asp:ListItem Value="Questionário Análise do Perfil de investidor 03">Questionário Análise do Perfil de investidor 03</asp:ListItem>
                         </asp:ListBox>
                     </td>
-                    <td>
-                        <asp:CheckBoxList ID="cbl_habilitar" runat="server" CssClass="caixaAlternativa" Width="300px">
-                            <asp:ListItem Value="0">Habilitar</asp:ListItem>
-                            <asp:ListItem Value="1">Permitir Edição</asp:ListItem>
-                            <asp:ListItem Value="2">Permitir Uso</asp:ListItem>
-                        </asp:CheckBoxList>
+                    <td class="auto-style5">
+                        <asp:Button ID="btn_habilitar" runat="server" Text="Habilitar" CssClass="botao" OnClick="btn_habilitar_Click"/>
                     </td>
+                    <td class="auto-style4">
+                        <asp:ListBox ID="ltb_questionarioDesab" runat="server" Height="141px" Width="358px" CssClass="" OnSelectedIndexChanged="ltb_questionarioDesab_SelectedIndexChanged" AutoPostBack="true">
+                            <asp:ListItem Value="Questionário Análise do Perfil de investidor 04">Questionário Análise do Perfil de investidor 04</asp:ListItem>
+                            <asp:ListItem Value="Questionário Análise do Perfil de investidor 05">Questionário Análise do Perfil de investidor 05</asp:ListItem>
+                            <asp:ListItem Value="Questionário Análise do Perfil de investidor 06">Questionário Análise do Perfil de investidor 06</asp:ListItem>
+                        </asp:ListBox>
+                    </td>
+                    <td class="auto-style2">
+                        &nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="auto-style3">
+                        &nbsp;</td>
+                    <td class="auto-style5">
+                        &nbsp;</td>
+                    <td class="auto-style4">
+                        &nbsp;</td>
+                    <td class="auto-style2">
+                        &nbsp;</td>
                 </tr>
             </table>
             
         </div>
         <br />
-        <p class="textoCorrido">bla bla bla</p>
+        <p class="textoCorrido">Selecione o questionário principal</p>
         <div id="eventos" class="abrir">
             <table class="auto-style1">
                 <tr>
-                    <td>
-                        <p class="texto">Questionário do Evento</p>
+                    <td class="auto-style7">
+                        <p class="texto">Questionário do Evento:</p>
+                    </td>
+                    <td class="auto-style6">
+                        &nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="auto-style7" >
+                        <asp:ListBox ID="ltb_questionarioPrincipal" runat="server" Height="141px" Width="358px" CssClass="">
+                            <asp:ListItem Value="Questionário Análise do Perfil de investidor 01">Questionário Análise do Perfil de investidor 01</asp:ListItem>
+                            <asp:ListItem Value="Questionário Análise do Perfil de investidor 02">Questionário Análise do Perfil de investidor 02</asp:ListItem>
+                            <asp:ListItem Value="Questionário Análise do Perfil de investidor 03">Questionário Análise do Perfil de investidor 03</asp:ListItem>
+                        </asp:ListBox>
+                    </td>
+                    <td class="auto-style6" >
+                        <asp:Label ID="lbl_principal" runat="server" Text="Questionário Análise do Perfil de investidor 02" CssClass="titulo"></asp:Label>
                     </td>
                 </tr>
                 <tr>
-                    <td >
-                        <asp:ListBox ID="ltb_evento" runat="server" Height="140px" Width="358px" CssClass="">
-                            <asp:ListItem Value="0">Questionário Análise do Perfil de investidor 01</asp:ListItem>
-                            <asp:ListItem Value="1">Questionário Análise do Perfil de investidor 02</asp:ListItem>
-                            <asp:ListItem Value="2">Questionário Análise do Perfil de investidor 03</asp:ListItem>
-                            <asp:ListItem Value="3">Questionário Análise do Perfil de investidor 04</asp:ListItem>
-                            <asp:ListItem Value="4">Questionário Análise do Perfil de investidor 05</asp:ListItem>
-                            <asp:ListItem Value="5">Questionário Análise do Perfil de investidor 06</asp:ListItem>
-                        </asp:ListBox>
+                    <td class="auto-style7" >
+                        <asp:Button ID="Button4" runat="server" OnClick="Button4_Click" Text="Tornar Principal" CssClass="botao"/>
                     </td>
-                    <td>
-                        <asp:CheckBoxList ID="cbl_habilitar0" runat="server" CssClass="caixaAlternativa" Width="300px">
-                            <asp:ListItem Value="0">Questionário Principal</asp:ListItem>
-                            <asp:ListItem Value="1">Usado em eventos Anteriores</asp:ListItem>
-                            <asp:ListItem Value="2">Editavel</asp:ListItem>
-                        </asp:CheckBoxList>
-                    </td>
+                    <td class="auto-style6" >
+                        &nbsp;</td>
                 </tr>
             </table>
             <br />
-            &nbsp;<br />
+            <br />
 
         </div>
         <br />

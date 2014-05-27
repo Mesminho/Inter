@@ -148,16 +148,18 @@ div#config span {
     cursor: pointer;
     font-family: Calibri;
     font-weight: bold;
-    color: rgb(105, 105, 105);
+    color: #fff;
     font-size: 18px;
     margin: 10px;
     padding: 5px;
-    border-radius: 5px 5px;
-    border: 1px solid rgb(105, 105, 105);
+    border-radius: 2px 2px;
+    border: 1px solid #fff;
+    background-color: rgb(18,95,118);
 }
 
     div#config span:hover {
-        color: rgb(18,95,118);
+         background: rgb(12, 120, 152);
+
     }
 
 div#config p {

@@ -3,6 +3,12 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+    <script language="javascript" type="text/javascript">
+        function msg() {
+            alert("Modelo do questionário salvo com sucesso.");
+        }
+
+    </script>
 
     <asp:Label ID="lbl_nomeQuestionario" runat="server" Text="Label" CssClass="titulo"></asp:Label>
     <br />
@@ -14,7 +20,7 @@
         <asp:ListItem Selected="True">Alternativa 1</asp:ListItem>
 
     </asp:RadioButtonList>
-    <asp:Button ID="btn_modificar0" runat="server" Text="Modificar" OnClick="btn_modificar0_Click" Visible="false" CssClass="botao"/>
+    <asp:Button ID="btn_modificar0" runat="server" Text="Modificar" OnClick="btn_modificar0_Click" Visible="false" CssClass="botao" />
     <br />
     <br />
 
@@ -24,7 +30,7 @@
         <asp:ListItem Selected="True">Alternativa 1</asp:ListItem>
 
     </asp:RadioButtonList>
-    <asp:Button ID="btn_modificar1" runat="server" Text="Modificar" Visible="false" OnClick="btn_modificar1_Click" CssClass="botao"/>
+    <asp:Button ID="btn_modificar1" runat="server" Text="Modificar" Visible="false" OnClick="btn_modificar1_Click" CssClass="botao" />
     <br />
     <br />
 
@@ -34,7 +40,7 @@
         <asp:ListItem Selected="True">Alternativa 1</asp:ListItem>
 
     </asp:RadioButtonList>
-    <asp:Button ID="btn_modificar2" runat="server" Text="Modificar" Visible="false" OnClick="btn_modificar2_Click" CssClass="botao"/>
+    <asp:Button ID="btn_modificar2" runat="server" Text="Modificar" Visible="false" OnClick="btn_modificar2_Click" CssClass="botao" />
     <br />
     <br />
 
@@ -44,7 +50,7 @@
         <asp:ListItem Selected="True">Alternativa 1</asp:ListItem>
 
     </asp:RadioButtonList>
-    <asp:Button ID="btn_modificar3" runat="server" Text="Modificar" Visible="false" OnClick="btn_modificar3_Click" CssClass="botao"/>
+    <asp:Button ID="btn_modificar3" runat="server" Text="Modificar" Visible="false" OnClick="btn_modificar3_Click" CssClass="botao" />
     <br />
     <br />
 
@@ -54,7 +60,7 @@
         <asp:ListItem Selected="True">Alternativa 1</asp:ListItem>
 
     </asp:RadioButtonList>
-    <asp:Button ID="btn_modificar4" runat="server" Text="Modificar" Visible="false" OnClick="btn_modificar4_Click" CssClass="botao"/>
+    <asp:Button ID="btn_modificar4" runat="server" Text="Modificar" Visible="false" OnClick="btn_modificar4_Click" CssClass="botao" />
     <br />
     <br />
 
@@ -64,7 +70,7 @@
         <asp:ListItem Selected="True">Alternativa 1</asp:ListItem>
 
     </asp:RadioButtonList>
-    <asp:Button ID="btn_modificar5" runat="server" Text="Modificar" Visible="false" OnClick="btn_modificar5_Click" CssClass="botao"/>
+    <asp:Button ID="btn_modificar5" runat="server" Text="Modificar" Visible="false" OnClick="btn_modificar5_Click" CssClass="botao" />
     <br />
     <br />
 
@@ -74,7 +80,7 @@
         <asp:ListItem Selected="True">Alternativa 1</asp:ListItem>
 
     </asp:RadioButtonList>
-    <asp:Button ID="btn_modificar6" runat="server" Text="Modificar" Visible="false" OnClick="btn_modificar6_Click" CssClass="botao"/>
+    <asp:Button ID="btn_modificar6" runat="server" Text="Modificar" Visible="false" OnClick="btn_modificar6_Click" CssClass="botao" />
     <br />
     <br />
 
@@ -84,7 +90,7 @@
         <asp:ListItem Selected="True">Alternativa 1</asp:ListItem>
 
     </asp:RadioButtonList>
-    <asp:Button ID="btn_modificar7" runat="server" Text="Modificar" Visible="false" OnClick="btn_modificar7_Click" CssClass="botao"/>
+    <asp:Button ID="btn_modificar7" runat="server" Text="Modificar" Visible="false" OnClick="btn_modificar7_Click" CssClass="botao" />
     <br />
     <br />
 
@@ -94,7 +100,7 @@
         <asp:ListItem Selected="True">Alternativa 1</asp:ListItem>
 
     </asp:RadioButtonList>
-    <asp:Button ID="btn_modificar8" runat="server" Text="Modificar" Visible="false" OnClick="btn_modificar8_Click" CssClass="botao"/>
+    <asp:Button ID="btn_modificar8" runat="server" Text="Modificar" Visible="false" OnClick="btn_modificar8_Click" CssClass="botao" />
     <br />
 
     <asp:Label ID="lbl_pergunta9" runat="server" Visible="false" Text="Label" CssClass="texto"></asp:Label>
@@ -103,7 +109,7 @@
         <asp:ListItem Selected="True">Alternativa 1</asp:ListItem>
 
     </asp:RadioButtonList>
-    <asp:Button ID="btn_modificar9" runat="server" Text="Modificar" Visible="false" OnClick="btn_modificar9_Click" CssClass="botao"/>
+    <asp:Button ID="btn_modificar9" runat="server" Text="Modificar" Visible="false" OnClick="btn_modificar9_Click" CssClass="botao" />
     <br />
     <br />
 
@@ -113,7 +119,7 @@
         <asp:ListItem Selected="True">Alternativa 1</asp:ListItem>
 
     </asp:RadioButtonList>
-    <asp:Button ID="btn_modificar10" runat="server" Text="Modificar" Visible="false" OnClick="btn_modificar10_Click" CssClass="botao"/>
+    <asp:Button ID="btn_modificar10" runat="server" Text="Modificar" Visible="false" OnClick="btn_modificar10_Click" CssClass="botao" />
     <br />
     <br />
 
@@ -123,7 +129,7 @@
         <asp:ListItem Selected="True">Alternativa 1</asp:ListItem>
 
     </asp:RadioButtonList>
-    <asp:Button ID="btn_modificar11" runat="server" Text="Modificar" Visible="false" OnClick="btn_modificar11_Click" CssClass="botao"/>
+    <asp:Button ID="btn_modificar11" runat="server" Text="Modificar" Visible="false" OnClick="btn_modificar11_Click" CssClass="botao" />
     <br />
     <br />
 
@@ -133,7 +139,7 @@
         <asp:ListItem Selected="True">Alternativa 1</asp:ListItem>
 
     </asp:RadioButtonList>
-    <asp:Button ID="btn_modificar12" runat="server" Text="Modificar" Visible="false" OnClick="btn_modificar12_Click" CssClass="botao"/>
+    <asp:Button ID="btn_modificar12" runat="server" Text="Modificar" Visible="false" OnClick="btn_modificar12_Click" CssClass="botao" />
     <br />
     <br />
 
@@ -143,7 +149,7 @@
         <asp:ListItem Selected="True">Alternativa 1</asp:ListItem>
 
     </asp:RadioButtonList>
-    <asp:Button ID="btn_modificar13" runat="server" Text="Modificar" Visible="false" OnClick="btn_modificar13_Click" CssClass="botao"/>
+    <asp:Button ID="btn_modificar13" runat="server" Text="Modificar" Visible="false" OnClick="btn_modificar13_Click" CssClass="botao" />
     <br />
     <br />
 
@@ -153,11 +159,12 @@
         <asp:ListItem Selected="True">Alternativa 1</asp:ListItem>
 
     </asp:RadioButtonList>
-    <asp:Button ID="btn_modificar14" runat="server" Text="Modificar" Visible="false" OnClick="btn_modificar14_Click" CssClass="botao"/>
-    <br /><br />
+    <asp:Button ID="btn_modificar14" runat="server" Text="Modificar" Visible="false" OnClick="btn_modificar14_Click" CssClass="botao" />
+    <br />
+    <br />
 
-    <asp:Button ID="bnt_cancelar" runat="server" Text="Cancelar" OnClick="bnt_cancelar_Click" CssClass="botao" />
+    <asp:Button ID="btn_cancelar" runat="server" Text="Cancelar" OnClick="bnt_cancelar_Click" CssClass="botao" />
 
-    <asp:Button ID="bnt_confirmar" runat="server" Text="Confirmar" OnClick="bnt_confirmar_Click" CssClass="botao" />
+    <asp:Button ID="btn_confirmar" runat="server" Text="Confirmar" OnClick="bnt_confirmar_Click" CssClass="botao" />
 </asp:Content>
 

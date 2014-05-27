@@ -16,21 +16,21 @@
         <asp:TextBox ID="txb_alter1" runat="server"></asp:TextBox>
         <asp:Label ID="lbl_pontos1" runat="server" Text="Pontos"></asp:Label>
         <asp:TextBox ID="txb_pontos1" runat="server"></asp:TextBox>
-        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txb_alter1" ErrorMessage="Preenchimento Obrigatório" ForeColor="Red" CssClass="textoAlerta"></asp:RequiredFieldValidator>
+        *<asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="txb_alter1" ErrorMessage="Preenchimento Obrigatório" ForeColor="Red" CssClass="textoAlerta"></asp:RequiredFieldValidator>
         <br />
 
         <asp:Label ID="lbl_alter2" runat="server" Text="Alternativa 2"></asp:Label>
         <asp:TextBox ID="txb_alter2" runat="server"></asp:TextBox>
         <asp:Label ID="lbl_pontos2" runat="server" Text="Pontos"></asp:Label>
         <asp:TextBox ID="txb_pontos2" runat="server"></asp:TextBox>
-        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txb_alter2" ErrorMessage="Preenchimento Obrigatório" ForeColor="Red" CssClass="textoAlerta"></asp:RequiredFieldValidator>
+        *<asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txb_alter2" ErrorMessage="Preenchimento Obrigatório" ForeColor="Red" CssClass="textoAlerta"></asp:RequiredFieldValidator>
         <br />
 
         <asp:Label ID="lbl_alter3" runat="server" Text="Alternativa 3"></asp:Label>
         <asp:TextBox ID="txb_alter3" runat="server"></asp:TextBox>
         <asp:Label ID="lbl_pontos3" runat="server" Text="Pontos"></asp:Label>
         <asp:TextBox ID="txb_pontos3" runat="server"></asp:TextBox>
-        <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="txb_alter3" ErrorMessage="Preenchimento Obrigatório" ForeColor="Red" CssClass="textoAlerta"></asp:RequiredFieldValidator>
+        *<asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="txb_alter3" ErrorMessage="Preenchimento Obrigatório" ForeColor="Red" CssClass="textoAlerta"></asp:RequiredFieldValidator>
         <br />
 
         <asp:Label ID="lbl_alter4" runat="server" Text="Alternativa 4" Visible="False"></asp:Label>

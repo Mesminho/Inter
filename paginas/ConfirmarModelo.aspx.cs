@@ -15,11 +15,12 @@ public partial class paginas_ConfirmarQuestionario : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         carregaModelo();
+        btn_confirmar.Attributes.Add("onclick", "msg();");
     }
 
     protected void bnt_confirmar_Click(object sender, EventArgs e)
     {
-        Response.Redirect("Confirmado.aspx");
+        Response.Redirect("Home.aspx");
     }
 
     protected void modificarPergunta(int index)

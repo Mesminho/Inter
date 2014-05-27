@@ -13,6 +13,7 @@ public partial class paginas_SelecionarVisitante : System.Web.UI.Page
     }
     protected void btnContinuar_Click(object sender, EventArgs e)
     {
+        Session["NomeVisitante"] = txtNome.Text;
         Response.Redirect("SelecionarQuestionario.aspx");
     }
 }

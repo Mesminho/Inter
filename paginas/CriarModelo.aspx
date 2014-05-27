@@ -25,7 +25,7 @@
         </td>
         <td class="auto-style3">
     <asp:TextBox ID="txb_nomeModelo" runat="server" OnTextChanged="TextBox1_TextChanged" CssClass="caixaTexto" Width="258px"></asp:TextBox>
-        </td>
+            *</td>
         <td>
     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" CssClass="textoAlerta" runat="server" ErrorMessage="Preenchimento Obrigatório" ControlToValidate="txb_nomeModelo"></asp:RequiredFieldValidator>
         </td>
@@ -42,7 +42,7 @@
         <asp:ListItem>2013</asp:ListItem>
         <asp:ListItem>2014</asp:ListItem>
     </asp:DropDownList>
-        </td>
+            *</td>
         <td class="auto-style6">&nbsp;</td>
     </tr>
     <tr>
@@ -52,7 +52,7 @@
         </td>
         <td class="auto-style5">
 
-    <textarea id="txt_descricao" cols="20" name="S1" rows="1" class="txtArea"></textarea></td>
+    <textarea id="txt_descricao" cols="20" name="S1" rows="1" class="txtArea"></textarea>*</td>
         <td class="auto-style6">&nbsp;</td>
     </tr>
     <tr>
@@ -73,8 +73,10 @@
         <td >
 
             <asp:TextBox ID="txtPontuacaoConservador" runat="server" Width="48px" CssClass="caixaTexto"></asp:TextBox>
+            *</td>
+        <td >
+            <asp:RegularExpressionValidator ID="CustomValidator1" runat="server" ControlToValidate="txtPontuacaoConservador" CssClass="textoAlerta" ErrorMessage="Apenas numeros" OnServerValidate="CustomValidator1_ServerValidate" SetFocusOnError="True" ValidateEmptyText="True" ValidationExpression="[0-9]+"></asp:RegularExpressionValidator>
         </td>
-        <td ></td>
     </tr>
     <tr>
         <td >
@@ -84,8 +86,10 @@
         <td>
 
             <asp:TextBox ID="txtPontuacaoModerado" runat="server" Width="48px" CssClass="caixaTexto"></asp:TextBox>
+            *</td>
+        <td class="auto-style1">
+            <asp:RegularExpressionValidator ID="CustomValidator2" runat="server" ControlToValidate="txtPontuacaoModerado" CssClass="textoAlerta" ErrorMessage="Apenas numeros" OnServerValidate="CustomValidator1_ServerValidate" SetFocusOnError="True" ValidateEmptyText="True" ValidationExpression="[0-9]+"></asp:RegularExpressionValidator>
         </td>
-        <td class="auto-style1">&nbsp;</td>
     </tr>
     <tr>
         <td class="auto-style1">
@@ -95,8 +99,10 @@
         <td class="auto-style1">
 
             <asp:TextBox ID="txtPontuacaoAgressivo" runat="server" Width="48px" CssClass="caixaTexto"></asp:TextBox>
+            *</td>
+        <td class="auto-style1">
+            <asp:RegularExpressionValidator ID="CustomValidator3" runat="server" ControlToValidate="txtPontuacaoAgressivo" CssClass="textoAlerta" ErrorMessage="Apenas numeros" OnServerValidate="CustomValidator1_ServerValidate" SetFocusOnError="True" ValidateEmptyText="True" ValidationExpression="[0-9]+"></asp:RegularExpressionValidator>
         </td>
-        <td class="auto-style1">&nbsp;</td>
     </tr>
     </table>
     <br />

@@ -44,7 +44,7 @@
                 <img src="../images/usuario.png" /><br />
                 <div class="tgl">
 
-                   <p>Nome: abc <br />
+                   <p>Nome: Sergio Augusto Siqueira<br />
                     Administrador<br />
                    </p>
                 </div>
@@ -61,7 +61,7 @@
                     <li><a href="SelecionarModelo.aspx">Criar</a></li>
                 </ul>
                 </li>
-                <li><a href="SelecaoEstatistica.aspx">Estatísticas</a></li>
+                <li><a href="SelecionarEstatistica.aspx">Estatísticas</a></li>
                  <li><a href="ConfigurarQuestionario.aspx">Configurações</a></li>
             </ul>
 
