@@ -99,27 +99,18 @@ footer#rodape {
     background-color: #1e47a9;
 }
 
-input   border-bottom-right-radius: 2px;
-    background-color: #f2f0ed;
-    padding: 5px;
-    margin:2px;
-    color:
-
-}
-
-    input:focus{
-        border: 1px solid rgb(18,95,118);
-    }
-
-
-textarea {
-    margin: 0rgin: 0;
-    font-si;
-    font-size: 14px;
+input {
+    margin: 0;
     border: solid 1px silver;
     padding: 2px;
-g gh   border-trd-to
-  h  }
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    background-color: #f2f0ed;
+}
+
+    input:focus {
+        border: 1px solid rgb(18,95,118);
+    }
 
 textarea {
     margin: 0;
@@ -129,12 +120,10 @@ textarea {
     border-top-right-radius: 4px;
     border-bottom-right-radius: 4px;
     background-color: #f2f0ed;
-
 }
 
     textarea:focus {
         border: 1px solid rgb(18,95,118);
-    
     }
 
 select {
@@ -188,7 +177,7 @@ ul {
         }
 
         ul li ul {
-            width:100px;
+            width: 100px;
             padding: 0;
             margin: auto 15px 10px 10px;
             position: absolute;
@@ -241,10 +230,9 @@ div#box-toggle {
     border-radius: 2px;
     font-family: Calibri;
     color: #fff;
-    font-size:12px;
+    font-size: 12px;
     padding: 10px;
     text-align: center;
-   
 }
 
     div#box-toggle img {
@@ -253,8 +241,7 @@ div#box-toggle {
     }
 
     div#box-toggle span {
-        cursor:pointer;
-        font-size:14px;
+        cursor: pointer;
+        font-size: 14px;
         font-weight: bold;
-  
     }

@@ -25,18 +25,18 @@
 
     <div id="config">
         <div id="editar" class="abrir">
-            testse
+            Editar questionários
  
      
         </div>  <br />
         <div id="habilitar" class="abrir">
-            hjhkjh
+            Habilitar/Desabilitar
 
        
         </div> <br />
 
         <div id="eventos" class="abrir">
-            dfasdf
+            gerenciar eventos
 
         </div> <br />
 
