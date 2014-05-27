@@ -99,23 +99,27 @@ footer#rodape {
     background-color: #1e47a9;
 }
 
-input {
-    margin: 0;
-    border: solid 1px silver;
-    padding: 2px;
-    border-top-right-radius: 2px;
-    border-bottom-right-radius: 2px;
+input   border-bottom-right-radius: 2px;
     background-color: #f2f0ed;
     padding: 5px;
     margin:2px;
+    color:
 
 }
 
-    input:hover{
+    input:focus{
         border: 1px solid rgb(18,95,118);
-        cursor:pointer;
-        color: rgb(18,95,118);
     }
+
+
+textarea {
+    margin: 0rgin: 0;
+    font-si;
+    font-size: 14px;
+    border: solid 1px silver;
+    padding: 2px;
+g gh   border-trd-to
+  h  }
 
 textarea {
     margin: 0;

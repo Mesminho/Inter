@@ -44,8 +44,8 @@
                 <img src="../images/usuario.png" /><br />
                 <div class="tgl">
 
-                   <p>Nome<br />
-                     
+                   <p>Nome: abc <br />
+                    Administrador<br />
                    </p>
                 </div>
             </div>
@@ -62,6 +62,7 @@
                 </ul>
                 </li>
                 <li><a href="SelecaoEstatistica.aspx">Estatísticas</a></li>
+                 <li><a href="ConfigurarQuestionario.aspx">Configurações</a></li>
             </ul>
 
         </nav>
