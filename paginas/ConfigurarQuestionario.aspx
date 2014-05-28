@@ -87,7 +87,7 @@
                 </tr>
                 <tr>
                     <td>
-                        <asp:Button ID="Button3" runat="server" Text="Editar" CssClass="botao" OnClick="Button3_Click" />
+                        <asp:Button ID="Button3" runat="server" Text="Editar" CssClass="botao" OnClick="Button3_Click" title="Clique para editar o questinário selecionado"/>
 
                     </td>
                 </tr>
@@ -116,7 +116,7 @@
                         </asp:ListBox>
                     </td>
                     <td class="auto-style5">
-                        <asp:Button ID="btn_habilitar" runat="server" Text="Habilitar" CssClass="botao" OnClick="btn_habilitar_Click" />
+                        <asp:Button ID="btn_habilitar" runat="server" Text="Habilitar" CssClass="botao" OnClick="btn_habilitar_Click" title="Habilite ou desabilite o questionário selecionado"/>
                     </td>
                     <td class="auto-style4">
                         <asp:ListBox ID="ltb_questionarioDesab" runat="server" Height="141px" Width="358px" CssClass="" OnSelectedIndexChanged="ltb_questionarioDesab_SelectedIndexChanged" AutoPostBack="true">
@@ -155,12 +155,12 @@
                         </asp:ListBox>
                     </td>
                     <td class="auto-style6">
-                        <asp:Label ID="lbl_principal" runat="server" Text="Questionário Análise do Perfil de investidor 02" CssClass="titulo"></asp:Label>
+                        <asp:Label ID="lbl_principal" runat="server" Text="Questionário Análise do Perfil de investidor 02" CssClass="titulo" title="Clique para abrir o questionário principal"></asp:Label>
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style7">
-                        <asp:Button ID="Button4" runat="server" OnClick="Button4_Click" Text="Tornar Principal" CssClass="botao" />
+                        <asp:Button ID="Button4" runat="server" OnClick="Button4_Click" Text="Tornar Principal" CssClass="botao" title="Torne o questionário selecionado o principal"/>
                     </td>
                     <td class="auto-style6">&nbsp;</td>
                 </tr>
