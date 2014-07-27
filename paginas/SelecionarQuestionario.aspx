@@ -5,17 +5,21 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
     <asp:Label ID="lblInfo" runat="server" Text="Escolha um tipo de questionário para aplicar: " CssClass="textoCorrido"></asp:Label>
-    <div id="lista">
-        <ul>
-            <li><a href="Questionario.aspx">
-                <img class="tipoQuestionario" id="investidor" alt="Perfil Investidor" src="../images/perfil_investidor.jpg" /><br />
+
+    <div class="linha">
+        <div class="bloco">
+            <a href="Questionario.aspx">
+                <img id="investidor" alt="Perfil Investidor" src="../images/perfil_investidor.jpg" /><br />
                 Investidor</a>
-            </li>
-            <li>
-                <img class="tipoQuestionario" id="educacao" alt="Educação Financeira" src="../images/educacao_financeira.jpg" /><br />
-                Educação Financeira</li>
-        </ul>
+
+        </div>
+        <div class="bloco">
+            <img class="tipoQuestionario" id="educacao" alt="Educação Financeira" src="../images/educacao_financeira.jpg" /><br />
+            Educação Financeira
+        </div>
+
 
     </div>
+
 </asp:Content>
 

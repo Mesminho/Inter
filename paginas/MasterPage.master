@@ -38,14 +38,13 @@
     <form id="form1" runat="server">
         <div id="header">
 
-            <asp:Image ID="LogotipoSistema" runat="server" AlternateText="Educação Financeira Fatec Guaratingueta" CssClass="img" Height="131px" ImageUrl="~/images/logo_educacao_financeira.png" ToolTip="Educação Financeira Fatec Guaratingueta" Width="384px" />
+            <asp:Image ID="LogotipoSistema" runat="server" AlternateText="Educação Financeira Fatec Guaratingueta" CssClass="imgLogo" ImageUrl="~/images/logo_educacao_financeira.png" ToolTip="Educação Financeira Fatec Guaratingueta"  />
 
             <div id="box-toggle">
                 <img src="../images/usuario.png" /><br />
                 <div class="tgl">
 
                    <p>Nome: Sergio Augusto Siqueira<br />
-                    Administrador<br />
                    </p>
                 </div>
             </div>
@@ -71,10 +70,7 @@
             </asp:ContentPlaceHolder>
         </div>
         <footer id="rodape">
-            <asp:Image ID="LogotipoSistema0" runat="server" AlternateText="Educação Financeira Fatec Guaratingueta" CssClass="cps" ImageUrl="~/images/LOGO_CPS_2010.png" ToolTip="Educação Financeira Fatec Guaratingueta" />
-
-            <asp:Image ID="LogotipoSistema1" runat="server" AlternateText="Educação Financeira Fatec Guaratingueta" CssClass="fatec" ImageUrl="~/images/logo_fatec_branco.png" ToolTip="Educação Financeira Fatec Guaratingueta" />
-            <br />
+           <br />
 
             <p>
                 Av. Prof. João Rodrigues Alckmin, 1501, Jd. Esperança, Guaratinguetá - SP, CEP 12517- 475<br />

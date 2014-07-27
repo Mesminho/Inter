@@ -134,15 +134,6 @@ img#educacao {
     border-radius: 3px 3px;
 }
 
-.tipoQuestionario:hover {
-    transition: 1s;
-    box-shadow: 2px 2px 5px rgba(0, 0, 1, 0.15);
-}
-
-div#lista {
-    text-align: center;
-    margin: 20px;
-}
 
 div#config span {
     cursor: pointer;
@@ -158,8 +149,7 @@ div#config span {
 }
 
     div#config span:hover {
-         background: rgb(12, 120, 152);
-
+        background: rgb(12, 120, 152);
     }
 
 div#config p {
@@ -173,3 +163,46 @@ div#config p {
     margin: 10px;
     padding: 5px;
 }
+
+/*lista tipo de questionário*/
+
+
+.linha {
+    width: auto;
+    padding: 5px;
+    height: auto;
+    display:table;
+    margin-left: 33%;
+
+    
+        
+}
+
+.bloco {
+    font: bold 12px/18px sans-serif;
+    font-size: 0.8rem;
+    display: inline-block;
+    margin: 5px;
+    position: relative;
+    padding: 10px 20px;
+    background: rgb(18,95,118);
+    cursor: pointer;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -ms-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.4s;
+    -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+    color: #fff;
+    border-radius:2px 2px;
+ 
+}
+
+    .bloco:hover {
+        background: rgb(12, 120, 152);
+        color: #fff;
+        padding-right: 3em;
+        padding-left: 3em;
+    }
