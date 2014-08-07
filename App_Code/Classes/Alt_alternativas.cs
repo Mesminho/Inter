@@ -11,7 +11,7 @@ public class Alt_alternativas
     int _codigoAlternativa;
     string _alternativaAlternativa;
     double _pesoAlternativa;
-    int _codigoPergunta;// aqui não seria "Pergunta pergunta"?
+    int _perguntaCodigo;
 
     public Alt_alternativas(string alternativa, double pontos)
     {
@@ -19,10 +19,10 @@ public class Alt_alternativas
         this._pesoAlternativa = pontos;
     }
 
-    public int CodigoPergunta
+    public int PerguntaCodigo
     {
-        get { return _codigoPergunta; }
-        set { _codigoPergunta = value; }
+        get { return _perguntaCodigo; }
+        set { _perguntaCodigo = value; }
     }
 
     public double PesoAlternativa

@@ -53,17 +53,16 @@ public class Per_perguntasDB
             IDbConnection objConexao;
             IDbCommand objcommand;
             String sql = "insert into per_perguntas ";
-            sql += "per_codigo, per_pergunta, mod_codigo,";//variável alternativa[array]??
-            sql += "values (?per_codigo, ?per_pergunta, ?mod_codigo,)";
-
+            sql += "(per_pergunta, mod_codigo)";
+            sql += "values (?per_pergunta, ?mod_codigo);";
+            sql += "select last_insert_id()";
             objConexao = Mapped.Connection();
             objcommand = Mapped.Command(sql, objConexao);
 
-            objcommand.Parameters.Add(Mapped.Parameter("?per_codigo", perguntas.CodigoPergunta));
             objcommand.Parameters.Add(Mapped.Parameter("?per_pergunta", perguntas.PerguntaPergunta));
             objcommand.Parameters.Add(Mapped.Parameter("?mod_codigo", perguntas.CodigoModelo));
             
-            objcommand.ExecuteNonQuery();
+            retorno = Convert.ToInt32(objcommand.ExecuteScalar());
             objConexao.Close();
             objcommand.Dispose();
             objConexao.Dispose();

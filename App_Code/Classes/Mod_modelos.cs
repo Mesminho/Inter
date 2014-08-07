@@ -17,6 +17,13 @@ public class Mod_modelos
     Boolean _ativoModelo;
     Boolean _editarModelo;
     int _eventoCodigo;
+    string _descricaoModelo;
+
+    public string DescricaoModelo
+    {
+        get { return _descricaoModelo; }
+        set { _descricaoModelo = value; }
+    }
 
     public string EventoNome
     {

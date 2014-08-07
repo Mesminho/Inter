@@ -20,6 +20,21 @@ public partial class paginas_ConfirmarQuestionario : System.Web.UI.Page
 
     protected void bnt_confirmar_Click(object sender, EventArgs e)
     {
+        int idModelo, idPergunta;
+        modelo = (Mod_modelos)Session["modelo"];
+        idModelo = Mod_modelosDB.Insert(modelo);
+        for (int i = 0; i < modelo.Pergunta.Count; i++)
+        {
+            pergunta = (Per_perguntas)modelo.Pergunta[i];
+            pergunta.CodigoModelo = idModelo;
+            idPergunta = Per_perguntasDB.Insert(pergunta);
+            for (int n = 0; n < pergunta.Alternativa.Count; n++)
+            {
+                alternativa = (Alt_alternativas)pergunta.Alternativa[n];
+                alternativa.PerguntaCodigo = idPergunta;
+                Alt_alternativasDB.Insert(alternativa);
+            }
+        }
         Response.Redirect("Home.aspx");
     }
 

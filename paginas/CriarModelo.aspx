@@ -36,11 +36,6 @@
         </td>
         <td class="auto-style5">
     <asp:DropDownList ID="ddl_nomeEvento" CssClass="caixaTexto" runat="server">
-        <asp:ListItem Value="2010">2010</asp:ListItem>
-        <asp:ListItem>2011</asp:ListItem>
-        <asp:ListItem>2012</asp:ListItem>
-        <asp:ListItem>2013</asp:ListItem>
-        <asp:ListItem>2014</asp:ListItem>
     </asp:DropDownList>
             *</td>
         <td class="auto-style6">&nbsp;</td>
@@ -52,7 +47,7 @@
         </td>
         <td class="auto-style5">
 
-    <textarea id="txt_descricao" cols="20" name="S1" rows="1" class="txtArea"></textarea>*</td>
+    <textarea id="txt_descricao" cols="20" name="S1" rows="1" class="txtArea" runat="server"></textarea>*</td>
         <td class="auto-style6">&nbsp;</td>
     </tr>
     <tr>

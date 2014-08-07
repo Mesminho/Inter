@@ -17,7 +17,7 @@ public class Mapped
     /// <returns>Retorna a conexao</returns>
     public static IDbConnection Connection()
     {
-        MySqlConnection objConexao = new MySqlConnection(ConfigurationManager.AppSettings["StrConexao"]);
+        MySqlConnection objConexao = new MySqlConnection(ConfigurationManager.AppSettings["ConfigDB"]);
         objConexao.Open();
         return objConexao;
     }

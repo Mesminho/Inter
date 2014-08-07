@@ -29,7 +29,7 @@ public class Alt_alternativasDB
             objcommand.Parameters.Add(Mapped.Parameter("?alt_codigo", alternativas.CodigoAlternativa));
             objcommand.Parameters.Add(Mapped.Parameter("?alt_alternativa", alternativas.AlternativaAlternativa));
             objcommand.Parameters.Add(Mapped.Parameter("?alt_peso", alternativas.PesoAlternativa));
-            objcommand.Parameters.Add(Mapped.Parameter("?per_codigo", alternativas.CodigoPergunta));
+            objcommand.Parameters.Add(Mapped.Parameter("?per_codigo", alternativas.PerguntaCodigo));
             objcommand.ExecuteNonQuery();
             objConexao.Close();
             objcommand.Dispose();
@@ -53,16 +53,15 @@ public class Alt_alternativasDB
             IDbConnection objConexao;
             IDbCommand objcommand;
             String sql = "insert into alt_alternativas ";
-            sql += "alt_codigo, alt_alternativa, alt_peso, per_codigo";
-            sql += "values (?alt_codigo, ?alt_alternativa,?alt_peso,?per_codigo)";
+            sql += "(alt_alternativa, alt_peso, per_codigo)";
+            sql += "values (?alt_alternativa,?alt_peso,?per_codigo)";
 
             objConexao = Mapped.Connection();
             objcommand = Mapped.Command(sql, objConexao);
 
-            objcommand.Parameters.Add(Mapped.Parameter("?alt_codigo", alternativas.CodigoAlternativa));
             objcommand.Parameters.Add(Mapped.Parameter("?alt_alternativa", alternativas.AlternativaAlternativa));
             objcommand.Parameters.Add(Mapped.Parameter("?alt_peso", alternativas.PesoAlternativa));
-            objcommand.Parameters.Add(Mapped.Parameter("?per_codigo", alternativas.CodigoPergunta));
+            objcommand.Parameters.Add(Mapped.Parameter("?per_codigo", alternativas.PerguntaCodigo));
             
             
             objcommand.ExecuteNonQuery();
@@ -140,7 +139,7 @@ public class Alt_alternativasDB
                 objAlternativas.CodigoAlternativa = Convert.ToInt32(objDatareader["alt_codigo"]);
                 string alt = objDatareader["alt_alternativa"].ToString();
                 double pes = Convert.ToDouble(objDatareader["alt_peso"]);
-                objAlternativas.CodigoPergunta = Convert.ToInt32(objDatareader["per_codigo"]);
+                objAlternativas.PerguntaCodigo = Convert.ToInt32(objDatareader["per_codigo"]);
 
                 objAlternativas = new Alt_alternativas(alt, pes);//por causa do construtor do Alt_alternativas
                
