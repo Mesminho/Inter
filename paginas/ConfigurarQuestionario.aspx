@@ -2,35 +2,7 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 
-    <style type="text/css">
-        .auto-style1 {
-            width: 100%;
-        }
-
-        .auto-style2 {
-            width: 5px;
-        }
-
-        .auto-style3 {
-            width: 358px;
-        }
-
-        .auto-style4 {
-            width: 391px;
-        }
-
-        .auto-style5 {
-            width: 38px;
-        }
-
-        .auto-style6 {
-            width: 568px;
-        }
-
-        .auto-style7 {
-            width: 387px;
-        }
-    </style>
+    
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
@@ -54,7 +26,7 @@
         })
     </script>
 
-    <script language="javascript" type="text/javascript">
+    <script type="text/javascript">
         function msg() {
             alert("O modelo foi habilitado/desabilitado com sucesso.");
         }
@@ -108,7 +80,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style3">
+                    <td >
                         <asp:ListBox ID="ltb_questionarioHab" runat="server" Height="141px" Width="358px" CssClass="" OnSelectedIndexChanged="ltb_questionarioHab_SelectedIndexChanged" AutoPostBack="true">
                             <asp:ListItem Value="Questionário Análise do Perfil de investidor 01">Questionário Análise do Perfil de investidor 01</asp:ListItem>
                             <asp:ListItem Value="Questionário Análise do Perfil de investidor 02">Questionário Análise do Perfil de investidor 02</asp:ListItem>
@@ -118,7 +90,7 @@
                     <td class="auto-style5">
                         <asp:Button ID="btn_habilitar" runat="server" Text="Habilitar" CssClass="botao" OnClick="btn_habilitar_Click" title="Habilite ou desabilite o questionário selecionado"/>
                     </td>
-                    <td class="auto-style4">
+                    <td>
                         <asp:ListBox ID="ltb_questionarioDesab" runat="server" Height="141px" Width="358px" CssClass="" OnSelectedIndexChanged="ltb_questionarioDesab_SelectedIndexChanged" AutoPostBack="true">
                             <asp:ListItem Value="Questionário Análise do Perfil de investidor 04">Questionário Análise do Perfil de investidor 04</asp:ListItem>
                             <asp:ListItem Value="Questionário Análise do Perfil de investidor 05">Questionário Análise do Perfil de investidor 05</asp:ListItem>
@@ -147,22 +119,22 @@
                     <td class="auto-style6">&nbsp;</td>
                 </tr>
                 <tr>
-                    <td class="auto-style7">
+                    <td>
                         <asp:ListBox ID="ltb_questionarioPrincipal" runat="server" Height="141px" Width="358px" CssClass="">
                             <asp:ListItem Value="Questionário Análise do Perfil de investidor 01">Questionário Análise do Perfil de investidor 01</asp:ListItem>
                             <asp:ListItem Value="Questionário Análise do Perfil de investidor 02">Questionário Análise do Perfil de investidor 02</asp:ListItem>
                             <asp:ListItem Value="Questionário Análise do Perfil de investidor 03">Questionário Análise do Perfil de investidor 03</asp:ListItem>
                         </asp:ListBox>
                     </td>
-                    <td class="auto-style6">
+                    <td>
                         <asp:Label ID="lbl_principal" runat="server" Text="Questionário Análise do Perfil de investidor 02" CssClass="titulo" title="Clique para abrir o questionário principal"></asp:Label>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style7">
+                    <td>
                         <asp:Button ID="Button4" runat="server" OnClick="Button4_Click" Text="Tornar Principal" CssClass="botao" title="Torne o questionário selecionado o principal"/>
                     </td>
-                    <td class="auto-style6">&nbsp;</td>
+                    <td></td>
                 </tr>
             </table>
             <br />

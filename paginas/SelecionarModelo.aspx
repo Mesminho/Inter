@@ -16,8 +16,9 @@
 
         </div>
         <div class="bloco">
+             <a href="CriarClassificacao.aspx">
             <img class="tipoQuestionario" id="educacao" alt="Educação Financeira" src="../images/educacao_financeira.jpg" /><br />
-            Educação Financeira
+            Educação Financeira</a>
         </div>
 
 

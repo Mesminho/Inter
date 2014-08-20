@@ -11,7 +11,7 @@ public partial class paginas_CriarQuestao : System.Web.UI.Page
 {
     Mod_modelos modelo; // Cria variavel do tipo Questionario
     Alt_alternativas alternativa; //Cria variavel tipo alternativa
-    Per_perguntas pergunta; //Cria variavel tipa questao
+    Per_perguntas pergunta; //Cria variavel tipo questao
     int valor = 0; //Instancia o contador de alternativas
     string Values; //Instancia variavel para valores dos campos dinamicos
     int contador = 0; //Verifica a quandtidade de questões.

@@ -1,7 +1,5 @@
 ﻿@charset "UTF-8";
 
-body {
-}
 
 lable {
 }
@@ -24,6 +22,7 @@ lable {
     margin-top: 10px;
     margin-bottom: 10px;
     padding: 3px;
+    width:auto;
 }
 
 .alternativa {
