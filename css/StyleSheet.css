@@ -94,7 +94,7 @@ footer#rodape {
 }
 
 input {
-    margin: 0;
+    margin: 1px;
     border: solid 1px silver;
     padding: 2px;
     border-top-right-radius: 2px;

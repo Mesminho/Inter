@@ -33,70 +33,67 @@ public partial class paginas_CriarQuestao : System.Web.UI.Page
         Response.Redirect("ConfirmarModelo.aspx"); //Redireciona para confirmar o questionario
     }
 
-    protected void TextBox1_TextChanged(object sender, EventArgs e)
-    {
-
-    }
+ 
 
     private void salvaQuestionario()
     {
         string nomeAlternativa;
         double pontos;
 
-        pergunta.PerguntaPergunta = txb_nomePergunta.Text;
+        pergunta.PerguntaPergunta = txb_nomePergunta.Value;
 
-        if (txb_alter1.Text != String.Empty && txb_pontos1.Text != String.Empty)
+        if (txb_alter1.Value != String.Empty && txb_pontos1.Value != String.Empty)
         {
-            nomeAlternativa = txb_alter1.Text;
-            pontos = Convert.ToDouble(txb_pontos1.Text);
+            nomeAlternativa = txb_alter1.Value;
+            pontos = Convert.ToDouble(txb_pontos1.Value);
             alternativa = new Alt_alternativas(nomeAlternativa, pontos);
             pergunta.Alternativa.Add(alternativa);
         }
 
-        if (txb_alter2.Text != String.Empty && txb_pontos2.Text != String.Empty)
+        if (txb_alter2.Value != String.Empty && txb_pontos2.Value != String.Empty)
         {
-            nomeAlternativa = txb_alter2.Text;
-            pontos = Convert.ToDouble(txb_pontos2.Text);
+            nomeAlternativa = txb_alter2.Value;
+            pontos = Convert.ToDouble(txb_pontos2.Value);
             alternativa = new Alt_alternativas(nomeAlternativa, pontos);
             pergunta.Alternativa.Add(alternativa);
         }
 
-        if (txb_alter3.Text != String.Empty && txb_pontos3.Text != String.Empty)
+        if (txb_alter3.Value != String.Empty && txb_pontos3.Value != String.Empty)
         {
-            nomeAlternativa = txb_alter3.Text;
-            pontos = Convert.ToDouble(txb_pontos3.Text);
+            nomeAlternativa = txb_alter3.Value;
+            pontos = Convert.ToDouble(txb_pontos3.Value);
             alternativa = new Alt_alternativas(nomeAlternativa, pontos);
             pergunta.Alternativa.Add(alternativa);
         }
 
-        if (txb_alter4.Text != String.Empty && txb_pontos4.Text != String.Empty)
+        if (txb_alter4.Value != String.Empty && txb_pontos4.Value != String.Empty)
         {
-            nomeAlternativa = txb_alter4.Text;
-            pontos = Convert.ToDouble(txb_pontos4.Text);
+            nomeAlternativa = txb_alter4.Value;
+            pontos = Convert.ToDouble(txb_pontos4.Value);
             alternativa = new Alt_alternativas(nomeAlternativa, pontos);
             pergunta.Alternativa.Add(alternativa);
         }
 
-        if (txb_alter5.Text != String.Empty && txb_pontos5.Text != String.Empty)
+        if (txb_alter5.Value != String.Empty && txb_pontos5.Value != String.Empty)
         {
-            nomeAlternativa = txb_alter5.Text;
-            pontos = Convert.ToDouble(txb_pontos5.Text);
+            nomeAlternativa = txb_alter5.Value;
+            pontos = Convert.ToDouble(txb_pontos5.Value);
             alternativa = new Alt_alternativas(nomeAlternativa, pontos);
             pergunta.Alternativa.Add(alternativa);
         }
 
-        if (txb_alter6.Text != String.Empty && txb_pontos6.Text != String.Empty)
+        if (txb_alter6.Value != String.Empty && txb_pontos6.Value != String.Empty)
         {
-            nomeAlternativa = txb_alter6.Text;
-            pontos = Convert.ToDouble(txb_pontos6.Text);
+            nomeAlternativa = txb_alter6.Value;
+            pontos = Convert.ToDouble(txb_pontos6.Value);
             alternativa = new Alt_alternativas(nomeAlternativa, pontos);
             pergunta.Alternativa.Add(alternativa);
         }
 
-        if (txb_alter7.Text != String.Empty && txb_pontos7.Text != String.Empty)
+        if (txb_alter7.Value != String.Empty && txb_pontos7.Value != String.Empty)
         {
-            nomeAlternativa = txb_alter7.Text;
-            pontos = Convert.ToDouble(txb_pontos7.Text);
+            nomeAlternativa = txb_alter7.Value;
+            pontos = Convert.ToDouble(txb_pontos7.Value);
             alternativa = new Alt_alternativas(nomeAlternativa, pontos);
             pergunta.Alternativa.Add(alternativa);
         }
@@ -105,32 +102,33 @@ public partial class paginas_CriarQuestao : System.Web.UI.Page
         Session["questionario"] = modelo; //Passa o obj questionario para a sessao
     }
 
-    protected void txb_alter3_TextChanged(object sender, EventArgs e)
-    {
-        txb_alter4.Visible = true;
-        txb_pontos4.Visible = true;
-        lbl_alter4.Visible = true;
-        lbl_pontos4.Visible = true;
-    }
-    protected void txb_alter4_TextChanged(object sender, EventArgs e)
-    {
-        txb_alter5.Visible = true;
-        txb_pontos5.Visible = true;
-        lbl_alter5.Visible = true;
-        lbl_pontos5.Visible = true;
-    }
-    protected void txb_alter5_TextChanged(object sender, EventArgs e)
-    {
-        txb_alter6.Visible = true;
-        txb_pontos6.Visible = true;
-        lbl_alter6.Visible = true;
-        lbl_pontos6.Visible = true;
-    }
-    protected void txb_alter6_TextChanged(object sender, EventArgs e)
-    {
-        txb_alter7.Visible = true;
-        txb_pontos7.Visible = true;
-        lbl_alter7.Visible = true;
-        lbl_pontos7.Visible = true;
-    }
+    //protected void txb_alter3_TextChanged(object sender, EventArgs e)
+    //{
+    //    txb_alter4.Visible = true;
+    //    txb_pontos4.Visible = true;
+    //    lbl_alter4.Visible = true;
+    //    lbl_pontos4.Visible = true;
+    //}
+    //protected void txb_alter4_TextChanged(object sender, EventArgs e)
+    //{
+    //    txb_alter5.Visible = true;
+    //    txb_pontos5.Visible = true;
+    //    lbl_alter5.Visible = true;
+    //    lbl_pontos5.Visible = true;
+    //}
+    //protected void txb_alter5_TextChanged(object sender, EventArgs e)
+    //{
+    //    txb_alter6.Visible = true;
+    //    txb_pontos6.Visible = true;
+    //    lbl_alter6.Visible = true;
+    //    lbl_pontos6.Visible = true;
+    //}
+    //protected void txb_alter6_TextChanged(object sender, EventArgs e)
+    //{
+    //    txb_alter7.Visible = true;
+    //    txb_pontos7.Visible = true;
+    //    lbl_alter7.Visible = true;
+    //    lbl_pontos7.Visible = true;
+    //}
+
 }
