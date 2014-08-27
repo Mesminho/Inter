@@ -4,21 +4,26 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
-    
+
     <asp:Label ID="lblInfo" runat="server" Text="Escolha o tipo de questionário que deseja criar: " CssClass="textoCorrido"></asp:Label>
 
 
     <div class="linha">
         <div class="bloco">
-            <a href="CriarModelo.aspx">
+            <a href="CriarModeloInvestidor.aspx">
                 <img id="investidor" alt="Perfil Investidor" src="../images/perfil_investidor.jpg" /><br />
                 Investidor</a>
 
         </div>
         <div class="bloco">
-             <a href="CriarClassificacao.aspx">
-            <img class="tipoQuestionario" id="educacao" alt="Educação Financeira" src="../images/educacao_financeira.jpg" /><br />
-            Educação Financeira</a>
+            <a href="CriarClassificacao.aspx">
+                <img class="tipoQuestionario" id="educacao" alt="Educação Financeira" src="../images/educacao_financeira.jpg" /><br />
+                Educação Financeira</a>
+        </div>
+        <div class="bloco">
+            <a href="CriarModelo.aspx">
+                <img class="tipoQuestionario" id="empresarial" alt="Empresarial"  /><br />
+                Empresarial</a>
         </div>
 
 
