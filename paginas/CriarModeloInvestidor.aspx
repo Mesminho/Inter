@@ -73,7 +73,7 @@
 
     <br />
 
-    <input type="button" value="Cancelar" class="botao" onclick="location.href='Home.aspx'"/>
+    <input type="button" value="Cancelar" class="botao" onclick="cancelar()"/>
 
     <asp:Button ID="btn_continuar" runat="server" Text="Continuar" CssClass="botao" OnClick="btn_continuar_Click" />
 

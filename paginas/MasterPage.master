@@ -13,6 +13,8 @@
 
     <script src="../script/FusionCharts.js"></script>
     <script src="../script/jquery.js"></script>
+    <script src="../script/funcoes.js"></script>
+
 
     <script type="text/javascript">
         jQuery.fn.toggleText = function (a, b) {
@@ -53,7 +55,7 @@
 
         <nav id="menu">
             <ul>
-                <li><a href="home.aspx">Home</a></li>
+                <li><a href="Default.aspx">Home</a></li>
                 <li>Questionário 
                 <ul>
                     <li><a href="SelecionarVisitante.aspx">Aplicar</a></li>

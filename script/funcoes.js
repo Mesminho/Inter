@@ -69,4 +69,10 @@ function calculaPerfil(quantidade) {
     }
 }
 
+function cancelar() {
+    if (confirm("Deseja cancelar operação?")) {
+        location.href = 'Home.aspx';
+    }
+}
+
 window.onload = RecreateDynamicTextboxes;

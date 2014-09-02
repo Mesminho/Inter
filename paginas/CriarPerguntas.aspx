@@ -3,7 +3,6 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-    <script src="../script/funcoes.js"></script>
     <table class="tabela">
         <tr>
             <td>
@@ -60,8 +59,8 @@
         <input id="txb_pontos7" type="number" max="9000" min="1" name="Pontuacao" runat="server" title="Valoração da alternativa" css="caixaTexto" />
     </div>
     <br />
-    <input type="button" value="Cancelar" class="botao" onclick="location.href = 'Home.aspx'"/>
-    <asp:Button ID="btn_novo" runat="server" Text="Nova Pergunta" OnClick="btn_novo_Click" CssClass="botao" />
+    <input type="button" value="Cancelar" class="botao" onclick="cancelar()"/>
+    <asp:Button ID="btn_novo" runat="server" Text="Nova Questão" OnClick="btn_novo_Click" CssClass="botao" />
     <asp:Button ID="btn_enviar" runat="server" Text="Finalizar" OnClick="btn_enviar_Click" CssClass="botao" />
 
 </asp:Content>
