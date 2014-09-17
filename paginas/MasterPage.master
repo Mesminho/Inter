@@ -55,7 +55,7 @@
 
         <nav id="menu">
             <ul>
-                <li><a href="Default.aspx">Home</a></li>
+                <li><a href="home.aspx">Home</a></li>
                 <li>Questionário 
                 <ul>
                     <li><a href="SelecionarVisitante.aspx">Aplicar</a></li>
@@ -63,7 +63,7 @@
                 </ul>
                 </li>
                 <li><a href="SelecionarEstatistica.aspx">Estatísticas</a></li>
-                 <li><a href="ConfigurarQuestionario.aspx">Configurações</a></li>
+                 <li><a href="ConfigQuestionarios.aspx">Configurações</a></li>
             </ul>
 
         </nav>

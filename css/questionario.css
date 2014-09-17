@@ -15,14 +15,14 @@ lable {
 .DDList {
     font-family: Calibri;
     color: rgb(105, 105, 105);
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .tabela {
     margin-top: 10px;
-    margin-bottom: 10px;
-    padding: 3px;
-    width:auto;
+    margin-bottom: 25px;
+    padding: 5px;
+    width: auto;
 }
 
 .alternativa {
@@ -40,20 +40,57 @@ lable {
     margin: 15px 20px 15px 15px;
 }
 
+/*botões aqui*/
 .botao {
-    font-size: 15px;
-    margin: 15px 10px 10px 10px;
-    font-family: Calibri;
-    color: #000;
-    font-size: 15px;
-    border-radius: 2px 2px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+    margin-bottom: 0;
+    margin-top: -5px;
+    margin-left: 5px;
+    padding: 3px 6px;
+    text-align: center;
+    vertical-align: middle;
+    background-color: transparent;
+    transition: all 0.5s ease 0s;
+    color: rgb(18,95,110);
+    border-color: rgb(18,95,110);
 }
 
     .botao:hover {
-        color: rgb(18,95,110);
-        cursor: pointer;
-        border: 1px solid rgb(18,95,110);
+        background-color: rgb(18,95,110);
+        border-color: rgb(18,95,110);
+        color: #fff;
     }
+
+
+.btn-cancelar {
+    border: 1px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+    margin-bottom: 0;
+    margin-top: -5px;
+    margin-left: 5px;
+    padding: 3px 6px;
+    text-align: center;
+    vertical-align: middle;
+    background-color: transparent;
+    transition: all 0.5s ease 0s;
+    color: rgb(254, 49, 49);
+    border-color: #d43f3a;
+}
+
+    .btn-cancelar:hover {
+        background-color: #d9534f;
+        border-color: #d43f3a;
+        color: #fff;
+    }
+
+
+/*FIM botao*/
+
 
 .texto {
     font-family: Calibri;
@@ -71,12 +108,12 @@ lable {
 }
 
 
-.textoAlerta {
+.Alerta {
     font-family: Calibri;
     font-weight: bold;
     color: rgb(255, 0, 0);
     font-size: 18px;
-    margin: 15px 10px 10px 10px;
+    margin: 3px;
 }
 
 .caixaTexto {
@@ -105,7 +142,7 @@ div#TextBoxContainer {
     font-weight: bold;
     color: rgb(105, 105, 105);
     font-size: 16px;
-    margin: 15px 10px 10px 10px;
+    margin: 15px 10px 10px 5px;
 }
 
     div#TextBoxContainer input {
@@ -121,17 +158,6 @@ div#grafico {
     margin-right: auto;
 }
 
-img#investidor {
-    height: 120px;
-    width: 120px;
-    border-radius: 2px 2px;
-}
-
-img#educacao {
-    width: 120px;
-    height: 120px;
-    border-radius: 3px 3px;
-}
 
 
 div#config span {
@@ -170,11 +196,9 @@ div#config p {
     width: auto;
     padding: 5px;
     height: auto;
-    display:table;
-    margin-left: 33%;
-
-    
-        
+    display: table;
+    margin-left: 25%;
+    margin-top: 30px;
 }
 
 .bloco {
@@ -195,8 +219,7 @@ div#config p {
     -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
     color: #fff;
-    border-radius:2px 2px;
- 
+    border-radius: 2px 2px;
 }
 
     .bloco:hover {
@@ -204,4 +227,61 @@ div#config p {
         color: #fff;
         padding-right: 3em;
         padding-left: 3em;
+    }
+
+.tipoQuestionario {
+    height: 7.5rem;
+    width: 7.5rem;
+    border-radius: 2px 2px;
+}
+
+/*Janela modal*/
+.janela {
+    display: none;
+    width: auto;
+    height: auto;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: #FFF;
+    z-index: 9900;
+    padding-top: 10px;
+    border-radius: 10px;
+    font-family: Calibri;
+    padding:15px;
+}
+
+#mascara {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 9000;
+    background-color: #000;
+}
+/*fim modal*/
+
+.fechar {
+    border: 1px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+    margin-bottom: 0;
+    margin-top: -8px;
+    margin-right:-8px;
+    margin-left: 6px;
+    padding: 3px 6px;
+    text-align: center;
+    vertical-align: middle;
+    background-color: transparent;
+    transition: all 0.5s ease 0s;
+    color: rgb(254, 49, 49);
+    border-color: #d43f3a;
+    float:right;
+}
+
+    .fechar:hover {
+        background-color: #d9534f;
+        border-color: #d43f3a;
+        color: #fff;
     }

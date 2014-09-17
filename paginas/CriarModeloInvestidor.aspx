@@ -28,7 +28,7 @@
                 <textarea id="txt_descricao" cols="20" name="S1" rows="1" class="txtArea" runat="server"></textarea></td>
         </tr>
         <tr>
-            <td class="auto-style1" colspan="2">&nbsp;</td>
+            <td colspan="2"></td>
         </tr>
         <tr>
             <td colspan="2">
@@ -68,12 +68,10 @@
         </tr>
     </table>
     <br />
-    <br />
-    <br />
 
-    <br />
+ 
 
-    <input type="button" value="Cancelar" class="botao" onclick="cancelar()"/>
+    <input type="button" value="Cancelar" class="btn-cancelar" onclick="cancelar()"/>
 
     <asp:Button ID="btn_continuar" runat="server" Text="Continuar" CssClass="botao" OnClick="btn_continuar_Click" />
 

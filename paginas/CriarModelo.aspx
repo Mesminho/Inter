@@ -28,7 +28,7 @@
         </tr>
     </table>
 
-    <input type="button" value="Cancelar" class="botao" onclick="cancelar()"/>
+    <input type="button" value="Cancelar" class="btn-cancelar" onclick="cancelar()"/>
 
     <asp:Button ID="btn_continuar" runat="server" Text="Continuar" CssClass="botao" />
 

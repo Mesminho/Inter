@@ -13,7 +13,7 @@ public class Mod_modelos
     string _eventoNome;
     int _codigoModelo;
     string _nomeModelo;
-    string _tipoModelo;
+    Tim_TipoModelo _tipoModelo;
     Boolean _ativoModelo;
     Boolean _editarModelo;
     int _eventoCodigo;

@@ -28,7 +28,7 @@
     </tr>
     </table>
 
-    <input type="button" value="Cancelar" class="botao" onclick="location.href = 'Home.aspx'"/>
+    <input type="button" value="Cancelar" class="btn-cancelar" onclick="location.href = 'Home.aspx'"/>
     <asp:Button ID="btnCadastrar" runat="server" Text="Cadastrar Classificação" CssClass="botao" OnClick="btnCadastrar_Click"/>
     <asp:Button ID="btnAvancar" runat="server" Text="Avançar" CssClass="botao" OnClick="btnAvancar_Click"/>
 

@@ -14,7 +14,7 @@
             </td>
             <td>
                 <asp:TextBox ID="txtNome" runat="server" CssClass="caixaTexto" Width="200" title="Digite o nome do visitante"></asp:TextBox>
-                *<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" CssClass="textoAlerta" ErrorMessage="É necessário preencher o campo." ControlToValidate="txtNome"></asp:RequiredFieldValidator>
+                *<asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" CssClass="Alerta" ErrorMessage="É necessário preencher o campo." ControlToValidate="txtNome"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
@@ -23,7 +23,7 @@
             </td>
             <td>
                 <asp:TextBox ID="txtEmail" runat="server" CssClass="caixaTexto" Width="200" title="Digite o e-mail do visitante"></asp:TextBox>
-                *<asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" CssClass="textoAlerta" ErrorMessage="É necessário preencher o campo." ControlToValidate="txtEmail"></asp:RequiredFieldValidator>
+                *<asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" CssClass="Alerta" ErrorMessage="É necessário preencher o campo." ControlToValidate="txtEmail"></asp:RequiredFieldValidator>
             </td>
         </tr>
     </table>

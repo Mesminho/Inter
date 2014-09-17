@@ -11,7 +11,7 @@
     <div class="linha">
         <div class="bloco">
             <a href="CriarModeloInvestidor.aspx">
-                <img id="investidor" alt="Perfil Investidor" src="../images/perfil_investidor.jpg" /><br />
+                <img class="tipoQuestionario" id="investidor" alt="Perfil Investidor" src="../images/perfil_investidor.jpg" /><br />
                 Investidor</a>
 
         </div>
@@ -22,7 +22,7 @@
         </div>
         <div class="bloco">
             <a href="CriarPerguntaEmpresarial.aspx">
-                <img class="tipoQuestionario" id="empresarial" alt="Empresarial"  /><br />
+                <img class="tipoQuestionario" id="empresarial" alt="Empresarial" src="../images/perfil_empresarial.jpg" /><br />
                 Empresarial</a>
         </div>
 
