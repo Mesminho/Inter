@@ -1,8 +1,9 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/paginas/MasterPage.master" AutoEventWireup="true" CodeFile="CriarPerguntas.aspx.cs" Inherits="paginas_CriarQuestao" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/paginas/MasterPage.master" AutoEventWireup="true" CodeFile="CriarPerguntaEd.aspx.cs" Inherits="paginas_CriarPerguntaEd" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    
     <table class="tabela">
         <tr>
             <td>
@@ -34,9 +35,9 @@
                     <input id="txb_pontos2" type="number" required="" max="9000" min="1" name="Pontuacao" runat="server" title="Valoração da alternativa" css="caixaTexto" />
                     <br />
                     <asp:Label ID="lbl_alter3" runat="server" Text="Alternativa 3"></asp:Label>
-                    <input type="text" required="" id="txb_alter3" runat="server" />
+                    <input type="text" id="txb_alter3" runat="server" />
                     <asp:Label ID="lbl_pontos3" runat="server" Text="Pontos"></asp:Label>
-                    <input id="txb_pontos3" type="number" required="" max="9000" min="1" name="Pontuacao" runat="server" title="Valoração da alternativa" css="caixaTexto" />
+                    <input id="txb_pontos3" type="number" max="9000" min="1" name="Pontuacao" runat="server" title="Valoração da alternativa" css="caixaTexto" />
                     <br />
                     <asp:Label ID="lbl_alter4" runat="server" Text="Alternativa 4"></asp:Label>
                     <input type="text" id="txb_alter4" runat="server" />
@@ -64,9 +65,8 @@
 
     <br />
     <input type="button" value="Cancelar" class="btn-cancelar" onclick="cancelar()" />
-    <asp:Button ID="btn_novo" runat="server" Text="Nova Questão" OnClick="btn_novo_Click" CssClass="botao" />
-    <asp:Button ID="btn_enviar" runat="server" Text="Finalizar" OnClick="btn_enviar_Click" CssClass="botao" />
+    <asp:Button ID="btn_novo" runat="server" Text="Nova Questão" CssClass="botao" />
+    <asp:Button ID="btn_enviar" runat="server" Text="Finalizar" CssClass="botao" />
 
 </asp:Content>
-
 

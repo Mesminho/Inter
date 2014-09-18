@@ -13,11 +13,18 @@ public class Mod_modelos
     string _eventoNome;
     int _codigoModelo;
     string _nomeModelo;
-    Tim_TipoModelo _tipoModelo;
+    string _tipoModelo;
     Boolean _ativoModelo;
     Boolean _editarModelo;
     int _eventoCodigo;
     string _descricaoModelo;
+
+
+    public string TipoModelo
+    {
+        get { return _tipoModelo; }
+        set { _tipoModelo = value; }
+    }
 
     public string DescricaoModelo
     {
@@ -43,13 +50,6 @@ public class Mod_modelos
         set { _nomeModelo = value; }
     }
     
-
-    public string TipoModelo
-    {
-        get { return _tipoModelo; }
-        set { _tipoModelo = value; }
-    }
-
     public Boolean AtivoModelo
     {
         get { return _ativoModelo; }

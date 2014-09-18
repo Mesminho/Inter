@@ -9,7 +9,7 @@
     <div class="linha">
         <div class="bloco">
             <a href="Questionario.aspx">
-                <img id="investidor" alt="Perfil Investidor" src="../images/perfil_investidor.jpg" /><br />
+                <img class="tipoQuestionario" alt="Perfil Investidor" src="../images/perfil_investidor.jpg" /><br />
                 Investidor</a>
 
         </div>

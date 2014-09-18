@@ -1,9 +1,5 @@
 ﻿@charset "UTF-8";
 
-
-lable {
-}
-
 .titulo {
     font-family: Calibri;
     font-size: 20px;
@@ -193,12 +189,15 @@ div#config p {
 
 
 .linha {
-    width: auto;
     padding: 5px;
     height: auto;
     display: table;
-    margin-left: 25%;
-    margin-top: 30px;
+    left: 50%;
+    top: 50%;
+    position: relative;
+    margin-left: -300px;
+    margin-top: 20px;
+
 }
 
 .bloco {
@@ -248,7 +247,7 @@ div#config p {
     padding-top: 10px;
     border-radius: 10px;
     font-family: Calibri;
-    padding:15px;
+    padding: 15px;
 }
 
 #mascara {
@@ -268,7 +267,7 @@ div#config p {
     display: inline-block;
     margin-bottom: 0;
     margin-top: -8px;
-    margin-right:-8px;
+    margin-right: -8px;
     margin-left: 6px;
     padding: 3px 6px;
     text-align: center;
@@ -277,7 +276,7 @@ div#config p {
     transition: all 0.5s ease 0s;
     color: rgb(254, 49, 49);
     border-color: #d43f3a;
-    float:right;
+    float: right;
 }
 
     .fechar:hover {

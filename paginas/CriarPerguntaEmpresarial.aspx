@@ -30,7 +30,7 @@
                     <asp:ListItem Text="Multipla Escolha" Value="1"></asp:ListItem>
                     <asp:ListItem Text="Dissertativa" Value="2"></asp:ListItem>
                 </asp:DropDownList>
-                <asp:RequiredFieldValidator ID="rfvDDLPergunta" CssClass="Alerta" runat="server" ErrorMessage="!" ControlToValidate="ddlTipoPergunta" InitialValue="0"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="rfvDDLPergunta" CssClass="Alerta" runat="server" ErrorMessage="*" ControlToValidate="ddlTipoPergunta" InitialValue="0"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
@@ -51,9 +51,9 @@
                             <input id="txb_pontos2" type="number" required="" max="9000" min="1" name="Pontuacao" runat="server" title="Valoração da alternativa" css="caixaTexto" />
                             <br />
                             <asp:Label ID="lbl_alter3" runat="server" Text="Alternativa 3"></asp:Label>
-                            <input type="text" required="" id="txb_alter3" runat="server" />
+                            <input type="text" id="txb_alter3" runat="server" />
                             <asp:Label ID="lbl_pontos3" runat="server" Text="Pontos"></asp:Label>
-                            <input id="txb_pontos3" type="number" required="" max="9000" min="1" name="Pontuacao" runat="server" title="Valoração da alternativa" css="caixaTexto" />
+                            <input id="txb_pontos3" type="number" max="9000" min="1" name="Pontuacao" runat="server" title="Valoração da alternativa" css="caixaTexto" />
                             <br />
                             <asp:Label ID="lbl_alter4" runat="server" Text="Alternativa 4"></asp:Label>
                             <input type="text" id="txb_alter4" runat="server" />
@@ -86,6 +86,7 @@
             </td>
         </tr>
     </table>
+    <br />
     <input type="button" value="Cancelar" class="btn-cancelar" onclick="cancelar()" />
     <asp:Button ID="btn_novo" runat="server" Text="Nova Questão" CssClass="botao" />
     <asp:Button ID="btn_enviar" runat="server" Text="Finalizar" CssClass="botao" />
