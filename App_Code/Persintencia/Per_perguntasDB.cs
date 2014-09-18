@@ -18,11 +18,7 @@ public class Per_perguntasDB
         {
             IDbConnection objConexao;
             IDbCommand objcommand;
-            String sql = "update per_perguntas set";
-            sql += "per_pergunta= ?per_pergunta";
-            sql += "mod_codigo= ?mod_codigo";
-
-            sql += "where per_codigo = ?per_codigo";
+            String sql = "CALL per_update(?mod_codigo, ?per_pergunta)";
 
             objConexao = Mapped.Connection();
             objcommand = Mapped.Command(sql, objConexao);
@@ -52,10 +48,8 @@ public class Per_perguntasDB
         {
             IDbConnection objConexao;
             IDbCommand objcommand;
-            String sql = "insert into per_perguntas ";
-            sql += "(per_pergunta, mod_codigo)";
-            sql += "values (?per_pergunta, ?mod_codigo);";
-            sql += "select last_insert_id()";
+            String sql = "CALL per_insert(?per_pergunta, ?mod_codigo)";
+            
             objConexao = Mapped.Connection();
             objcommand = Mapped.Command(sql, objConexao);
 
@@ -86,7 +80,7 @@ public class Per_perguntasDB
             IDbConnection objConexao;
             IDbCommand objcommand;
 
-            String sql = "delete from per_perguntas where per_codigo = ?per_codigo";
+            String sql = "CALL per_delete(?per_codigo)";
             objConexao = Mapped.Connection();
             objcommand = Mapped.Command(sql, objConexao);
             objcommand.Parameters.Add(Mapped.Parameter("?per_codigo", codigo));
@@ -111,7 +105,7 @@ public class Per_perguntasDB
         IDbCommand objcommand;
         IDataAdapter objDataAdapter;
         objConexao = Mapped.Connection();
-        objcommand = Mapped.Command("select * from per_perguntas order by per_codigo", objConexao);
+        objcommand = Mapped.Command("SELECT * FROM per_view", objConexao);
         objDataAdapter = Mapped.Adapter(objcommand);
         objDataAdapter.Fill(ds);
         objConexao.Close();
@@ -129,7 +123,7 @@ public class Per_perguntasDB
             IDbCommand objcommand;
             IDataReader objDatareader;
             objConexao = Mapped.Connection();
-            objcommand = Mapped.Command("select * from per_perguntas where per_codigo = ?per_codigo", objConexao);
+            objcommand = Mapped.Command("CALL per_select(?per_codigo)", objConexao);
             objcommand.Parameters.Add(Mapped.Parameter("?per_codigo", codigo));
             objDatareader = objcommand.ExecuteReader();
 

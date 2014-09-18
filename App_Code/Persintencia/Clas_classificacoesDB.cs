@@ -16,12 +16,7 @@ public class Clas_classificacoesDB
         {
             IDbConnection objConexao;
             IDbCommand objcommand;
-            String sql = "update cla_classificacoes set";
-            sql += "cla_pontosMax= ?cla_pontosMax";
-            sql += "cla_descricao= ?cla_descricao";
-            sql += "cla_nome= ?cla_nome";
-         
-            sql += "where cla_codigo = ?cla_codigo";
+            String sql = "call cla_update(?cla_codigo, ?cla_pontosMax, ?cla_descricao, ?cla_nome)";
 
             objConexao = Mapped.Connection();
             objcommand = Mapped.Command(sql, objConexao);
@@ -54,9 +49,7 @@ public class Clas_classificacoesDB
         {
             IDbConnection objConexao;
             IDbCommand objcommand;
-            String sql = "insert into cla_classificacoes ";
-            sql += "cla_codigo, cla_pontosMax,cla_descricao,cla_nome";
-            sql += "values (?cla_codigo, ?cla_pontosMax, ?cla_descricao,?cla_nome)";
+            String sql = "CALL cla_insert(?cla_pontosMax, ?cla_descricao,?cla_nome) ";
 
             objConexao = Mapped.Connection();
             objcommand = Mapped.Command(sql, objConexao);
@@ -90,7 +83,7 @@ public class Clas_classificacoesDB
             IDbConnection objConexao;
             IDbCommand objcommand;
 
-            String sql = "delete from cla_classificacoes where cla_codigo = ?cla_codigo";
+            String sql = "CALL cla_delete(?cla_codigo)";
             objConexao = Mapped.Connection();
             objcommand = Mapped.Command(sql, objConexao);
             objcommand.Parameters.Add(Mapped.Parameter("?cla_codigo", codigo));
@@ -114,7 +107,7 @@ public class Clas_classificacoesDB
         IDbCommand objcommand;
         IDataAdapter objDataAdapter;
         objConexao = Mapped.Connection();
-        objcommand = Mapped.Command("select * from cla_classificacoes order by cla_codigo", objConexao);
+        objcommand = Mapped.Command("SELECT * FROM cla_view", objConexao);
         objDataAdapter = Mapped.Adapter(objcommand);
         objDataAdapter.Fill(ds);
         objConexao.Close();
@@ -132,7 +125,7 @@ public class Clas_classificacoesDB
             IDbCommand objcommand;
             IDataReader objDatareader;
             objConexao = Mapped.Connection();
-            objcommand = Mapped.Command("select * from cla_classificacoes where cla_codigo = ?cla_codigo", objConexao);
+            objcommand = Mapped.Command("CALL cla_select(?cla_codigo)", objConexao);
             objcommand.Parameters.Add(Mapped.Parameter("?cla_codigo", codigo));
             objDatareader = objcommand.ExecuteReader();
 

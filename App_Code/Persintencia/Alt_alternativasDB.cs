@@ -16,12 +16,7 @@ public class Alt_alternativasDB
         {
             IDbConnection objConexao;
             IDbCommand objcommand;
-            String sql = "update alt_alternativas set";
-            sql += "alt_alternativa= ?alt_alternativa";
-            sql += "alt_peso= ?alt_peso";
-            sql += "per_codigo= ?per_codigo";
-
-            sql += "where alt_codigo = ?alt_codigo";
+            String sql = "CALL alt_update(?alt_codigo, ?alt_alternativa, ?alt_peso)";
 
             objConexao = Mapped.Connection();
             objcommand = Mapped.Command(sql, objConexao);
@@ -52,9 +47,7 @@ public class Alt_alternativasDB
         {
             IDbConnection objConexao;
             IDbCommand objcommand;
-            String sql = "insert into alt_alternativas ";
-            sql += "(alt_alternativa, alt_peso, per_codigo)";
-            sql += "values (?alt_alternativa,?alt_peso,?per_codigo)";
+            String sql = "CALL alt_insert(?alt_alternativa, ?alt_peso, ?per_codigo) ";
 
             objConexao = Mapped.Connection();
             objcommand = Mapped.Command(sql, objConexao);
@@ -87,7 +80,7 @@ public class Alt_alternativasDB
             IDbConnection objConexao;
             IDbCommand objcommand;
 
-            String sql = "delete from alt_alternativas where alt_codigo = ?alt_codigo";
+            String sql = "CALL alt_delete (?alt_codigo)";
             objConexao = Mapped.Connection();
             objcommand = Mapped.Command(sql, objConexao);
             objcommand.Parameters.Add(Mapped.Parameter("?alt_codigo", codigo));
@@ -111,7 +104,7 @@ public class Alt_alternativasDB
         IDbCommand objcommand;
         IDataAdapter objDataAdapter;
         objConexao = Mapped.Connection();
-        objcommand = Mapped.Command("select * from alt_alternativas order by alt_codigo", objConexao);
+        objcommand = Mapped.Command("SELECT * FROM alt_view", objConexao);
         objDataAdapter = Mapped.Adapter(objcommand);
         objDataAdapter.Fill(ds);
         objConexao.Close();
@@ -129,7 +122,7 @@ public class Alt_alternativasDB
             IDbCommand objcommand;
             IDataReader objDatareader;
             objConexao = Mapped.Connection();
-            objcommand = Mapped.Command("select * from alt_alternativas where alt_codigo = ?alt_codigo", objConexao);
+            objcommand = Mapped.Command("CALL alt_select(?alt_codigo)", objConexao);
             objcommand.Parameters.Add(Mapped.Parameter("?alt_codigo", codigo));
             objDatareader = objcommand.ExecuteReader();
 
