@@ -36,57 +36,6 @@
     margin: 15px 20px 15px 15px;
 }
 
-/*botões aqui*/
-.botao {
-    border: 1px solid transparent;
-    border-radius: 4px;
-    cursor: pointer;
-    display: inline-block;
-    margin-bottom: 0;
-    margin-top: -5px;
-    margin-left: 5px;
-    padding: 3px 6px;
-    text-align: center;
-    vertical-align: middle;
-    background-color: transparent;
-    transition: all 0.5s ease 0s;
-    color: rgb(18,95,110);
-    border-color: rgb(18,95,110);
-}
-
-    .botao:hover {
-        background-color: rgb(18,95,110);
-        border-color: rgb(18,95,110);
-        color: #fff;
-    }
-
-
-.btn-cancelar {
-    border: 1px solid transparent;
-    border-radius: 4px;
-    cursor: pointer;
-    display: inline-block;
-    margin-bottom: 0;
-    margin-top: -5px;
-    margin-left: 5px;
-    padding: 3px 6px;
-    text-align: center;
-    vertical-align: middle;
-    background-color: transparent;
-    transition: all 0.5s ease 0s;
-    color: rgb(254, 49, 49);
-    border-color: #d43f3a;
-}
-
-    .btn-cancelar:hover {
-        background-color: #d9534f;
-        border-color: #d43f3a;
-        color: #fff;
-    }
-
-
-/*FIM botao*/
-
 
 .texto {
     font-family: Calibri;
@@ -197,7 +146,6 @@ div#config p {
     position: relative;
     margin-left: -300px;
     margin-top: 20px;
-
 }
 
 .bloco {
@@ -234,31 +182,6 @@ div#config p {
     border-radius: 2px 2px;
 }
 
-/*Janela modal*/
-.janela {
-    display: none;
-    width: auto;
-    height: auto;
-    position: absolute;
-    left: 0;
-    top: 0;
-    background: #FFF;
-    z-index: 9900;
-    padding-top: 10px;
-    border-radius: 10px;
-    font-family: Calibri;
-    padding: 15px;
-}
-
-#mascara {
-    display: none;
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: 9000;
-    background-color: #000;
-}
-/*fim modal*/
 
 .fechar {
     border: 1px solid transparent;
@@ -277,6 +200,7 @@ div#config p {
     color: rgb(254, 49, 49);
     border-color: #d43f3a;
     float: right;
+    font-size: 16px;
 }
 
     .fechar:hover {
@@ -284,3 +208,29 @@ div#config p {
         border-color: #d43f3a;
         color: #fff;
     }
+
+/*Modal*/
+.modalBackground {
+    background-color: Gray;
+    filter: alpha(opacity=50);
+    opacity: 0.50;
+}
+
+.pnl {
+    background-color: White;
+    padding: 20px;
+    border-radius:2px 2px;
+  
+}
+
+.close {
+    DISPLAY: block;
+    LEFT: -12px;
+    WIDTH: 26px;
+    TEXT-INDENT: -1000em;
+    POSITION: absolute;
+    TOP: -12px;
+    HEIGHT: 26px;
+}
+
+/*Fim Modal*/
