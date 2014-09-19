@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/paginas/MasterPage.master" AutoEventWireup="true" CodeFile="CriarPerguntaEd.aspx.cs" Inherits="paginas_CriarPerguntaEd" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/paginas/MasterPage.master" AutoEventWireup="true" CodeFile="CriarPerguntas.aspx.cs" Inherits="paginas_CriarPerguntaEd" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
 </asp:Content>
@@ -65,8 +65,8 @@
 
     <br />
     <input type="button" value="Cancelar" class="btn-cancelar" onclick="cancelar()" />
-    <asp:Button ID="btn_novo" runat="server" Text="Nova Questão" CssClass="botao" />
-    <asp:Button ID="btn_enviar" runat="server" Text="Finalizar" CssClass="botao" />
+    <asp:Button ID="btn_novo" runat="server" Text="Nova Questão" CssClass="botao" OnClick="btn_novo_Click" />
+    <asp:Button ID="btn_enviar" runat="server" Text="Finalizar" CssClass="botao" OnClick="btn_enviar_Click" />
 
 </asp:Content>
 

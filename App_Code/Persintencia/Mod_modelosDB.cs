@@ -153,7 +153,7 @@ public class Mod_modelosDB
                 objModelos.EventoCodigo = Convert.ToInt32(objDatareader["eve_codigo"]);
                 objModelos.EventoNome = objDatareader["eve_nome"].ToString();
                 objModelos.NomeModelo= objDatareader["mod_nome"].ToString();
-                objModelos.TipoModelo = objDatareader["mod_tipo"].ToString();
+                objModelos.TipoModelo = Convert.ToInt32(objDatareader["mod_tipo"]);
                 objModelos.AtivoModelo = Convert.ToBoolean(objDatareader["mod_ativo"]);
                 objModelos.EditarModelo = Convert.ToBoolean(objDatareader["mod_editar"]);
 
