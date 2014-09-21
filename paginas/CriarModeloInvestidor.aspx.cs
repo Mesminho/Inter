@@ -10,7 +10,6 @@ using System.Collections;
 
 public partial class paginas_CriarQuestionario : System.Web.UI.Page
 {
-    ArrayList classificacoes = new ArrayList();
     Mod_modelos modelo = new Mod_modelos(); //Instancia o Objeto Questionario
     Clas_classificacoes classificacao; //Instancia um Array de Classificações
     
@@ -32,24 +31,23 @@ public partial class paginas_CriarQuestionario : System.Web.UI.Page
         classificacao.NomeClassificacao = "Conservador";
         classificacao.PontoClassificacao = Convert.ToDouble(txtPontuacaoConservador.Value);
         classificacao.DescricaoClassificacao = "";
-        classificacoes.Add(classificacao);
+        modelo.Classificacoes.Add(classificacao);
 
         //Perfil Moderado
         classificacao = new Clas_classificacoes();
         classificacao.NomeClassificacao = "Moderado";
         classificacao.PontoClassificacao = Convert.ToDouble(txtPontuacaoModerado.Value);
         classificacao.DescricaoClassificacao = "";
-        classificacoes.Add(classificacao);
+        modelo.Classificacoes.Add(classificacao);
 
         //Perfil Agressivo
         classificacao = new Clas_classificacoes();
         classificacao.NomeClassificacao = "Agressivo";
         classificacao.PontoClassificacao = Convert.ToDouble(txtPontuacaoAgressivo.Value);
         classificacao.DescricaoClassificacao = "";
-        classificacoes.Add(classificacao);
+        modelo.Classificacoes.Add(classificacao);
 
         Session["modelo"] = modelo; //Passa o obj Questionario para sessao
-        Session["classificacoes"] = classificacoes; //Passa o obj Questionario para sessao
         Response.Redirect("CriarPerguntas.aspx"); //Redireciona para pagina de criar perguntas
     }
  

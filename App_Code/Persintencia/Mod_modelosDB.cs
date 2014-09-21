@@ -150,8 +150,6 @@ public class Mod_modelosDB
                 objModelos = new Mod_modelos();
                 //variavel questão (array)????
                 objModelos.CodigoModelo = Convert.ToInt32(objDatareader["mod_codigo"]);
-                objModelos.EventoCodigo = Convert.ToInt32(objDatareader["eve_codigo"]);
-                objModelos.EventoNome = objDatareader["eve_nome"].ToString();
                 objModelos.NomeModelo= objDatareader["mod_nome"].ToString();
                 objModelos.TipoModelo = Convert.ToInt32(objDatareader["mod_tipo"]);
                 objModelos.AtivoModelo = Convert.ToBoolean(objDatareader["mod_ativo"]);

@@ -14,8 +14,8 @@ public partial class paginas_CriarPerguntaEd : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         modelo = (Mod_modelos)Session["modelo"]; //Instancia o obj Questionario, com os valores vindos da pg anterior
-        pergunta = new Per_perguntas(); // Instancia uma nova questão
         lbl_nomeQuestionario.Text = modelo.NomeModelo; //Passa o nome do Questionario pro label
+        pergunta = new Per_perguntas(); // Instancia uma nova questão
     }
 
     protected void btn_novo_Click(object sender, EventArgs e)
@@ -94,7 +94,7 @@ public partial class paginas_CriarPerguntaEd : System.Web.UI.Page
         }
 
         modelo.Pergunta.Add(pergunta); //Adiciona o ojb questão ao questionario
-        Session["questionario"] = modelo; //Passa o obj questionario para a sessao
+        Session["modelo"] = modelo; //Passa o obj modelo para a sessao
     }
-   
+
 }

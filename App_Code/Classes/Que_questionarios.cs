@@ -10,7 +10,7 @@ public class Que_questionarios
 {
     int _codigoQuestionario;
     double _pontoQuestionario;
-    Mod_has_cla _modCla;
+    Moc_modeloClassificacao _modCla;
     string _inicioQuestionario;
     string _fimQuestionario;
    
@@ -27,7 +27,7 @@ public class Que_questionarios
         set { _inicioQuestionario = value; }
     }
 
-    public Mod_has_cla ModCla
+    public Moc_modeloClassificacao ModCla
     {
         get { return _modCla; }
         set { _modCla = value; }

@@ -1,32 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
-using System.Data;
 
 /// <summary>
-/// Summary description for Clas_classificacoesDB
+/// Summary description for Mod_has_claDB
 /// </summary>
-public class Clas_classificacoesDB
+public class Moc_modeloClassificacaoDB
 {
-    public int Update(Clas_classificacoes classificacoes)
+    public int Update(Moc_modeloClassificacao moc)
     {
         int retorno = 0;
         try
         {
             IDbConnection objConexao;
             IDbCommand objcommand;
-            String sql = "call cla_update(?cla_codigo, ?cla_pontosMax, ?cla_descricao, ?cla_nome)";
+            String sql = "CALL moc_insert(?mod_codigo, ?cla_codigo)";
 
             objConexao = Mapped.Connection();
             objcommand = Mapped.Command(sql, objConexao);
 
-            objcommand.Parameters.Add(Mapped.Parameter("?cla_codigo", classificacoes.CodigoClassificacao));
-            objcommand.Parameters.Add(Mapped.Parameter("?cla_nome", classificacoes.NomeClassificacao));
-            objcommand.Parameters.Add(Mapped.Parameter("?cla_descricao", classificacoes.DescricaoClassificacao));
-            objcommand.Parameters.Add(Mapped.Parameter("?cla_pontosMax", classificacoes.PontoClassificacao));
-           
-
+            objcommand.Parameters.Add(Mapped.Parameter("?mod_codigo", moc.Modelo.CodigoModelo));
+            objcommand.Parameters.Add(Mapped.Parameter("?cla_codigo", moc.Classificacao.CodigoClassificacao));
+            
             objcommand.ExecuteNonQuery();
             objConexao.Close();
             objcommand.Dispose();
@@ -42,25 +39,22 @@ public class Clas_classificacoesDB
         return retorno;
     }
 
-    public static int Insert(Clas_classificacoes classificacoes)
+    public static int Insert(Moc_modeloClassificacao moc)
     {
         int retorno = 0;
         try
         {
             IDbConnection objConexao;
             IDbCommand objcommand;
-            String sql = "CALL cla_insert(?cla_pontosMax, ?cla_descricao,?cla_nome) ";
+            String sql = "CALL moc_insert(?mod_codigo, ?cla_codigo)";
 
             objConexao = Mapped.Connection();
             objcommand = Mapped.Command(sql, objConexao);
 
-            objcommand.Parameters.Add(Mapped.Parameter("?cla_codigo", classificacoes.CodigoClassificacao));
-            objcommand.Parameters.Add(Mapped.Parameter("?cla_pontosMax", classificacoes.PontoClassificacao));
-            objcommand.Parameters.Add(Mapped.Parameter("?cla_descricao", classificacoes.DescricaoClassificacao));
-            objcommand.Parameters.Add(Mapped.Parameter("?cla_nome", classificacoes.NomeClassificacao));
+            objcommand.Parameters.Add(Mapped.Parameter("?mod_codigo", moc.Modelo.CodigoModelo));
+            objcommand.Parameters.Add(Mapped.Parameter("?cla_codigo", moc.Classificacao.CodigoClassificacao));
 
-
-            retorno = Convert.ToInt32(objcommand.ExecuteScalar());
+            objcommand.ExecuteNonQuery();
             objConexao.Close();
             objcommand.Dispose();
             objConexao.Dispose();
@@ -83,10 +77,10 @@ public class Clas_classificacoesDB
             IDbConnection objConexao;
             IDbCommand objcommand;
 
-            String sql = "CALL cla_delete(?cla_codigo)";
+            String sql = "CALL alt_delete (?alt_codigo)";
             objConexao = Mapped.Connection();
             objcommand = Mapped.Command(sql, objConexao);
-            objcommand.Parameters.Add(Mapped.Parameter("?cla_codigo", codigo));
+            objcommand.Parameters.Add(Mapped.Parameter("?alt_codigo", codigo));
             objcommand.ExecuteNonQuery();
             objConexao.Close();
             objcommand.Dispose();
@@ -107,7 +101,7 @@ public class Clas_classificacoesDB
         IDbCommand objcommand;
         IDataAdapter objDataAdapter;
         objConexao = Mapped.Connection();
-        objcommand = Mapped.Command("SELECT * FROM cla_view", objConexao);
+        objcommand = Mapped.Command("SELECT * FROM alt_view", objConexao);
         objDataAdapter = Mapped.Adapter(objcommand);
         objDataAdapter.Fill(ds);
         objConexao.Close();
@@ -116,28 +110,28 @@ public class Clas_classificacoesDB
         return ds;
     }
 
-    public Clas_classificacoes Select(int codigo)
+    public Alt_alternativas Select(int codigo)
     {
         try
         {
-            Clas_classificacoes objClassificacao = null;
+            Alt_alternativas objAlternativas = null;
             IDbConnection objConexao;
             IDbCommand objcommand;
             IDataReader objDatareader;
             objConexao = Mapped.Connection();
-            objcommand = Mapped.Command("CALL cla_select(?cla_codigo)", objConexao);
-            objcommand.Parameters.Add(Mapped.Parameter("?cla_codigo", codigo));
+            objcommand = Mapped.Command("CALL alt_select(?alt_codigo)", objConexao);
+            objcommand.Parameters.Add(Mapped.Parameter("?alt_codigo", codigo));
             objDatareader = objcommand.ExecuteReader();
 
             while (objDatareader.Read())
             {
-                objClassificacao = new Clas_classificacoes();
 
-                objClassificacao.CodigoClassificacao = Convert.ToInt32(objDatareader["cla_codigo"]);
-                objClassificacao.PontoClassificacao = Convert.ToDouble(objDatareader["cla_pontosMax"]);
-                objClassificacao.DescricaoClassificacao = objDatareader["cla_descricao"].ToString();
-                objClassificacao.NomeClassificacao = objDatareader["cla_nome"].ToString();
-      
+                objAlternativas.CodigoAlternativa = Convert.ToInt32(objDatareader["alt_codigo"]);
+                string alt = objDatareader["alt_alternativa"].ToString();
+                double pes = Convert.ToDouble(objDatareader["alt_peso"]);
+                objAlternativas.PerguntaCodigo = Convert.ToInt32(objDatareader["per_codigo"]);
+
+                objAlternativas = new Alt_alternativas(alt, pes);//por causa do construtor do Alt_alternativas
 
             }
             objDatareader.Close();
@@ -145,7 +139,7 @@ public class Clas_classificacoesDB
             objcommand.Dispose();
             objConexao.Dispose();
             objDatareader.Dispose();
-            return objClassificacao;
+            return objAlternativas;
         }
         catch (Exception e)
         {

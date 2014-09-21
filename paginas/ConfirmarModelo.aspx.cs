@@ -23,6 +23,7 @@ public partial class paginas_ConfirmarQuestionario : System.Web.UI.Page
         int idModelo, idPergunta;
         modelo = (Mod_modelos)Session["modelo"];
         idModelo = Mod_modelosDB.Insert(modelo);
+        modelo.CodigoModelo = idModelo;
         for (int i = 0; i < modelo.Pergunta.Count; i++)
         {
             pergunta = (Per_perguntas)modelo.Pergunta[i];
@@ -35,6 +36,17 @@ public partial class paginas_ConfirmarQuestionario : System.Web.UI.Page
                 Alt_alternativasDB.Insert(alternativa);
             }
         }
+        for (int i = 0; i < modelo.Classificacoes.Count; i++)
+        {
+            Clas_classificacoes classificacao = new Clas_classificacoes();
+            Moc_modeloClassificacao moc = new Moc_modeloClassificacao();
+            classificacao = (Clas_classificacoes)modelo.Classificacoes[i];
+            classificacao.CodigoClassificacao = Clas_classificacoesDB.Insert(classificacao);
+            moc.Classificacao = classificacao;
+            moc.Modelo = modelo;
+            Moc_modeloClassificacaoDB.Insert(moc);
+        }
+        
         Response.Redirect("Home.aspx");
     }
 
@@ -48,12 +60,15 @@ public partial class paginas_ConfirmarQuestionario : System.Web.UI.Page
             pergunta = (Per_perguntas)modelo.Pergunta[i];
             Label lbl_pergunta = new Label();
             Label lbl_espaco = new Label();
+            Label lbl_espaco2 = new Label();
             RadioButtonList rbl_alternativa = new RadioButtonList();
             Button btn_modificar = new Button();
             rbl_alternativa.ID = i.ToString();
-            lbl_espaco.Text = "<br/><br/>";
+            lbl_espaco.Text = "<br/><br/><br/>";
+            lbl_espaco2.Text = "<br/>";
+            btn_modificar.Text = "Modificar";
+            btn_modificar.CssClass = "botao";
             btn_modificar.CommandArgument = i.ToString();
-            btn_modificar.CommandName = "Modificar";
             btn_modificar.Click += btn_modificar_Click;
             lbl_pergunta.Text = pergunta.PerguntaPergunta;
             for (int n = 0; n < pergunta.Alternativa.Count; n++)
@@ -63,8 +78,10 @@ public partial class paginas_ConfirmarQuestionario : System.Web.UI.Page
             }
             div_confirmar.Controls.Add(lbl_pergunta);
             div_confirmar.Controls.Add(rbl_alternativa);
+            div_confirmar.Controls.Add(lbl_espaco2);
             div_confirmar.Controls.Add(btn_modificar);
             div_confirmar.Controls.Add(lbl_espaco);
+
         }
     }
 

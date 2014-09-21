@@ -6,7 +6,7 @@ using System.Web;
 /// <summary>
 /// Summary description for Mod_has_cla
 /// </summary>
-public class Mod_has_cla
+public class Moc_modeloClassificacao
 {
     Clas_classificacoes _classificacao;
     Mod_modelos _modelo;
