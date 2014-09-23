@@ -44,7 +44,7 @@ public partial class paginas_ModificarPergunta : System.Web.UI.Page
         string nomeAlternativa;
         double pontos;
 
-        pergunta.PerguntaPergunta = txb_nomePergunta.Text;
+        pergunta.PerguntaPergunta = txb_nomePergunta.Value;
 
         if (txb_alter1.Text != String.Empty && txb_pontos1.Text != String.Empty)
         {
@@ -192,7 +192,7 @@ public partial class paginas_ModificarPergunta : System.Web.UI.Page
 
 
 
-        txb_nomePergunta.Text = pergunta.PerguntaPergunta;
+        txb_nomePergunta.Value = pergunta.PerguntaPergunta;
 
         for (int i = 0; i < pergunta.Alternativa.Count; i++)
         {

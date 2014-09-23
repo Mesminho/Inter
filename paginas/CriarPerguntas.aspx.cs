@@ -15,7 +15,11 @@ public partial class paginas_CriarPerguntaEd : System.Web.UI.Page
     {
         modelo = (Mod_modelos)Session["modelo"]; //Instancia o obj Questionario, com os valores vindos da pg anterior
         lbl_nomeQuestionario.Text = modelo.NomeModelo; //Passa o nome do Questionario pro label
+<<<<<<< HEAD
+        btn_novo.Attributes.Add("onclick", "msgNovaQuestao();");
+=======
         pergunta = new Per_perguntas(); // Instancia uma nova questão
+>>>>>>> origin/master
     }
 
     protected void btn_novo_Click(object sender, EventArgs e)

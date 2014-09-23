@@ -27,7 +27,7 @@
     <br />
     <br />
     <div id="visitante">
-        <asp:Label ID="lbl0" runat="server" Text="Nome do visitante: "></asp:Label>
+        <asp:Label ID="lbl" runat="server" Text="Nome do visitante: "></asp:Label>
         <asp:Label ID="lblNome" runat="server" Text=""></asp:Label>
     </div>
     <asp:Label ID="lbl_nomeQuestao0" runat="server" Text="1. Qual a sua faixa de idade?*" Class="tituloQuestao"></asp:Label>

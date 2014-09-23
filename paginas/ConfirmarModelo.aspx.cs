@@ -16,6 +16,7 @@ public partial class paginas_ConfirmarQuestionario : System.Web.UI.Page
     {
         carregaModelo();
         btn_confirmar.Attributes.Add("onclick", "msg();");
+        btn_cancelar.Attributes.Add("onclick", "cancelar()");
     }
 
     protected void bnt_confirmar_Click(object sender, EventArgs e)
@@ -63,25 +64,50 @@ public partial class paginas_ConfirmarQuestionario : System.Web.UI.Page
             Label lbl_espaco2 = new Label();
             RadioButtonList rbl_alternativa = new RadioButtonList();
             Button btn_modificar = new Button();
+            Button btn_excluir = new Button();
+            //lista de alternativas
             rbl_alternativa.ID = i.ToString();
+<<<<<<< HEAD
+            rbl_alternativa.CssClass = "alternativa";
+            //botão modificar questão
+            btn_modificar.CommandArgument = i.ToString();
+            btn_modificar.CommandName = "Modificar";
+            btn_modificar.CssClass = "botao";
+            btn_modificar.Text = "Modificar";
+=======
             lbl_espaco.Text = "<br/><br/><br/>";
             lbl_espaco2.Text = "<br/>";
             btn_modificar.Text = "Modificar";
             btn_modificar.CssClass = "botao";
             btn_modificar.CommandArgument = i.ToString();
+>>>>>>> origin/master
             btn_modificar.Click += btn_modificar_Click;
+            //botão excluir
+            btn_excluir.CssClass = "btn-cancelar";
+            btn_excluir.Text = "Excluir";
+            //titulo da questão
             lbl_pergunta.Text = pergunta.PerguntaPergunta;
+            lbl_pergunta.CssClass = "tituloQuestao";
+            lbl_espaco.Text = "<br/><br/>";
             for (int n = 0; n < pergunta.Alternativa.Count; n++)
             {
                 alternativa = (Alt_alternativas)pergunta.Alternativa[n];
-                rbl_alternativa.Items.Add(alternativa.AlternativaAlternativa + ", " + alternativa.PesoAlternativa);
+                rbl_alternativa.Items.Add(alternativa.AlternativaAlternativa + "; Peso: " + alternativa.PesoAlternativa);
             }
             div_confirmar.Controls.Add(lbl_pergunta);
             div_confirmar.Controls.Add(rbl_alternativa);
+<<<<<<< HEAD
+            div_confirmar.Controls.Add(btn_excluir);
+            div_confirmar.Controls.Add(btn_modificar);
+            div_confirmar.Controls.Add(lbl_espaco);
+
+
+=======
             div_confirmar.Controls.Add(lbl_espaco2);
             div_confirmar.Controls.Add(btn_modificar);
             div_confirmar.Controls.Add(lbl_espaco);
 
+>>>>>>> origin/master
         }
     }
 
