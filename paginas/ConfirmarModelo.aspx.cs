@@ -47,7 +47,7 @@ public partial class paginas_ConfirmarQuestionario : System.Web.UI.Page
             moc.Modelo = modelo;
             Moc_modeloClassificacaoDB.Insert(moc);
         }
-        
+
         Response.Redirect("Home.aspx");
     }
 
@@ -67,20 +67,17 @@ public partial class paginas_ConfirmarQuestionario : System.Web.UI.Page
             Button btn_excluir = new Button();
             //lista de alternativas
             rbl_alternativa.ID = i.ToString();
-<<<<<<< HEAD
             rbl_alternativa.CssClass = "alternativa";
             //botão modificar questão
             btn_modificar.CommandArgument = i.ToString();
             btn_modificar.CommandName = "Modificar";
             btn_modificar.CssClass = "botao";
             btn_modificar.Text = "Modificar";
-=======
             lbl_espaco.Text = "<br/><br/><br/>";
             lbl_espaco2.Text = "<br/>";
             btn_modificar.Text = "Modificar";
             btn_modificar.CssClass = "botao";
             btn_modificar.CommandArgument = i.ToString();
->>>>>>> origin/master
             btn_modificar.Click += btn_modificar_Click;
             //botão excluir
             btn_excluir.CssClass = "btn-cancelar";
@@ -96,18 +93,14 @@ public partial class paginas_ConfirmarQuestionario : System.Web.UI.Page
             }
             div_confirmar.Controls.Add(lbl_pergunta);
             div_confirmar.Controls.Add(rbl_alternativa);
-<<<<<<< HEAD
             div_confirmar.Controls.Add(btn_excluir);
             div_confirmar.Controls.Add(btn_modificar);
             div_confirmar.Controls.Add(lbl_espaco);
 
-
-=======
             div_confirmar.Controls.Add(lbl_espaco2);
             div_confirmar.Controls.Add(btn_modificar);
             div_confirmar.Controls.Add(lbl_espaco);
 
->>>>>>> origin/master
         }
     }
 
@@ -117,7 +110,7 @@ public partial class paginas_ConfirmarQuestionario : System.Web.UI.Page
         Session["index"] = Convert.ToInt32(btn_confimar.CommandArgument);
         Response.Redirect("ModificarPergunta.aspx");
     }
-  
+
     protected void bnt_cancelar_Click(object sender, EventArgs e)
     {
         Session["modelo"] = null;
