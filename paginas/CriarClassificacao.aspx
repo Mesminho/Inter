@@ -24,7 +24,7 @@
     <asp:Label ID="lblPontuacao" runat="server" CssClass="texto" Text="Pontuação: "></asp:Label>
         </td>
         <td class="auto-style5">
-            <input type="number" required="" max="9000" min="1" name="Pontuacao" runat="server" title="Valoração máxima para a classificação"/></td>
+            <input type="number" required="" max="9000" min="1" id="txtPontuacao" runat="server" title="Valoração máxima para a classificação"/></td>
     </tr>
     </table>
 

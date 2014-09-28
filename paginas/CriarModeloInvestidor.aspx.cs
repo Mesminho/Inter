@@ -11,7 +11,7 @@ using System.Collections;
 public partial class paginas_CriarQuestionario : System.Web.UI.Page
 {
     Mod_modelos modelo = new Mod_modelos(); //Instancia o Objeto Questionario
-    Clas_classificacoes classificacao; //Instancia um Array de Classificações
+    Clas_classificacoes classificacao; //Instancia de Classificações
     
 
     protected void Page_Load(object sender, EventArgs e)
