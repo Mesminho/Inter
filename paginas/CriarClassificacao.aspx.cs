@@ -12,7 +12,7 @@ public partial class paginas_CriarClassificacao : System.Web.UI.Page
 
     protected void Page_Load(object sender, EventArgs e)
     {
-        modelo = (Mod_modelos)Session["modelo"]
+        modelo = (Mod_modelos)Session["modelo"];
     }
     protected void btnCadastrar_Click(object sender, EventArgs e)
     {

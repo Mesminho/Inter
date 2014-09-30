@@ -61,7 +61,7 @@ public partial class paginas_ConfirmarQuestionario : System.Web.UI.Page
             pergunta = (Per_perguntas)modelo.Pergunta[i];
             Label lbl_pergunta = new Label();
             Label lbl_espaco = new Label();
-            Label lbl_espaco2 = new Label();
+    
             RadioButtonList rbl_alternativa = new RadioButtonList();
             Button btn_modificar = new Button();
             Button btn_excluir = new Button();
@@ -74,7 +74,6 @@ public partial class paginas_ConfirmarQuestionario : System.Web.UI.Page
             btn_modificar.CssClass = "botao";
             btn_modificar.Text = "Modificar";
             lbl_espaco.Text = "<br/><br/><br/>";
-            lbl_espaco2.Text = "<br/>";
             btn_modificar.Text = "Modificar";
             btn_modificar.CssClass = "botao";
             btn_modificar.CommandArgument = i.ToString();
@@ -95,10 +94,7 @@ public partial class paginas_ConfirmarQuestionario : System.Web.UI.Page
             div_confirmar.Controls.Add(rbl_alternativa);
             div_confirmar.Controls.Add(btn_excluir);
             div_confirmar.Controls.Add(btn_modificar);
-            div_confirmar.Controls.Add(lbl_espaco);
-
-            div_confirmar.Controls.Add(lbl_espaco2);
-            div_confirmar.Controls.Add(btn_modificar);
+         
             div_confirmar.Controls.Add(lbl_espaco);
 
         }

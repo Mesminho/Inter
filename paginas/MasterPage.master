@@ -62,7 +62,6 @@
                     <li><a href="SelecionarModelo.aspx">Criar</a></li>
                 </ul>
                 </li>
-                <li><a href="SelecionarEstatistica.aspx">Estatísticas</a></li>
                  <li><a href="ConfigQuestionarios.aspx">Configurações</a></li>
             </ul>
 
