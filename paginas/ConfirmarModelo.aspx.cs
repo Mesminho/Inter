@@ -15,39 +15,49 @@ public partial class paginas_ConfirmarQuestionario : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         carregaModelo();
-        btn_confirmar.Attributes.Add("onclick", "msg();");
         btn_cancelar.Attributes.Add("onclick", "cancelar()");
     }
 
     protected void bnt_confirmar_Click(object sender, EventArgs e)
     {
+        string script;
+
         int idModelo, idPergunta;
         modelo = (Mod_modelos)Session["modelo"];
         idModelo = Mod_modelosDB.Insert(modelo);
         modelo.CodigoModelo = idModelo;
-        for (int i = 0; i < modelo.Pergunta.Count; i++)
+        if (idModelo != -2)
         {
-            pergunta = (Per_perguntas)modelo.Pergunta[i];
-            pergunta.CodigoModelo = idModelo;
-            idPergunta = Per_perguntasDB.Insert(pergunta);
-            for (int n = 0; n < pergunta.Alternativa.Count; n++)
+            for (int i = 0; i < modelo.Pergunta.Count; i++)
             {
-                alternativa = (Alt_alternativas)pergunta.Alternativa[n];
-                alternativa.PerguntaCodigo = idPergunta;
-                Alt_alternativasDB.Insert(alternativa);
+                pergunta = (Per_perguntas)modelo.Pergunta[i];
+                pergunta.CodigoModelo = idModelo;
+                idPergunta = Per_perguntasDB.Insert(pergunta);
+                for (int n = 0; n < pergunta.Alternativa.Count; n++)
+                {
+                    alternativa = (Alt_alternativas)pergunta.Alternativa[n];
+                    alternativa.PerguntaCodigo = idPergunta;
+                    Alt_alternativasDB.Insert(alternativa);
+                }
             }
+            for (int i = 0; i < modelo.Classificacoes.Count; i++)
+            {
+                Clas_classificacoes classificacao = new Clas_classificacoes();
+                Moc_modeloClassificacao moc = new Moc_modeloClassificacao();
+                classificacao = (Clas_classificacoes)modelo.Classificacoes[i];
+                classificacao.CodigoClassificacao = Clas_classificacoesDB.Insert(classificacao);
+                moc.Classificacao = classificacao;
+                moc.Modelo = modelo;
+                Moc_modeloClassificacaoDB.Insert(moc);
+            }
+            script = "<script language='javascript'>alert('USER Deleted Sucessfully');</script>";
+            Page.ClientScript.RegisterStartupScript(this.GetType(), "alerta", script, true);
+            
         }
-        for (int i = 0; i < modelo.Classificacoes.Count; i++)
+        else
         {
-            Clas_classificacoes classificacao = new Clas_classificacoes();
-            Moc_modeloClassificacao moc = new Moc_modeloClassificacao();
-            classificacao = (Clas_classificacoes)modelo.Classificacoes[i];
-            classificacao.CodigoClassificacao = Clas_classificacoesDB.Insert(classificacao);
-            moc.Classificacao = classificacao;
-            moc.Modelo = modelo;
-            Moc_modeloClassificacaoDB.Insert(moc);
+            //ClientScript.RegisterStartupScript(GetType(), "alerta2", "alert('Cadastro Não Realizado!');", true);
         }
-
         Response.Redirect("Home.aspx");
     }
 
