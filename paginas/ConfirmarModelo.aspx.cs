@@ -53,7 +53,7 @@ public partial class paginas_ConfirmarQuestionario : System.Web.UI.Page
             script = "<script language='javascript'>alert('USER Deleted Sucessfully');</script>";
             ClientScript.RegisterStartupScript(GetType(), "alerta1", script, false);
             //Page.ClientScript.RegisterClientScriptBlock(Page.GetType(), "alert", script); 
-            
+
         }
         else
         {
@@ -69,46 +69,106 @@ public partial class paginas_ConfirmarQuestionario : System.Web.UI.Page
         modelo = (Mod_modelos)Session["modelo"]; //Istancia o obj questionario passando a sessao
         lbl_nomeQuestionario.Text = modelo.NomeModelo;
 
+        
+
+        //Carregar classificações
+        for (int i = 0; i < modelo.Classificacoes.Count; i++)
+        {
+            Clas_classificacoes classicacao = (Clas_classificacoes)modelo.Classificacoes[i];
+            Label lbl_titulo = new Label();
+            Label lbl_descricao = new Label();
+            Label lbl_ponto = new Label();
+
+            Label lbl_espaco = new Label();
+            Label lbl_espaco2 = new Label();
+            Label lbl_espaco3 = new Label();
+            Label lbl_espaco4 = new Label();
+            Label lbl_espaco5 = new Label();
+
+            lbl_espaco.Text = "<br/><br/><br/>";
+            lbl_espaco2.Text = "<br/>";
+            lbl_espaco3.Text = "<br/>";
+            lbl_espaco4.Text = "<br/><br/>";
+            lbl_espaco5.Text = "<br/><br/>";
+
+            Button btn_modificar = new Button();
+            Button btn_excluir = new Button();
+
+            btn_modificar.CommandName = "Modificar";
+            btn_modificar.Text = "Modificar";
+            btn_modificar.CssClass = "botao";
+
+            btn_excluir.CommandName = "Excluir";
+            btn_excluir.CssClass = "btn-cancelar";
+            btn_excluir.Text = "Excluir";
+
+            lbl_titulo.Text = "Titulo: "+classicacao.NomeClassificacao;
+            lbl_descricao.Text = "Descrição: "+classicacao.DescricaoClassificacao;
+            lbl_ponto.Text = "Pontos: "+classicacao.PontoClassificacao.ToString();
+            btn_modificar.CommandArgument = i.ToString();
+            btn_excluir.CommandArgument = i.ToString();
+
+            div_classificacoes.Controls.Add(lbl_titulo);
+            div_classificacoes.Controls.Add(lbl_espaco2);
+            div_classificacoes.Controls.Add(lbl_descricao);
+            div_classificacoes.Controls.Add(lbl_espaco3);
+            div_classificacoes.Controls.Add(lbl_ponto);
+            div_classificacoes.Controls.Add(lbl_espaco4);
+            div_classificacoes.Controls.Add(btn_excluir);
+            div_classificacoes.Controls.Add(btn_modificar);
+            div_classificacoes.Controls.Add(lbl_espaco);
+
+        }
+
+        //Carregar questões
         for (int i = 0; i < modelo.Pergunta.Count; i++)
         {
             pergunta = (Per_perguntas)modelo.Pergunta[i];
+
             Label lbl_pergunta = new Label();
-            Label lbl_espaco = new Label();
-    
             RadioButtonList rbl_alternativa = new RadioButtonList();
+
+            Label lbl_espaco = new Label();
+            Label lbl_espaco2 = new Label();
+
+            lbl_espaco.Text = "<br/><br/>";
+            lbl_espaco2.Text = "<br/>";
+
             Button btn_modificar = new Button();
             Button btn_excluir = new Button();
+
             //lista de alternativas
             rbl_alternativa.ID = i.ToString();
             rbl_alternativa.CssClass = "alternativa";
+
             //botão modificar questão
-            btn_modificar.CommandArgument = i.ToString();
             btn_modificar.CommandName = "Modificar";
-            btn_modificar.CssClass = "botao";
-            btn_modificar.Text = "Modificar";
-            lbl_espaco.Text = "<br/><br/><br/>";
             btn_modificar.Text = "Modificar";
             btn_modificar.CssClass = "botao";
             btn_modificar.CommandArgument = i.ToString();
             btn_modificar.Click += btn_modificar_Click;
+
             //botão excluir
+            btn_excluir.CommandName = "Excluir";
             btn_excluir.CssClass = "btn-cancelar";
             btn_excluir.Text = "Excluir";
+
             //titulo da questão
             lbl_pergunta.Text = pergunta.PerguntaPergunta;
             lbl_pergunta.CssClass = "tituloQuestao";
-            lbl_espaco.Text = "<br/><br/>";
+
             for (int n = 0; n < pergunta.Alternativa.Count; n++)
             {
                 alternativa = (Alt_alternativas)pergunta.Alternativa[n];
                 rbl_alternativa.Items.Add(alternativa.AlternativaAlternativa + "; Peso: " + alternativa.PesoAlternativa);
             }
-            div_confirmar.Controls.Add(lbl_pergunta);
-            div_confirmar.Controls.Add(rbl_alternativa);
-            div_confirmar.Controls.Add(btn_excluir);
-            div_confirmar.Controls.Add(btn_modificar);
-         
-            div_confirmar.Controls.Add(lbl_espaco);
+
+            div_questoes.Controls.Add(lbl_pergunta);
+            div_questoes.Controls.Add(rbl_alternativa);
+            div_questoes.Controls.Add(lbl_espaco2);
+            div_questoes.Controls.Add(btn_excluir);
+            div_questoes.Controls.Add(btn_modificar);
+            div_questoes.Controls.Add(lbl_espaco);
 
         }
     }

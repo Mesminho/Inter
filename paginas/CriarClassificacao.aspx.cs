@@ -14,17 +14,26 @@ public partial class paginas_CriarClassificacao : System.Web.UI.Page
     {
         modelo = (Mod_modelos)Session["modelo"];
     }
+
     protected void btnCadastrar_Click(object sender, EventArgs e)
     {
-        classificacao = new Clas_classificacoes();
-        classificacao.NomeClassificacao = "Conservador";
-        classificacao.PontoClassificacao = Convert.ToDouble(txtPontuacao.Value);
-        classificacao.DescricaoClassificacao = "";
-        modelo.Classificacoes.Add(classificacao);
+        adicionarClassificacao();
+        Response.Redirect("CriarClassificacao.aspx");
     }
     protected void btnAvancar_Click(object sender, EventArgs e)
     {
+        adicionarClassificacao();
         Response.Redirect("CriarPerguntas.aspx");
+    }
+
+    private void adicionarClassificacao()
+    {
+        classificacao = new Clas_classificacoes();
+        classificacao.NomeClassificacao = txtTitulo.Text;
+        classificacao.PontoClassificacao = Convert.ToDouble(txtPontuacao.Value);
+        classificacao.DescricaoClassificacao = txtClassificacao.Value;
+        modelo.Classificacoes.Add(classificacao);
+        Session["modelo"] = modelo;
     }
 
 

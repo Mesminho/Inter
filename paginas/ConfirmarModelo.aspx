@@ -14,8 +14,11 @@
     <asp:Label ID="lbl_nomeQuestionario" runat="server" CssClass="titulo"></asp:Label>
     <br />
     
+    <div runat="server" id="div_classificacoes" style="margin-bottom:20px; margin-left:5px; margin-top:20px;">
 
-    <div runat="server" id="div_confirmar" style="margin-bottom:20px; margin-left:5px; margin-top:20px;">
+    </div>
+
+    <div runat="server" id="div_questoes" style="margin-bottom:20px; margin-left:5px; margin-top:20px;">
 
     </div>
     <br />
