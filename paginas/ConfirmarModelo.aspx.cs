@@ -51,12 +51,15 @@ public partial class paginas_ConfirmarQuestionario : System.Web.UI.Page
                 Moc_modeloClassificacaoDB.Insert(moc);
             }
             script = "<script language='javascript'>alert('USER Deleted Sucessfully');</script>";
-            Page.ClientScript.RegisterStartupScript(this.GetType(), "alerta", script, true);
+            ClientScript.RegisterStartupScript(GetType(), "alerta1", script, false);
+            //Page.ClientScript.RegisterClientScriptBlock(Page.GetType(), "alert", script); 
             
         }
         else
         {
-            //ClientScript.RegisterStartupScript(GetType(), "alerta2", "alert('Cadastro Não Realizado!');", true);
+            script = "<script language='javascript'>alert('USER Deleted Sucessfully');</script>";
+            ClientScript.RegisterStartupScript(GetType(), "alerta2", script, false);
+            //Page.ClientScript.RegisterClientScriptBlock(Page.GetType(), "alert", script); 
         }
         Response.Redirect("Home.aspx");
     }
