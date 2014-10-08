@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
- 
+
     <table class="tabela">
         <tr>
             <td>
@@ -19,6 +19,8 @@
             </td>
             <td>
                 <input type="text" required="" id="txb_nomePergunta" runat="server" />
+                <asp:RequiredFieldValidator ID="rfvPergunta" runat="server" ControlToValidate="txb_nomePergunta" ErrorMessage=""></asp:RequiredFieldValidator>
+
             </td>
         </tr>
         <tr>
@@ -26,13 +28,20 @@
                 <div id="TextBoxContainer">
                     <asp:Label ID="lbl_alter1" runat="server" Text="Alternativa 1"></asp:Label>
                     <input type="text" required="" id="txb_alter1" runat="server" />
+                    <asp:RequiredFieldValidator ID="rfvAlter1" runat="server" ControlToValidate="txb_alter1" ErrorMessage=""></asp:RequiredFieldValidator>
                     <asp:Label ID="lbl_pontos1" runat="server" Text="Pontos"></asp:Label>
                     <input id="txb_pontos1" type="number" required="" max="9000" min="0" name="Pontuacao" runat="server" title="Valoração da alternativa" css="caixaTexto" />
+                    <asp:RegularExpressionValidator ID="revPontos1" runat="server" ControlToValidate="txb_pontos1" ErrorMessage="" ValidationExpression="[0-9]+"></asp:RegularExpressionValidator>
+                    <asp:RequiredFieldValidator ID="rfvPontos1" runat="server" ControlToValidate="txb_pontos1" ErrorMessage=""></asp:RequiredFieldValidator>
+
                     <br />
                     <asp:Label ID="lbl_alter2" runat="server" Text="Alternativa 2"></asp:Label>
                     <input type="text" required="" id="txb_alter2" runat="server" />
+                    <asp:RequiredFieldValidator ID="rfvAlter2" runat="server" ControlToValidate="txb_alter2" ErrorMessage=""></asp:RequiredFieldValidator>
                     <asp:Label ID="lbl_pontos2" runat="server" Text="Pontos"></asp:Label>
                     <input id="txb_pontos2" type="number" required="" max="9000" min="0" name="Pontuacao" runat="server" title="Valoração da alternativa" css="caixaTexto" />
+                    <asp:RegularExpressionValidator ID="revPontos2" runat="server" ControlToValidate="txb_pontos2" ErrorMessage="" ValidationExpression="[0-9]+"></asp:RegularExpressionValidator>
+                    <asp:RequiredFieldValidator ID="rfvPontos2" runat="server" ControlToValidate="txb_pontos2" ErrorMessage=""></asp:RequiredFieldValidator>
                     <br />
                     <asp:Label ID="lbl_alter3" runat="server" Text="Alternativa 3"></asp:Label>
                     <input type="text" id="txb_alter3" runat="server" />

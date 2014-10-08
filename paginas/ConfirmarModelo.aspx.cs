@@ -85,7 +85,7 @@ public partial class paginas_ConfirmarQuestionario : System.Web.UI.Page
             Label lbl_espaco4 = new Label();
             Label lbl_espaco5 = new Label();
 
-            lbl_espaco.Text = "<br/><br/><br/>";
+            lbl_espaco.Text = "<br/><br/>";
             lbl_espaco2.Text = "<br/>";
             lbl_espaco3.Text = "<br/>";
             lbl_espaco4.Text = "<br/><br/>";
@@ -102,9 +102,14 @@ public partial class paginas_ConfirmarQuestionario : System.Web.UI.Page
             btn_excluir.CssClass = "btn-cancelar";
             btn_excluir.Text = "Excluir";
 
-            lbl_titulo.Text = "Titulo: "+classicacao.NomeClassificacao;
+            lbl_titulo.Text = ""+classicacao.NomeClassificacao;
             lbl_descricao.Text = "Descrição: "+classicacao.DescricaoClassificacao;
-            lbl_ponto.Text = "Pontos: "+classicacao.PontoClassificacao.ToString();
+            lbl_ponto.Text = "Pontuação Máxima: "+classicacao.PontoClassificacao.ToString();
+            //css
+            lbl_titulo.CssClass = "tituloQuestao";
+            lbl_descricao.CssClass = "textoCorrido";
+            lbl_ponto.CssClass = "textoCorrido";
+
             btn_modificar.CommandArgument = i.ToString();
             btn_excluir.CommandArgument = i.ToString();
 
@@ -119,6 +124,12 @@ public partial class paginas_ConfirmarQuestionario : System.Web.UI.Page
             div_classificacoes.Controls.Add(lbl_espaco);
 
         }
+
+        Label lblQuestoes = new Label();
+        lblQuestoes.Text = "Verifique abaixo todas as questões criadas para esse questionário:<br/>";
+        lblQuestoes.CssClass = "texto";
+        div_classificacoes.Controls.Add(lblQuestoes);
+       
 
         //Carregar questões
         for (int i = 0; i < modelo.Pergunta.Count; i++)

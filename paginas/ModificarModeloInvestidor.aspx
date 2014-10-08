@@ -1,14 +1,12 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/paginas/MasterPage.master" AutoEventWireup="true" CodeFile="CriarModeloInvestidor.aspx.cs" Inherits="paginas_CriarQuestionario" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/paginas/MasterPage.master" AutoEventWireup="true" CodeFile="ModificarModeloInvestidor.aspx.cs" Inherits="paginas_ModificarModeloInvestidor" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
-
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
-
     <table class="tabela">
         <tr>
             <td class="auto-style2" colspan="2">
-                <asp:Label ID="lblInfo" runat="server" CssClass="textoCorrido" Text="Crie um novo modelo de questionário para perfil de Investidor:"></asp:Label>
+                <asp:Label ID="lblInfo" runat="server" CssClass="textoCorrido" Text="Modifique o modelo de questionário para perfil de Investidor:"></asp:Label>
             </td>
         </tr>
         <tr>
@@ -32,7 +30,7 @@
         </tr>
         <tr>
             <td colspan="2">
-                <asp:Label ID="lblPontuacaoMax" runat="server" Text="Informe a pontuação máxima para cada perfil de investidor: " CssClass="textoCorrido"></asp:Label>
+                <asp:Label ID="lblPontuacaoMax" runat="server" Text="Modifique a pontuação máxima para cada perfil de investidor: " CssClass="textoCorrido"></asp:Label>
 
             </td>
         </tr>
@@ -69,11 +67,9 @@
     </table>
     <br />
 
- 
-
-    <input type="button" value="Cancelar" class="btn-cancelar" onclick="cancelar()"/>
-
-    <asp:Button ID="btn_continuar" runat="server" Text="Continuar" CssClass="botao" OnClick="btn_continuar_Click" />
+    
+    <<asp:Button ID="btn_cancelar" runat="server" text="Cancelar" class="btn-cancelar" />
+    <asp:Button ID="btn_continuar" runat="server" Text="Continuar" CssClass="botao"/>
 
 </asp:Content>
 
