@@ -29,7 +29,7 @@
 
     <input type="button" value="Cancelar" class="btn-cancelar" onclick="cancelar()"/>
 
-    <asp:Button ID="btn_continuar" runat="server" Text="Continuar" CssClass="botao" />
+    <asp:Button ID="btn_continuar" runat="server" Text="Continuar" CssClass="botao" OnClick="btn_continuar_Click" />
 
 </asp:Content>
 

@@ -21,7 +21,7 @@
                 Educação Financeira</a>
         </div>
         <div class="bloco">
-            <a href="CriarPerguntaEmpresarial.aspx">
+            <a href="CriarModeloEmpresarial.aspx">
                 <img class="tipoQuestionario" id="empresarial" alt="Empresarial" src="../images/perfil_empresarial.jpg" /><br />
                 Empresarial</a>
         </div>

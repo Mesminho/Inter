@@ -23,8 +23,6 @@ public partial class paginas_CriarPerguntaEd : System.Web.UI.Page
     {
         salvaQuestionario();
         Response.Redirect("CriarPerguntas.aspx"); //Recarrega a pagina
-        string script = "<script language='javascript'>alert('Questão guardada com sucesso');</script>";
-        ClientScript.RegisterStartupScript(GetType(), "alerta1", script, false);
         
     }
     protected void btn_enviar_Click(object sender, EventArgs e)
