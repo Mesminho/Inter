@@ -155,6 +155,7 @@ footer#rodape {
         color: rgb(56, 55, 55);
     }
 
+/*MENU*/
 nav#menu {
     margin: 5px auto 5px auto;
     background-color: rgb(18,95,118);
@@ -256,7 +257,7 @@ a {
         color: #ffffff;
         text-decoration: none;
     }
-
+/*Fim menu*/
 div#box-toggle {
     position: static;
     float: right;
@@ -351,6 +352,11 @@ div#box-toggle {
 
     .Grid td {
         padding: 2px;
+    }
+
+    .Grid tr:hover {
+         background-color: rgb(126, 203, 219);
+      
     }
 
     .Grid th {
