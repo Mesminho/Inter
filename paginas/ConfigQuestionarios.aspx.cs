@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -12,12 +13,21 @@ public partial class paginas_ConfigQuestionarios : System.Web.UI.Page
     {
         if (!Page.IsPostBack)
         {
+            CarregaGrid();
             ModalInvestidor.Hide();
             ModalEd.Hide();
             ModalEmpresarial.Hide();
           
         }
     }
+
+    private void CarregaGrid()
+    {
+        DataSet ds = Mod_modelosDB.SelectAll();
+        FuncoesBasicas.Function.CarregaGrid(ds, grvQ, lblTotal);
+        FuncoesBasicas.Function.CarregaGrid(ds, grvQ2, lblTotal);
+    }
+
     protected void btnInvestidor_Click(object sender, ImageClickEventArgs e)
     {
         ModalInvestidor.Show();

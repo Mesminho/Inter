@@ -107,7 +107,7 @@ public class Mod_modelosDB
         IDbCommand objcommand;
         IDataAdapter objDataAdapter;
         objConexao = Mapped.Connection();
-        objcommand = Mapped.Command("SELECT * FROM mod_view", objConexao);
+        objcommand = Mapped.Command("SELECT * FROM mod_modelos", objConexao);
         objDataAdapter = Mapped.Adapter(objcommand);
         objDataAdapter.Fill(ds);
         objConexao.Close();

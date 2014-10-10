@@ -1,6 +1,4 @@
-﻿@charset "UTF-8";
-
-.titulo {
+﻿.titulo {
     font-family: Calibri;
     font-size: 25px;
     color: rgb(56, 55, 55);
@@ -30,7 +28,6 @@
     margin-bottom: 5px;
     margin-left: 5px;
     margin-top: 20px;
-
 }
 
 
@@ -221,5 +218,49 @@ div#config p {
     TOP: -12px;
     HEIGHT: 26px;
 }
-
 /*Fim Modal*/
+
+/*Accordion style*/
+.accordion {
+    width: auto;
+}
+
+.accordionHeader {
+    border: 1px solid rgb(18,95,110);
+    color: rgb(18,95,110);
+    background-color: white;
+    font-family: Calibri;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 5px;
+    margin-top: 5px;
+    cursor: pointer;
+    transition: all 0.5s ease 0s;
+}
+
+    .accordionHeader:hover {
+        background-color: rgb(18,95,110);
+        border-color: rgb(18,95,110);
+        color: #fff;
+    }
+
+.accordionHeaderSelected {
+    border: 1px solid rgb(18,95,110);
+    color: white;
+    background-color: rgb(18,95,110);
+    font-family: Calibri;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 5px;
+    margin-top: 5px;
+    cursor: pointer;
+}
+
+.accordionContent {
+    background-color: white;
+    border: 1px solid rgb(18,95,110);
+    border-top: none;
+    padding: 5px;
+    padding-top: 10px;
+}
+/*fim accordion*/

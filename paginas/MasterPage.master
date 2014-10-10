@@ -10,9 +10,8 @@
 
     <link href="../css/StyleSheet.css" rel="stylesheet" type="text/css" />
     <link href="../css/questionario.css" rel="stylesheet" type="text/css" />
+    <%--<link href="../css/bootstrap.min.css" rel="stylesheet" />--%>
 
-    <script src="../script/FusionCharts.js"></script>
-    <script src="../script/jquery.js"></script>
     <script src="../script/funcoes.js"></script>
 
 
@@ -42,23 +41,16 @@
 
             <asp:Image ID="LogotipoSistema" runat="server" AlternateText="Educação Financeira Fatec Guaratingueta" CssClass="imgLogo" ImageUrl="~/images/logo_educacao_financeira.png" ToolTip="Educação Financeira Fatec Guaratingueta"  />
 
-            <div id="box-toggle">
-                <img src="../images/usuario.png" /><br />
-                <div class="tgl">
-
-                   <p>Nome: Sergio Augusto Siqueira<br />
-                   </p>
-                </div>
+         
             </div>
 
-        </div>
-
+      
         <nav id="menu">
             <ul>
                 <li><a href="home.aspx">Home</a></li>
                 <li>Questionário 
                 <ul>
-                    <li><a href="SelecionarVisitante.aspx">Aplicar</a></li>
+                    <%--<li><a href="SelecionarVisitante.aspx">Aplicar</a></li>--%>
                     <li><a href="SelecionarModelo.aspx">Criar</a></li>
                 </ul>
                 </li>
