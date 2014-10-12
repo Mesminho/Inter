@@ -1,6 +1,7 @@
-﻿body {
+﻿
+body {
     background: silver;
-    /*min-width: 56rem;*/
+    min-width: 37.2rem;
 }
 
 #header {
@@ -257,6 +258,7 @@ a {
         color: #ffffff;
         text-decoration: none;
     }
+
 /*Fim menu*/
 div#box-toggle {
     position: static;
@@ -342,36 +344,47 @@ div#box-toggle {
 /*FIM botao*/
 
 /*Grid style*/
+
 .Grid {
     background-color: #fff;
     margin: 10px;
-    border-collapse: collapse;
     font-family: Calibri;
     color: #474747;
+    border-color: white;
+    border-collapse: collapse;
 }
+
+
 
     .Grid td {
         padding: 2px;
     }
 
-    .Grid tr:hover {
-         background-color: rgb(126, 203, 219);
-      
+
+    .Grid tr {
+        border-color: white;
     }
+
+        .Grid tr:hover {
+            background-color: #d1d7d5;
+            border-color: #d1d7d5;
+        }
 
     .Grid th {
         padding: 5px;
         color: #fff;
         background: rgb(18,95,110);
-        font-size: 0.9em;
+        font-size: 1.1em;
+        border-color: white;
     }
 
     .Grid .alt {
         background-color: #fcfcfc;
+        border-color: #fcfcfc;
     }
 
     .Grid .pgr {
-        background-color: #363670;
+        background-color: white;
     }
 
         .Grid .pgr table {
@@ -379,21 +392,26 @@ div#box-toggle {
         }
 
         .Grid .pgr td {
-            border-width: 0;
-            padding: 0 6px;
-            border-left: solid 1px #666;
+            padding: 2px 2px;
             font-weight: bold;
-            color: #fff;
+            color: #000;
             line-height: 12px;
         }
 
         .Grid .pgr a {
-            color: Gray;
-            text-decoration: none;
+            background-color: transparent;
+            transition: all 0.5s ease 0s;
+            color: rgb(18,95,110);
+            text-decoration: none;           
+            padding: 2px 4px 2px 4px;
+            margin: 2px;
         }
 
             .Grid .pgr a:hover {
-                color: #000;
+                background-color: rgb(18,95,110);
+                border-color: rgb(18,95,110);
+                color: #fff;
                 text-decoration: none;
             }
+
 /*Fim grid*/

@@ -48,13 +48,13 @@
                             <Header>Habilitar e Desabilitar</Header>
                             <Content>
 
-                                <asp:GridView ID="grvQ" runat="server" AutoGenerateColumns="false" 
+                                <asp:GridView ID="grvQ" runat="server" AutoGenerateColumns="false"
                                     PagerStyle-CssClass="pgr"
                                     AlternatingRowStyle-CssClass="alt"
-                                      CssClass="Grid" >
+                                    CssClass="Grid" AllowPaging="true" PageSize="5" PageIndex="0" OnPageIndexChanging="grvQ_PageIndexChanging">
                                     <Columns>
-                                    <asp:BoundField DataField="mod_nome" HeaderText="Modelo do Questionário" />
-                                    <asp:BoundField DataField="mod_descricao" HeaderText="Descrição" />
+                                        <asp:BoundField DataField="mod_nome" HeaderText="Modelo do Questionário" />
+                                        <asp:BoundField DataField="mod_descricao" HeaderText="Descrição" />
                                     </Columns>
                                 </asp:GridView>
                                 <br />
@@ -66,13 +66,13 @@
                             <Header>Editar</Header>
                             <Content>
 
-                                 <asp:GridView ID="grvQ2" runat="server" AutoGenerateColumns="false" 
+                                <asp:GridView ID="grvQ2" runat="server" AutoGenerateColumns="false"
                                     PagerStyle-CssClass="pgr"
                                     AlternatingRowStyle-CssClass="alt"
-                                      CssClass="Grid" >
+                                    CssClass="Grid">
                                     <Columns>
-                                    <asp:BoundField DataField="mod_nome" HeaderText="Modelo do Questionário" />
-                                    <asp:BoundField DataField="mod_descricao" HeaderText="Descrição" />
+                                        <asp:BoundField DataField="mod_nome" HeaderText="Modelo do Questionário" />
+                                        <asp:BoundField DataField="mod_descricao" HeaderText="Descrição" />
                                     </Columns>
                                 </asp:GridView>
                                 <br />

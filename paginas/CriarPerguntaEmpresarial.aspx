@@ -18,6 +18,7 @@
             </td>
             <td>
                 <input type="text" required="" itemid="txb_nomePergunta" id="txb_nomePergunta" runat="server" style="width: 280px;" />
+                <asp:RequiredFieldValidator ID="rfvTitulo" runat="server" ControlToValidate="txb_nomePergunta" ErrorMessage=""></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
@@ -25,12 +26,14 @@
                 <asp:Label ID="lblTipoPergunta" runat="server" Text="Tipo da Questão: " CssClass="texto"></asp:Label>
             </td>
             <td>
-                <asp:DropDownList ID="ddlTipoPergunta" runat="server" AutoPostBack="true" OnSelectedIndexChanged="ddlTipoPergunta_SelectedIndexChanged" CssClass="DDList">
+                <asp:DropDownList ID="ddlTipoPergunta" runat="server" AutoPostBack="true"
+                    OnSelectedIndexChanged="ddlTipoPergunta_SelectedIndexChanged"
+                    CssClass="DDList">
                     <asp:ListItem Text="Selecione" Value="0"></asp:ListItem>
                     <asp:ListItem Text="Multipla Escolha" Value="1"></asp:ListItem>
                     <asp:ListItem Text="Dissertativa" Value="2"></asp:ListItem>
                 </asp:DropDownList>
-                <asp:RequiredFieldValidator ID="rfvDDLPergunta" CssClass="Alerta" runat="server" ErrorMessage="*" ControlToValidate="ddlTipoPergunta" InitialValue="0"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="rfvDDLPergunta" CssClass="Alerta" runat="server" ErrorMessage="Selecione o tipo da questão" ControlToValidate="ddlTipoPergunta" InitialValue="0"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
@@ -42,9 +45,11 @@
                         <div id="TextBoxContainer">
                             <asp:Label ID="lbl_alter1" runat="server" Text="Alternativa 1"></asp:Label>
                             <input type="text" required="" id="txb_alter1" runat="server" />
+                            <asp:RequiredFieldValidator ID="rfvAlter1" runat="server" ErrorMessage="" ControlToValidate="txb_alter1"></asp:RequiredFieldValidator>
                             <br />
                             <asp:Label ID="lbl_alter2" runat="server" Text="Alternativa 2"></asp:Label>
                             <input type="text" required="" id="txb_alter2" runat="server" />
+                            <asp:RequiredFieldValidator ID="rfvAlter2" runat="server" ErrorMessage="" ControlToValidate="txb_alter2"></asp:RequiredFieldValidator>
                             <br />
                             <asp:Label ID="lbl_alter3" runat="server" Text="Alternativa 3"></asp:Label>
                             <input type="text" id="txb_alter3" runat="server" />

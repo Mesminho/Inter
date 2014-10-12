@@ -1,5 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/paginas/MasterPage.master" AutoEventWireup="true" CodeFile="CriarClassificacao.aspx.cs" Inherits="paginas_CriarClassificacao" %>
-
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/paginas/MasterPage.master" AutoEventWireup="true" CodeFile="ModificarClassificacao.aspx.cs" Inherits="paginas_ModificarClassificacao" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
@@ -8,7 +7,7 @@
     <table class="tabela">
         <tr>
             <td colspan="2">
-                <asp:Label ID="lblInfo" runat="server" CssClass="textoCorrido" Text="Cadastre uma classificação para o questionário de Educação Financeira:"></asp:Label>
+                <asp:Label ID="lblInfo" runat="server" CssClass="textoCorrido" Text="Modifique a classificação do questionário:"></asp:Label>
             </td>
         </tr>
         <tr>
@@ -33,7 +32,7 @@
         </tr>
         <tr>
             <td colspan="2">
-                <asp:Label ID="lblInfo2" runat="server" CssClass="textoCorrido" Text="Indique a pontuação máxima para a classificação:"></asp:Label>
+                <asp:Label ID="lblInfo2" runat="server" CssClass="textoCorrido" Text="Modifique a pontuação máxima para a classificação:"></asp:Label>
             </td>
         </tr>
         <tr>
@@ -49,9 +48,9 @@
         </tr>
     </table>
 
-    <input type="button" value="Cancelar" class="btn-cancelar" onclick="location.href = 'Home.aspx'" />
-    <asp:Button ID="btnCadastrar" runat="server" Text="Cadastrar Classificação" CssClass="botao" OnClick="btnCadastrar_Click" />
-    <span onclick="return confirm('Deseja finalizar a criação de classificações?')">
-        <asp:Button ID="btnAvancar" runat="server" Text="Avançar" CssClass="botao" OnClick="btnAvancar_Click" />
-    </span>
+    <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" CssClass="btn-cancelar" />
+    <asp:Button ID="btnConfirmar" runat="server" Text="Confirmar" CssClass="botao" />
+
+
 </asp:Content>
+

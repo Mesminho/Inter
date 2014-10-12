@@ -17,6 +17,8 @@
             </td>
             <td>
                 <input type="text" id="txb_nomeModelo" runat="server" class="caixaTexto" required="" />
+                <asp:RequiredFieldValidator ID="rfvModelo" runat="server" ControlToValidate="txb_nomeModelo" ErrorMessage=""></asp:RequiredFieldValidator>
+
             </td>
         </tr>
         <tr>
@@ -43,6 +45,8 @@
             </td>
             <td>
                 <input id="txtPontuacaoConservador" type="number" required="" max="9000" min="1" name="Pontuacao" runat="server" title="Pontuação máxima para definir o perfil conservador" css="caixaTexto" />
+                <asp:RegularExpressionValidator ID="revPontosConservador" runat="server" ControlToValidate="txtPontuacaoConservador" ErrorMessage="" ValidationExpression="[0-9]+"></asp:RegularExpressionValidator>
+                <asp:RequiredFieldValidator ID="rfvPontosConservador" runat="server" ControlToValidate="txtPontuacaoConservador" ErrorMessage=""></asp:RequiredFieldValidator>
 
             </td>
         </tr>
@@ -53,6 +57,8 @@
             </td>
             <td>
                 <input id="txtPontuacaoModerado" type="number" required="" max="9000" min="1" name="Pontuacao" runat="server" title="Pontuação máxima para definir o perfil moderado" css="caixaTexto" />
+                <asp:RegularExpressionValidator ID="revPontosModerado" runat="server" ControlToValidate="txtPontuacaoModerado" ErrorMessage="" ValidationExpression="[0-9]+"></asp:RegularExpressionValidator>
+                <asp:RequiredFieldValidator ID="rfvPontosModerado" runat="server" ControlToValidate="txtPontuacaoModerado" ErrorMessage=""></asp:RequiredFieldValidator>
 
             </td>
         </tr>
@@ -63,15 +69,17 @@
             </td>
             <td>
                 <input id="txtPontuacaoAgressivo" type="number" required="" max="9000" min="1" name="Pontuacao" runat="server" title="Pontuação máxima para definir o perfil agressivo" css="caixaTexto" />
+                <asp:RegularExpressionValidator ID="revPontosAgressivo" runat="server" ControlToValidate="txtPontuacaoAgressivo" ErrorMessage="" ValidationExpression="[0-9]+"></asp:RegularExpressionValidator>
+                <asp:RequiredFieldValidator ID="rfvPontosAgressivo" runat="server" ControlToValidate="txtPontuacaoAgressivo" ErrorMessage=""></asp:RequiredFieldValidator>
 
             </td>
         </tr>
     </table>
     <br />
 
- 
 
-    <input type="button" value="Cancelar" class="btn-cancelar" onclick="cancelar()"/>
+
+    <input type="button" value="Cancelar" class="btn-cancelar" onclick="cancelar()" />
 
     <asp:Button ID="btn_continuar" runat="server" Text="Continuar" CssClass="botao" OnClick="btn_continuar_Click" />
 

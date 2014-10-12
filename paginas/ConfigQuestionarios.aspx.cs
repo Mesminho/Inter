@@ -43,4 +43,11 @@ public partial class paginas_ConfigQuestionarios : System.Web.UI.Page
 
     }
 
+
+    protected void grvQ_PageIndexChanging(object sender, GridViewPageEventArgs e)
+    {
+        grvQ.PageIndex = e.NewPageIndex;
+        CarregaGrid();
+        ModalInvestidor.Show();
+    }
 }

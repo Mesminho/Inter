@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/paginas/MasterPage.master" AutoEventWireup="true" CodeFile="ModificarModeloEmpresarial.aspx.cs" Inherits="paginas_ModificarModeloEmpresarial" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/paginas/MasterPage.master" AutoEventWireup="true" CodeFile="ModificarModelo.aspx.cs" Inherits="paginas_ModificarModeloEd" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
@@ -7,7 +7,7 @@
     <table class="tabela">
         <tr>
             <td colspan="2">
-                <asp:Label ID="lblInfo" runat="server" CssClass="textoCorrido" Text="Modifique o modelo de Questionário Empresarial"></asp:Label>
+                <asp:Label ID="lblInfo" runat="server" CssClass="textoCorrido" Text="Modifique o modelo do questionário:"></asp:Label>
             </td>
         </tr>
         <tr>
@@ -27,8 +27,9 @@
         </tr>
     </table>
 
-    <asp:Button runat="server" ID="btn_cancelar" class="btn-cancelar" />
+    <asp:Button ID="btn_cancelar" runat="server" Text="Cancelar" CssClass="btn-cancelar"/>
     <asp:Button ID="btn_continuar" runat="server" Text="Continuar" CssClass="botao" />
+
 
 </asp:Content>
 

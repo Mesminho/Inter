@@ -207,6 +207,7 @@ div#config p {
     background-color: White;
     padding: 20px;
     border-radius: 2px 2px;
+   transition-delay: 0.1s;
 }
 
 .close {

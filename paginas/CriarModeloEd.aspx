@@ -1,9 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/paginas/MasterPage.master" AutoEventWireup="true" CodeFile="CriarModeloEd.aspx.cs" Inherits="paginas_CriarModelo" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
-
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
 </asp:Content>
-<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
     <table class="tabela">
         <tr>
@@ -16,7 +15,9 @@
                 <asp:Label ID="lbl_nomeModelo" runat="server" Text="Nome do Modelo: " CssClass="texto"></asp:Label>
             </td>
             <td>
-                <input type="text" id="txb_nomeModelo" runat="server" class="caixaTexto" required="" /></td>
+                <input type="text" id="txb_nomeModelo" runat="server" class="caixaTexto" required="" />
+                <asp:RequiredFieldValidator ID="rfvModelo" runat="server" ControlToValidate="txb_nomeModelo" ErrorMessage=""></asp:RequiredFieldValidator>
+            </td>
         </tr>
         <tr>
             <td>
@@ -28,9 +29,9 @@
         </tr>
     </table>
 
-    <input type="button" value="Cancelar" class="btn-cancelar" onclick="cancelar()"/>
+    <input type="button" value="Cancelar" class="btn-cancelar" onclick="cancelar()" />
 
-    <asp:Button ID="btn_continuar" runat="server" Text="Continuar" CssClass="botao" onclick="btn_continuar_Click"/>
+    <asp:Button ID="btn_continuar" runat="server" Text="Continuar" CssClass="botao" OnClick="btn_continuar_Click" />
 
 
 </asp:Content>
