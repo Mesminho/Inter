@@ -14,6 +14,8 @@ public partial class paginas_CriarPerguntaEmpresarial : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
 
+        modelo = (Mod_modelos)Session["modelo"]; //Instancia o obj Questionario, com os valores vindos da pg anterior
+        lbl_nomeQuestionario.Text = modelo.NomeModelo; //Passa o nome do Questionario pro label
 
         if (!Page.IsPostBack)
         {

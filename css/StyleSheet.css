@@ -394,15 +394,22 @@ div#box-toggle {
         .Grid .pgr td {
             padding: 2px 2px;
             font-weight: bold;
-            color: #000;
             line-height: 12px;
         }
+
+            .Grid .pgr td span {
+                background-color: rgb(18,95,110);
+                border-color: rgb(18,95,110);
+                color: #fff;
+                padding: 2px 4px 2px 4px;
+            }
+
 
         .Grid .pgr a {
             background-color: transparent;
             transition: all 0.5s ease 0s;
             color: rgb(18,95,110);
-            text-decoration: none;           
+            text-decoration: none;
             padding: 2px 4px 2px 4px;
             margin: 2px;
         }

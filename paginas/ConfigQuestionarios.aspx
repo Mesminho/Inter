@@ -34,7 +34,9 @@
             </div>
 
             <asp:Panel ID="PanelInvestidor" runat="server" CssClass="pnl">
-                <asp:Button ID="btnFechar1" CssClass="fechar" runat="server" Text="X" />
+                <button runat="server" id="btnFechar1" class="fechar" title="fechar">
+                    <i class="fa fa-times"></i>
+                </button>
                 <asp:Label ID="LblInvestidor" Text="Configuração dos questionários - Perfil de Investidor" runat="server" CssClass="titulo"></asp:Label>
                 <asp:Accordion
                     ID="accordion"
@@ -94,7 +96,9 @@
             </asp:ModalPopupExtender>
 
             <asp:Panel ID="PanelEducacao" runat="server" CssClass="pnl">
-                <asp:Button ID="btnFechar2" CssClass="fechar" runat="server" Text="X" />
+                <button runat="server" id="btnFechar2" class="fechar" title="fechar">
+                    <i class="fa fa-times"></i>
+                </button>
                 <asp:Label ID="lblEd" Text="Configuração dos questionários - Educação Financeira" runat="server" CssClass="titulo"></asp:Label>
             </asp:Panel>
 
@@ -107,7 +111,9 @@
             </asp:ModalPopupExtender>
 
             <asp:Panel ID="PanelEmpresarial" runat="server" CssClass="pnl">
-                <asp:Button ID="btnFechar3" CssClass="fechar" runat="server" Text="X" />
+                <button runat="server" id="btnFechar3" class="fechar" title="fechar">
+                    <i class="fa fa-times"></i>
+                </button>
                 <asp:Label ID="lblEmpresarial" Text="Configuração dos questionários - Empresarial" runat="server" CssClass="titulo"></asp:Label>
             </asp:Panel>
 

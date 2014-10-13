@@ -40,7 +40,7 @@
                                 <asp:Label ID="lbl_pontos1" runat="server" Text="Pontos"></asp:Label>
                                 <asp:TextBox ID="txb_pontos1" required="" runat="server" type="number" max="9000" min="0" title="Valoração da alternativa" CssClass="caixaTexto" Width="100px" />
                                 <asp:RequiredFieldValidator ID="rfvPontos1" runat="server" ControlToValidate="txb_pontos1" ErrorMessage=""></asp:RequiredFieldValidator>
-                                <asp:RegularExpressionValidator ID="revPontos1" runat="server" ControlToValidate="txb_pontos1" ErrorMessage="" ValidationExpression="[0-9]+"></asp:RegularExpressionValidator>
+                                <asp:RegularExpressionValidator ID="revPontos1" runat="server" ControlToValidate="txb_pontos1" ErrorMessage="" ValidationExpression="[1-9]+"></asp:RegularExpressionValidator>
 
                             </td>
                         </tr>
@@ -55,7 +55,7 @@
                                 <asp:Label ID="lbl_pontos2" runat="server" Text="Pontos"></asp:Label>
                                 <asp:TextBox ID="txb_pontos2" required="" runat="server" type="number" max="9000" min="0" title="Valoração da alternativa" CssClass="caixaTexto" Width="100px" />
                                 <asp:RequiredFieldValidator ID="rfvPontos2" runat="server" ControlToValidate="txb_pontos2" ErrorMessage=""></asp:RequiredFieldValidator>
-                                <asp:RegularExpressionValidator ID="revPontos2" runat="server" ControlToValidate="txb_pontos2" ErrorMessage="" ValidationExpression="[0-9]+"></asp:RegularExpressionValidator>
+                                <asp:RegularExpressionValidator ID="revPontos2" runat="server" ControlToValidate="txb_pontos2" ErrorMessage="" ValidationExpression="[1-9]+"></asp:RegularExpressionValidator>
 
                             </td>
                         </tr>
@@ -67,6 +67,8 @@
                             <td>
                                 <asp:Label ID="lbl_pontos3" runat="server" Text="Pontos"></asp:Label>
                                 <asp:TextBox ID="txb_pontos3" runat="server" type="number" max="9000" min="0" title="Valoração da alternativa" CssClass="caixaTexto" Width="100px" />
+                                <asp:RegularExpressionValidator ID="revPontos3" runat="server" ControlToValidate="txb_pontos3" ErrorMessage="" ValidationExpression="[1-9]+"></asp:RegularExpressionValidator>
+
                             </td>
                         </tr>
                         <tr>
@@ -77,16 +79,21 @@
                             <td>
                                 <asp:Label ID="lbl_pontos4" runat="server" Text="Pontos"></asp:Label>
                                 <asp:TextBox ID="txb_pontos4" runat="server" type="number" max="9000" min="0" title="Valoração da alternativa" CssClass="caixaTexto" Width="100px" />
+                                <asp:RegularExpressionValidator ID="revPontos4" runat="server" ControlToValidate="txb_pontos4" ErrorMessage="" ValidationExpression="[1-9]+"></asp:RegularExpressionValidator>
+
                             </td>
                         </tr>
                         <tr>
                             <td>
                                 <asp:Label ID="lbl_alter5" runat="server" Text="Alternativa 5"></asp:Label>
                                 <asp:TextBox ID="txb_alter5" runat="server" />
+
                             </td>
                             <td>
                                 <asp:Label ID="lbl_pontos5" runat="server" Text="Pontos"></asp:Label>
                                 <asp:TextBox ID="txb_pontos5" runat="server" type="number" max="9000" min="0" title="Valoração da alternativa" CssClass="caixaTexto" Width="100px" />
+                                <asp:RegularExpressionValidator ID="revPontos5" runat="server" ControlToValidate="txb_pontos5" ErrorMessage="" ValidationExpression="[1-9]+"></asp:RegularExpressionValidator>
+
                             </td>
                         </tr>
                         <tr>
@@ -97,6 +104,8 @@
                             <td>
                                 <asp:Label ID="lbl_pontos6" runat="server" Text="Pontos"></asp:Label>
                                 <asp:TextBox ID="txb_pontos6" runat="server" type="number" max="9000" min="0" title="Valoração da alternativa" CssClass="caixaTexto" Width="100px" />
+                                <asp:RegularExpressionValidator ID="revPontos6" runat="server" ControlToValidate="txb_pontos6" ErrorMessage="" ValidationExpression="[1-9]+"></asp:RegularExpressionValidator>
+
                             </td>
                         </tr>
                         <tr>
@@ -107,6 +116,8 @@
                             <td>
                                 <asp:Label ID="lbl_pontos7" runat="server" Text="Pontos"></asp:Label>
                                 <asp:TextBox ID="txb_pontos7" runat="server" type="number" max="9000" min="0" title="Valoração da alternativa" CssClass="caixaTexto" Width="100px" />
+                                <asp:RegularExpressionValidator ID="revPontos7" runat="server" ControlToValidate="txb_pontos7" ErrorMessage="" ValidationExpression="[1-9]+"></asp:RegularExpressionValidator>
+
                             </td>
                         </tr>
                     </table>

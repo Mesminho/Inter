@@ -23,6 +23,8 @@ public partial class paginas_ModificarPergunta : System.Web.UI.Page
         if (!IsPostBack)
         {
             valorarCampos();
+            validarEmpresarial();
+
         }
     }
 
@@ -104,7 +106,7 @@ public partial class paginas_ModificarPergunta : System.Web.UI.Page
             perguntaN.Alternativa.Add(alternativa);
         }
 
-        modelo.Pergunta[index] = perguntaN; //Adiciona o ojb questão ao questionario
+        modelo.Pergunta[index] = perguntaN; //Adiciona o obj questão ao questionario
         Session["questionario"] = modelo; //Passa o obj questionario para a sessao
     }
 
@@ -130,6 +132,7 @@ public partial class paginas_ModificarPergunta : System.Web.UI.Page
         txb_ponto[6] = txb_pontos7;
 
 
+
         txb_nomePergunta.Value = pergunta.PerguntaPergunta;
 
         for (int i = 0; i < pergunta.Alternativa.Count; i++)
@@ -140,4 +143,34 @@ public partial class paginas_ModificarPergunta : System.Web.UI.Page
         }
 
     }
+
+    private void validarEmpresarial()
+    {
+        if (txb_pontos1.Text == "0")
+        {
+            lbl_pontos1.Visible = false;
+            txb_pontos1.Visible = false;
+
+            lbl_pontos2.Visible = false;
+            txb_pontos2.Visible = false;
+
+            lbl_pontos3.Visible = false;
+            txb_pontos3.Visible = false;
+
+            lbl_pontos4.Visible = false;
+            txb_pontos4.Visible = false;
+
+            lbl_pontos5.Visible = false;
+            txb_pontos5.Visible = false;
+
+            lbl_pontos6.Visible = false;
+            txb_pontos6.Visible = false;
+
+            lbl_pontos7.Visible = false;
+            txb_pontos7.Visible = false;
+
+        }
+
+    }
+
 }

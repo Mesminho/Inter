@@ -21,38 +21,50 @@ public partial class paginas_CriarQuestionario : System.Web.UI.Page
 
     protected void btn_continuar_Click(object sender, EventArgs e)
     {
-        modelo.NomeModelo = txb_nomeModelo.Value; //Passa o texto do textBox Para o obj Questionario
-        modelo.TipoModelo = 1;
-        modelo.DescricaoModelo = txt_descricao.Value;
+        if (validarCampos())
+        {
+            modelo.NomeModelo = txb_nomeModelo.Value; //Passa o texto do textBox Para o obj Questionario
+            modelo.TipoModelo = 1;
+            modelo.DescricaoModelo = txt_descricao.Value;
 
 
-        //Perfil Conservador
-        classificacao = new Clas_classificacoes();
-        classificacao.NomeClassificacao = "Conservador";
-        classificacao.PontoClassificacao = Convert.ToDouble(txtPontuacaoConservador.Value);
-        classificacao.DescricaoClassificacao = "";
-        modelo.Classificacoes.Add(classificacao);
+            //Perfil Conservador
+            classificacao = new Clas_classificacoes();
+            classificacao.NomeClassificacao = "Conservador";
+            classificacao.PontoClassificacao = Convert.ToDouble(txtPontuacaoConservador.Value);
+            classificacao.DescricaoClassificacao = "";
+            modelo.Classificacoes.Add(classificacao);
 
-        //Perfil Moderado
-        classificacao = new Clas_classificacoes();
-        classificacao.NomeClassificacao = "Moderado";
-        classificacao.PontoClassificacao = Convert.ToDouble(txtPontuacaoModerado.Value);
-        classificacao.DescricaoClassificacao = "";
-        modelo.Classificacoes.Add(classificacao);
+            //Perfil Moderado
+            classificacao = new Clas_classificacoes();
+            classificacao.NomeClassificacao = "Moderado";
+            classificacao.PontoClassificacao = Convert.ToDouble(txtPontuacaoModerado.Value);
+            classificacao.DescricaoClassificacao = "";
+            modelo.Classificacoes.Add(classificacao);
 
-        //Perfil Agressivo
-        classificacao = new Clas_classificacoes();
-        classificacao.NomeClassificacao = "Agressivo";
-        classificacao.PontoClassificacao = Convert.ToDouble(txtPontuacaoAgressivo.Value);
-        classificacao.DescricaoClassificacao = "";
-        modelo.Classificacoes.Add(classificacao);
+            //Perfil Agressivo
+            classificacao = new Clas_classificacoes();
+            classificacao.NomeClassificacao = "Agressivo";
+            classificacao.PontoClassificacao = Convert.ToDouble(txtPontuacaoAgressivo.Value);
+            classificacao.DescricaoClassificacao = "";
+            modelo.Classificacoes.Add(classificacao);
 
-        Session["modelo"] = modelo; //Passa o obj Questionario para sessao
-        Response.Redirect("CriarPerguntas.aspx"); //Redireciona para pagina de criar perguntas
+            Session["modelo"] = modelo; //Passa o obj Questionario para sessao
+            Response.Redirect("CriarPerguntas.aspx"); //Redireciona para pagina de criar perguntas
+        }
+        else
+        {
+            String script = "<script language='javascript'>alert('Pontuação máxima dos perfis não podem ser iguais');</script>";
+            ClientScript.RegisterStartupScript(GetType(), "alerta1", script, false);
+        }
+
     }
  
-    protected void CustomValidator1_ServerValidate(object source, ServerValidateEventArgs args)
-    {
 
+
+    private bool validarCampos()
+    {
+        return txtPontuacaoConservador.Value != txtPontuacaoModerado.Value && txtPontuacaoConservador.Value != txtPontuacaoAgressivo.Value && txtPontuacaoModerado.Value != txtPontuacaoAgressivo.Value;
     }
+
 }
