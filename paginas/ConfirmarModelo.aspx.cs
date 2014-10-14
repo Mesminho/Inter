@@ -67,9 +67,18 @@ public partial class paginas_ConfirmarQuestionario : System.Web.UI.Page
     private void carregaModelo()
     {
         modelo = (Mod_modelos)Session["modelo"]; //Istancia o obj questionario passando a sessao
-        lbl_nomeQuestionario.Text = modelo.NomeModelo;
 
-        
+        Button btn_modificarModelo = new Button();
+
+        lbl_nomeModelo.Text = modelo.NomeModelo;
+        lbl_descricaoModelo.Text = modelo.DescricaoModelo;
+
+        btn_modificarModelo.CommandName = "Modificar";
+        btn_modificarModelo.Text = "Modificar";
+        btn_modificarModelo.CssClass = "botao";
+        btn_modificarModelo.Click += btn_modificarModelo_Click;
+
+        div_modelo.Controls.Add(btn_modificarModelo);
 
         //Carregar classificações
         for (int i = 0; i < modelo.Classificacoes.Count; i++)
@@ -97,10 +106,13 @@ public partial class paginas_ConfirmarQuestionario : System.Web.UI.Page
             btn_modificar.CommandName = "Modificar";
             btn_modificar.Text = "Modificar";
             btn_modificar.CssClass = "botao";
+            btn_modificar.CommandArgument = i.ToString();
+            btn_modificar.Click += btn_modificarClassificacao_Click;
 
             btn_excluir.CommandName = "Excluir";
             btn_excluir.CssClass = "btn-cancelar";
             btn_excluir.Text = "Excluir";
+            btn_excluir.CommandArgument = i.ToString();
 
             lbl_titulo.Text = ""+classicacao.NomeClassificacao;
             lbl_descricao.Text = "Descrição: "+classicacao.DescricaoClassificacao;
@@ -109,9 +121,6 @@ public partial class paginas_ConfirmarQuestionario : System.Web.UI.Page
             lbl_titulo.CssClass = "tituloQuestao";
             lbl_descricao.CssClass = "textoCorrido";
             lbl_ponto.CssClass = "textoCorrido";
-
-            btn_modificar.CommandArgument = i.ToString();
-            btn_excluir.CommandArgument = i.ToString();
 
             div_classificacoes.Controls.Add(lbl_titulo);
             div_classificacoes.Controls.Add(lbl_espaco2);
@@ -189,6 +198,19 @@ public partial class paginas_ConfirmarQuestionario : System.Web.UI.Page
         Button btn_confimar = (Button)sender;
         Session["index"] = Convert.ToInt32(btn_confimar.CommandArgument);
         Response.Redirect("ModificarPergunta.aspx");
+    }
+
+    void btn_modificarModelo_Click(object sender, EventArgs e)
+    {
+        Button btn_confimar = (Button)sender;
+        Response.Redirect("ModificarModelo.aspx");
+    }
+
+    void btn_modificarClassificacao_Click(object sender, EventArgs e)
+    {
+        Button btn_confimar = (Button)sender;
+        Session["index"] = Convert.ToInt32(btn_confimar.CommandArgument);
+        Response.Redirect("ModificarClassificacao.aspx");
     }
 
     protected void bnt_cancelar_Click(object sender, EventArgs e)

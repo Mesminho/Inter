@@ -48,8 +48,8 @@
         </tr>
     </table>
 
-    <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" CssClass="btn-cancelar" />
-    <asp:Button ID="btnConfirmar" runat="server" Text="Confirmar" CssClass="botao" />
+    <asp:Button ID="btnCancelar" runat="server" Text="Cancelar" CssClass="btn-cancelar" OnClick="btnCancelar_Click" />
+    <asp:Button ID="btnConfirmar" runat="server" Text="Confirmar" CssClass="botao" OnClick="btnConfirmar_Click" />
 
 
 </asp:Content>
