@@ -17,6 +17,7 @@ public partial class paginas_ConfigQuestionarios : System.Web.UI.Page
             ModalInvestidor.Hide();
             ModalEd.Hide();
             ModalEmpresarial.Hide();
+            ModalPopupExtenderDesc.Hide();
           
         }
     }
@@ -48,6 +49,12 @@ public partial class paginas_ConfigQuestionarios : System.Web.UI.Page
     {
         grvQ.PageIndex = e.NewPageIndex;
         CarregaGrid();
+        ModalInvestidor.Show();
+    }
+
+    protected void btn_falso_Click(object sender, EventArgs e)
+    {
+        ModalPopupExtenderDesc.Show();
         ModalInvestidor.Show();
     }
 }

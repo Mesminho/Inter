@@ -17,7 +17,6 @@
         <br />
         <br />
     </div>
-    <br />
 
     <div runat="server" id="div_classificacoes" style="margin-bottom: 20px; margin-left: 5px; margin-top: 20px;">
     </div>

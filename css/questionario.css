@@ -3,7 +3,7 @@
     font-size: 25px;
     color: rgb(56, 55, 55);
     font-weight: bolder;
-    margin: 10px;
+    margin: 15px;
 }
 
 .DDList {
@@ -200,14 +200,15 @@ div#config p {
 .modalBackground {
     background-color: Gray;
     filter: alpha(opacity=50);
-    opacity: 0.50;
+    opacity: 0.2;
 }
 
 .pnl {
     background-color: White;
     padding: 20px;
     border-radius: 2px 2px;
-   transition-delay: 0.1s;
+    box-shadow: 9px 9px 33px -4px rgba(0,0,0,0.75);
+    transition-delay: 0.1s;
 }
 
 .close {
