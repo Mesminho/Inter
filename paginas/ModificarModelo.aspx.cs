@@ -16,6 +16,7 @@ public partial class paginas_ModificarModeloEd : System.Web.UI.Page
         {
             valorarCampos();
         }
+            
     }
 
     private void salvarModelo()
@@ -39,4 +40,5 @@ public partial class paginas_ModificarModeloEd : System.Web.UI.Page
     {
         Response.Redirect("ConfirmarModelo.aspx");
     }
+
 }

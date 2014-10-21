@@ -10,7 +10,7 @@ using System.Data;
 public class Mod_modelosDB
 {
 
-    public static int Update(Mod_modelos modelos)
+    public int Update(Mod_modelos modelos)
     {
         int retorno = 0;
         try
@@ -107,7 +107,7 @@ public class Mod_modelosDB
         IDbCommand objcommand;
         IDataAdapter objDataAdapter;
         objConexao = Mapped.Connection();
-        objcommand = Mapped.Command("SELECT * FROM mod_modelos", objConexao);
+        objcommand = Mapped.Command("SELECT * FROM mod_view", objConexao);
         objDataAdapter = Mapped.Adapter(objcommand);
         objDataAdapter.Fill(ds);
         objConexao.Close();
@@ -115,6 +115,23 @@ public class Mod_modelosDB
         objConexao.Dispose();
         return ds;
     }
+
+    public static DataSet SelectNaoEditado()
+    {
+        DataSet ds = new DataSet();
+        IDbConnection objConexao;
+        IDbCommand objcommand;
+        IDataAdapter objDataAdapter;
+        objConexao = Mapped.Connection();
+        objcommand = Mapped.Command("SELECT * FROM mod_modelos where mod_editar=true", objConexao);
+        objDataAdapter = Mapped.Adapter(objcommand);
+        objDataAdapter.Fill(ds);
+        objConexao.Close();
+        objcommand.Dispose();
+        objConexao.Dispose();
+        return ds;
+    }
+
 
     public static DataSet SelectAll_Evento()
     {
@@ -132,7 +149,7 @@ public class Mod_modelosDB
         return ds;
     }
 
-    public Mod_modelos Select(int codigo)
+    public static Mod_modelos Select(int codigo)
     {
         try
         {
@@ -141,8 +158,8 @@ public class Mod_modelosDB
             IDbCommand objcommand;
             IDataReader objDatareader;
             objConexao = Mapped.Connection();
-            objcommand = Mapped.Command("CALL mod_select(?mod_codigo)", objConexao);
-            objcommand.Parameters.Add(Mapped.Parameter("?codigoModelo", codigo));
+            objcommand = Mapped.Command("SELECT *, if(mod_habilitado = 0, 'Desabilitado', 'Habilitado') as habilitado FROM mod_modelos WHERE mod_codigo = ?mod_codigo;", objConexao);
+            objcommand.Parameters.Add(Mapped.Parameter("?mod_codigo", codigo));
             objDatareader = objcommand.ExecuteReader();
 
             while (objDatareader.Read())
@@ -151,8 +168,10 @@ public class Mod_modelosDB
                 //variavel questão (array)????
                 objModelos.CodigoModelo = Convert.ToInt32(objDatareader["mod_codigo"]);
                 objModelos.NomeModelo= objDatareader["mod_nome"].ToString();
-                objModelos.TipoModelo = Convert.ToInt32(objDatareader["mod_tipo"]);
-                objModelos.AtivoModelo = Convert.ToBoolean(objDatareader["mod_ativo"]);
+                objModelos.DescricaoModelo = objDatareader["mod_descricao"].ToString();
+                //objModelos.TipoModelo = Convert.ToInt32(objDatareader["mod_tipo"]); NAO ESTA NA PROCEDURE
+                objModelos.Habilitado = Convert.ToString(objDatareader["habilitado"]);
+                objModelos.AtivoModelo = Convert.ToBoolean(objDatareader["mod_habilitado"]);
                 objModelos.EditarModelo = Convert.ToBoolean(objDatareader["mod_editar"]);
 
             }
@@ -169,5 +188,64 @@ public class Mod_modelosDB
         }
 
     }
+
+
+
+
+
+    public int Desabilitar(Mod_modelos modelo)
+    {
+        int errNumber = 0;
+        try
+        {
+            IDbConnection objConexao;
+            IDbCommand objCommand;
+            string sql = "UPDATE mod_modelos SET ";
+            sql += "mod_habilitado = ?mod_habilitado ";
+            sql += "WHERE mod_codigo = ?mod_codigo";
+            objConexao = Mapped.Connection();
+            objCommand = Mapped.Command(sql, objConexao);
+
+            objCommand.Parameters.Add(Mapped.Parameter("?mod_habilitado", 0));
+            objCommand.Parameters.Add(Mapped.Parameter("?mod_codigo", modelo.CodigoModelo));
+            objCommand.ExecuteNonQuery();
+            objConexao.Close();
+            objCommand.Dispose();
+            objConexao.Dispose();
+        }
+        catch (Exception ex)
+        {
+            errNumber = -2;
+        }
+        return errNumber;
+    }
+
+    public int Habilitar(Mod_modelos modelo)
+    {
+        int errNumber = 0;
+        try
+        {
+            IDbConnection objConexao;
+            IDbCommand objCommand;
+            string sql = "UPDATE mod_modelos SET ";
+            sql += "mod_habilitado = ?mod_habilitado ";
+            sql += "WHERE mod_codigo = ?mod_codigo";
+            objConexao = Mapped.Connection();
+            objCommand = Mapped.Command(sql, objConexao);
+
+            objCommand.Parameters.Add(Mapped.Parameter("?mod_habilitado", 1));
+            objCommand.Parameters.Add(Mapped.Parameter("?mod_codigo", modelo.CodigoModelo));
+            objCommand.ExecuteNonQuery();
+            objConexao.Close();
+            objCommand.Dispose();
+            objConexao.Dispose();
+        }
+        catch (Exception ex)
+        {
+            errNumber = -2;
+        }
+        return errNumber;
+    }
+
 
 }

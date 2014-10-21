@@ -357,7 +357,7 @@ div#box-toggle {
 
 
     .Grid td {
-        padding: 2px;
+        padding: 5px;
     }
 
 
@@ -405,20 +405,19 @@ div#box-toggle {
             }
 
 
-        .Grid .pgr a {
-            background-color: transparent;
-            transition: all 0.5s ease 0s;
-            color: rgb(18,95,110);
-            text-decoration: none;
-            padding: 2px 4px 2px 4px;
-            margin: 2px;
-        }
+    .Grid a {
+        background-color: transparent;
+        transition: all 0.5s ease 0s;
+        color: rgb(18,95,110);
+        padding: 2px 4px 2px 4px;
+        margin: 2px;
+        font-family: Calibri;
+    }
 
-            .Grid .pgr a:hover {
-                background-color: rgb(18,95,110);
-                border-color: rgb(18,95,110);
-                color: #fff;
-                text-decoration: none;
-            }
+        .Grid a:hover {
+            background-color: rgb(18,95,110);
+            border-color: rgb(18,95,110);
+            color: #fff;
+        }
 
 /*Fim grid*/

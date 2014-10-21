@@ -16,8 +16,15 @@ public class Mod_modelos
     int _tipoModelo;
     Boolean _ativoModelo;
     Boolean _editarModelo;
+    string _habilitado;
     int _eventoCodigo;
     string _descricaoModelo;
+
+    public string Habilitado
+    {
+        get { return _habilitado; }
+        set { _habilitado = value; }
+    }
 
     public ArrayList Classificacoes
     {
@@ -48,7 +55,7 @@ public class Mod_modelos
         get { return _nomeModelo; }
         set { _nomeModelo = value; }
     }
-    
+
     public Boolean AtivoModelo
     {
         get { return _ativoModelo; }

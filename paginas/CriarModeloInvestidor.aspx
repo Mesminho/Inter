@@ -71,7 +71,7 @@
                 <input id="txtPontuacaoAgressivo" type="number" required="" max="9000" min="1" name="Pontuacao" runat="server" title="Pontuação máxima para definir o perfil agressivo" css="caixaTexto" />
                 <asp:RegularExpressionValidator ID="revPontosAgressivo" runat="server" ControlToValidate="txtPontuacaoAgressivo" ErrorMessage="" ValidationExpression="[0-9]+"></asp:RegularExpressionValidator>
                 <asp:RequiredFieldValidator ID="rfvPontosAgressivo" runat="server" ControlToValidate="txtPontuacaoAgressivo" ErrorMessage=""></asp:RequiredFieldValidator>
-
+                <asp:Label ID="Label1" runat="server" Text="" Visible="false"></asp:Label>
             </td>
         </tr>
     </table>
@@ -82,6 +82,6 @@
     <input type="button" value="Cancelar" class="btn-cancelar" onclick="cancelar()" />
 
     <asp:Button ID="btn_continuar" runat="server" Text="Continuar" CssClass="botao" OnClick="btn_continuar_Click" />
-
+    <asp:Button ID="btn_atualizar" runat="server" Visible="false" Text="Atualizar" CssClass="botao" OnClick="btn_atualizar_Click"/>
 </asp:Content>
 
