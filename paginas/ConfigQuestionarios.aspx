@@ -60,14 +60,14 @@
                                         
                                         <asp:TemplateField HeaderText="Status">
                                             <ItemTemplate>
-                                                <asp:LinkButton ID="lbAlterar" CommandName="Alterar" CausesValidation="false" CommandArgument='<%# Bind("mod_codigo")%>' runat="server"><i class="fa fa-refresh"></i> Alterar</asp:LinkButton>
+                                                <asp:LinkButton ID="lbAlterar" CommandName="Alterar" CausesValidation="false" CommandArgument='<%# Bind("mod_codigo")%>' runat="server"><i class="fa fa-refresh" ></i> Alterar</asp:LinkButton>
                                             </ItemTemplate>
                                         
                                         </asp:TemplateField>
 
                                         <asp:TemplateField HeaderText="Descrição">
                                             <ItemTemplate>
-                                                <asp:LinkButton ID="lbVisualizar" CommandName="Visualizar" CausesValidation="false" CommandArgument='<%# Bind("mod_codigo")%>' runat="server"><i class="fa fa-search"> Visualizar</i></asp:LinkButton>
+                                                <asp:LinkButton ID="lbVisualizar" CommandName="Visualizar" CausesValidation="false" CommandArgument='<%# Bind("mod_codigo")%>' runat="server"><i class="fa fa-search" ></i> Visualizar</asp:LinkButton>
                                             </ItemTemplate>
                                         
                                         </asp:TemplateField>
@@ -163,9 +163,12 @@
 
                 <asp:Label ID="Label3" Text="Descrição do Questionário" runat="server" CssClass="titulo"></asp:Label>
                 <br />
-        
+                 <br />
+                <br />
                 <p class="text-center ">
-                    <asp:Label ID="Descricao" runat="server" CssClass="textoCorrido" Text=""></asp:Label>
+                    <asp:Label ID="Descricao" runat="server" Text=""></asp:Label><br />
+                    
+
                 </p>
 
 

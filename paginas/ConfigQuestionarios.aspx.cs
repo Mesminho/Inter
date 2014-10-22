@@ -131,8 +131,8 @@ public partial class paginas_ConfigQuestionarios : System.Web.UI.Page
 
             if (mod != null)
             {
-                Session["EditarModelo"] = mod;
-                Response.Redirect("CriarModeloInvestidor.aspx");
+                Session["Modelo"] = mod;
+                Response.Redirect("ConfirmarModelo.aspx");
             }
             else
             {

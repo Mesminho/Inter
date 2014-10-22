@@ -71,7 +71,7 @@ footer#rodape {
     font-size: 20px;
     font-family: Calibri;
     font-weight: bolder;
-    border-radius: 2px 2px;
+    text-align: center;
 }
 
 .label {
@@ -249,14 +249,14 @@ ul {
         }
 
 a {
-    color: #fff;
+    color: #1e47a9;
+    font-family: Calibri;
     text-decoration: none;
-    text-transform: capitalize;
+    font-size: 18px;
 }
 
     a:hover {
-        color: #ffffff;
-        text-decoration: none;
+        text-decoration: underline;
     }
 
 /*Fim menu*/
