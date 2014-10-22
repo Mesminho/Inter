@@ -146,9 +146,9 @@ public partial class paginas_ConfirmarQuestionario : System.Web.UI.Page
         }
 
         Label lblQuestoes = new Label();
-        lblQuestoes.Text = "Verifique abaixo todas as questões criadas para esse questionário:<br/>";
+        lblQuestoes.Text = "Verifique abaixo todas as questões criadas para esse questionário:<br/><br/>";
         lblQuestoes.CssClass = "texto";
-        div_classificacoes.Controls.Add(lblQuestoes);
+        div_questoes.Controls.Add(lblQuestoes);
        
 
         //Carregar questões

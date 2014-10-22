@@ -94,12 +94,12 @@
                                         <asp:BoundField DataField="mod_descricao" HeaderText="Descrição" />
                                          <asp:TemplateField HeaderText="Descrição">
                                             <ItemTemplate>
-                                                <asp:LinkButton ID="lbVisualizar" CommandName="Visualizar" CausesValidation="false" CommandArgument='<%# Bind("mod_codigo")%>' runat="server"><i class="fa fa-search" ></i></asp:LinkButton>
+                                                <asp:LinkButton ID="lbVisualizar" CommandName="Visualizar" CausesValidation="false" CommandArgument='<%# Bind("mod_codigo")%>' runat="server"><i class="fa fa-search"></i> Visualizar</asp:LinkButton>
                                             </ItemTemplate>
                                         </asp:TemplateField>
-                                        <asp:TemplateField HeaderText="Editar">
+                                        <asp:TemplateField HeaderText="Modificar">
                                          <ItemTemplate>
-                                                <asp:LinkButton ID="lbEditar" CommandName="Editar" CausesValidation="false" CommandArgument='<%# Bind("mod_codigo")%>' runat="server"><i class="fa fa-pencil" ></i></asp:LinkButton>
+                                                <asp:LinkButton ID="lbEditar" CommandName="Editar" CausesValidation="false" CommandArgument='<%# Bind("mod_codigo")%>' runat="server"><i class="fa fa-pencil" ></i> Editar</asp:LinkButton>
                                             </ItemTemplate>
                                         
                                         </asp:TemplateField>
@@ -163,12 +163,9 @@
 
                 <asp:Label ID="Label3" Text="Descrição do Questionário" runat="server" CssClass="titulo"></asp:Label>
                 <br />
-                 <br />
-                <br />
+             
                 <p class="text-center ">
-                    <asp:Label ID="Descricao" runat="server" Text=""></asp:Label><br />
-                    
-
+                    <asp:Label ID="Descricao" runat="server" CssClass="textoCorrido"></asp:Label>
                 </p>
 
 

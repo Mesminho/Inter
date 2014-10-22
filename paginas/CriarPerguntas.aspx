@@ -85,7 +85,7 @@
     <br />
     <input type="button" value="Cancelar" class="btn-cancelar" onclick="cancelar()" />
     <asp:Button ID="btn_novo" runat="server" Text="Nova Questão" CssClass="botao" OnClick="btn_novo_Click" />
-    <span onclick="return confirm('Deseja Finalizar?')">
+    <span onclick="return confirm('Deseja finalizar a criação de perguntas?')">
         <asp:Button ID="btn_enviar" runat="server" Text="Finalizar" CssClass="botao" OnClick="btn_enviar_Click" />
     </span>
 </asp:Content>
