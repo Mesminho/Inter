@@ -128,13 +128,11 @@ public class Alt_alternativasDB
 
             while (objDatareader.Read())
             {
-
+                objAlternativas = new Alt_alternativas();
                 objAlternativas.CodigoAlternativa = Convert.ToInt32(objDatareader["alt_codigo"]);
-                string alt = objDatareader["alt_alternativa"].ToString();
-                double pes = Convert.ToDouble(objDatareader["alt_peso"]);
+                objAlternativas.AlternativaAlternativa = objDatareader["alt_alternativa"].ToString();
+                objAlternativas.PesoAlternativa = Convert.ToDouble(objDatareader["alt_peso"]);
                 objAlternativas.PerguntaCodigo = Convert.ToInt32(objDatareader["per_codigo"]);
-
-                objAlternativas = new Alt_alternativas(alt, pes);//por causa do construtor do Alt_alternativas
                
             }
             objDatareader.Close();

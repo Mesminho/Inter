@@ -18,7 +18,7 @@ public partial class paginas_ConfirmarQuestionario : System.Web.UI.Page
         btn_cancelar.Attributes.Add("onclick", "cancelar()");
         if (!IsPostBack)
         {
-            if (Convert.ToString(Session["Modelo"]) != "")
+            if (Convert.ToBoolean(Session["editar"]))
             {
 
                 btn_confirmar.Visible = false;
