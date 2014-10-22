@@ -29,6 +29,8 @@
     <asp:Button ID="btn_cancelar" runat="server" Text="Cancelar" OnClick="bnt_cancelar_Click" CssClass="btn-cancelar" />
     <span onclick="return confirm('Deseja finalizar a criação do questionário?')">
         <asp:Button ID="btn_confirmar" runat="server" Text="Confirmar" OnClick="bnt_confirmar_Click" CssClass="botao" />
-    </span>
+       <asp:Button ID="btn_atualizar" runat="server" Visible="false" Text="Atualizar" CssClass="botao" OnClick="btn_atualizar_Click"/>
+
+         </span>
 </asp:Content>
 
