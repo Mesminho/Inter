@@ -9,7 +9,7 @@ using System.Data;
 /// </summary>
 public class Clas_classificacoesDB
 {
-    public int Update(Clas_classificacoes classificacoes)
+    public static int Update(Clas_classificacoes classificacoes)
     {
         int retorno = 0;
         try

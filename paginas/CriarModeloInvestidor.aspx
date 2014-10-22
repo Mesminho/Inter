@@ -82,6 +82,6 @@
     <input type="button" value="Cancelar" class="btn-cancelar" onclick="cancelar()" />
 
     <asp:Button ID="btn_continuar" runat="server" Text="Continuar" CssClass="botao" OnClick="btn_continuar_Click" />
-    <asp:Button ID="btn_atualizar" runat="server" Visible="false" Text="Atualizar" CssClass="botao" OnClick="btn_atualizar_Click"/>
+    <asp:Button ID="btn_atualizar" runat="server" Visible="false" Text="Atualizar" CssClass="botao" />
 </asp:Content>
 

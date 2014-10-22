@@ -38,6 +38,7 @@ public partial class paginas_CriarPerguntaEmpresarial : System.Web.UI.Page
     protected void btn_enviar_Click(object sender, EventArgs e)
     {
         salvaQuestionario();
+        Session["editar"] = false;        
         Response.Redirect("ConfirmarModelo.aspx"); //Redireciona para confirmar o questionario
     }
 

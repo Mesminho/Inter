@@ -31,6 +31,7 @@ public partial class paginas_CriarPerguntaEd : System.Web.UI.Page
         //ClientScript.RegisterStartupScript(GetType(), "alerta1", script, false);
         
         salvaQuestionario();
+        Session["editar"] = false;
         Response.Redirect("ConfirmarModelo.aspx"); //Redireciona para confirmar o questionario
     }
 

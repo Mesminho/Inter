@@ -129,6 +129,8 @@ public partial class paginas_ConfigQuestionarios : System.Web.UI.Page
             int id = Convert.ToInt32(e.CommandArgument);
             Mod_modelos mod = Mod_modelosDB.Aplicar(id);
 
+            Session.Remove("modelo");
+
             if (mod != null)
             {
                 Session["modelo"] = mod;

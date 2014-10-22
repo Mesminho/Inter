@@ -84,33 +84,6 @@ public partial class paginas_CriarQuestionario : System.Web.UI.Page
         return txtPontuacaoConservador.Value != txtPontuacaoModerado.Value && txtPontuacaoConservador.Value != txtPontuacaoAgressivo.Value && txtPontuacaoModerado.Value != txtPontuacaoAgressivo.Value;
     }
 
-    protected void btn_atualizar_Click(object sender, EventArgs e)
-    {
-
-
-            Mod_modelos mod = (Mod_modelos)Session["EditarModelo"];
-            mod.NomeModelo = txb_nomeModelo.Value;
-            mod.DescricaoModelo = txt_descricao.InnerText;
-
-
-            Mod_modelosDB modDB = new Mod_modelosDB();
-            switch (modDB.Update(mod))
-            {
-                case -2:
-                    Label1.Text = "Erro ao editar";
-                    break;
-                case 0:
-                    ClientScript.RegisterStartupScript(GetType(), "alerta", "alert('Atualização realizada com sucesso!');", true);
-                    Label1.Text = "Atualização realizada";
-                    
-                    txb_nomeModelo.Value = string.Empty;
-                    txt_descricao.InnerText=string.Empty;
-                    
-                    btn_atualizar.Visible = false;
-                    btn_continuar.Visible = true;
-                    break;
-            }
-        }
-
+    
 
     }
