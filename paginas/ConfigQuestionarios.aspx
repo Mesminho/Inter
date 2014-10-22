@@ -88,7 +88,7 @@
                                     AlternatingRowStyle-CssClass="alt"
                                     CssClass="Grid"
                                     OnRowCommand="grvQ2_RowCommand"
-                                    AllowPaging="true" PageSize="5">
+                                    AllowPaging="true" PageSize="5" OnPageIndexChanging="grvQ2_PageIndexChanging">
                                     <Columns>
                                         <asp:BoundField DataField="mod_nome" HeaderText="Modelo do Questionário" />
                                         <asp:BoundField DataField="mod_descricao" HeaderText="Descrição" />

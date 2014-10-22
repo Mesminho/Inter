@@ -130,7 +130,6 @@ public class Per_perguntasDB
             while (objDatareader.Read())
             {
                 objPerguntas = new Per_perguntas();
-                //variavel alternativa
                 objPerguntas.CodigoPergunta = Convert.ToInt32(objDatareader["per_codigo"]);
                 objPerguntas.CodigoModelo = Convert.ToInt32(objDatareader["mod_ codigo"]);
                 objPerguntas.PerguntaPergunta = objDatareader["per_pergunta"].ToString();

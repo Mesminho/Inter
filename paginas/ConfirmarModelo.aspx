@@ -2,61 +2,79 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
     <style>
-        .div_modelo {
-        }
-
-        .classificacoes {
-        }
-
-        .questoes {
+        .principal {
         }
 
         aside {
             display: table;
-            float: right;
+            float: left;
             height: auto;
-            margin-bottom: 20px;
-            margin-left: 5px;
-            margin-top: 20px;
+            left: -50px;
+            margin-bottom: 25px;
+            margin-right: 100px;
+            margin-left: 10px;
+            margin-top: 25px;
+            padding-left: 15px;
+            border-left: 1px solid #000;
         }
 
         section {
-            height: auto;
+            float: left;
+            width: auto;
             display: table;
             margin-bottom: 20px;
-            margin-left: 5px;
-            margin-top: 20px;
+            margin-left: 20px;
+            margin-right: 100px;
+            margin-top: 25px;
         }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
-    <asp:Label ID="lbl_nomeModelo" runat="server" CssClass="titulo"></asp:Label>
+    <center>
+        <asp:Label ID="lbl_nomeModelo" runat="server" CssClass="titulo"></asp:Label>
+
+    </center>
     <hr />
-    <section>
-        <div runat="server" id="div_modelo" class="modelo">
-            <br />
-            <asp:Label ID="lbl_descricaoModelo" runat="server" CssClass="textoCorrido"></asp:Label>
-            <br />
-            <br />
-        </div>
 
-        <div runat="server" id="div_classificacoes" class="classificacao">
-        </div>
-    </section>
 
-    <aside>
-        <div runat="server" id="div_questoes" class="questoes">
-        </div>
-    </aside>
+    <div class="principal">
+        <section>
+            <div runat="server" id="div_modelo" class="modelo">
 
+                <asp:Label ID="lbl_desctitulo" runat="server" CssClass="texto" Text="Descrição"></asp:Label><br />
+                <asp:Label ID="lbl_descricaoModelo" runat="server" CssClass="textoCorrido"></asp:Label>
+                <br />
+                <br />
+            </div>
+        </section>
+        <aside>
+            <asp:Label ID="lbl_classModelo" runat="server" CssClass="texto" Text="Classificações"></asp:Label><br />
+            <br />
+            <div runat="server" id="div_classificacoes" class="classificacao">
+            </div>
+        </aside>
+
+        <aside>
+            <div runat="server" id="div_questoes" class="questoes">
+                <asp:Label ID="Label1" runat="server" CssClass="texto" Text="Questões"></asp:Label><br />
+                <aside runat="server" id="questoesDireita">
+                     
+                </aside>
+                <aside runat="server" id="questoesEsquerda">
+                     
+                </aside>
+                <br />
+            </div>
+        </aside>
+    </div>
     <br />
-
-    <asp:Button ID="btn_cancelar" runat="server" Text="Cancelar" OnClick="bnt_cancelar_Click" CssClass="btn-cancelar" />
-    <span onclick="return confirm('Deseja finalizar a criação do questionário?')">
-        <asp:Button ID="btn_confirmar" runat="server" Text="Confirmar" OnClick="bnt_confirmar_Click" CssClass="botao" />
-        <asp:Button ID="btn_atualizar" runat="server" Visible="false" Text="Atualizar" CssClass="botao" OnClick="btn_atualizar_Click" />
-
-    </span>
+    <div style="clear: both;">
+        <asp:Button ID="btn_cancelar" runat="server" Text="Cancelar" OnClick="bnt_cancelar_Click" CssClass="btn-cancelar" />
+        <span onclick="return confirm('Deseja finalizar a criação do questionário?')">
+            <asp:Button ID="btn_confirmar" runat="server" Text="Confirmar" OnClick="bnt_confirmar_Click" CssClass="botao" />
+            <asp:Button ID="btn_atualizar" runat="server" Visible="false" Text="Atualizar" CssClass="botao" OnClick="btn_atualizar_Click" />
+        </span>
+    </div>
 </asp:Content>
 

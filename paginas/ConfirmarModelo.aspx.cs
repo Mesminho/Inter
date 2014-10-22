@@ -18,7 +18,7 @@ public partial class paginas_ConfirmarQuestionario : System.Web.UI.Page
         btn_cancelar.Attributes.Add("onclick", "cancelar()");
         if (!IsPostBack)
         {
-            if (Convert.ToString(Session["Modelo"]) != "")
+            if (Convert.ToBoolean(Session["editar"]))
             {
 
                 btn_confirmar.Visible = false;
@@ -145,11 +145,7 @@ public partial class paginas_ConfirmarQuestionario : System.Web.UI.Page
 
         }
 
-        Label lblQuestoes = new Label();
-        lblQuestoes.Text = "Verifique abaixo todas as questões criadas para esse questionário:<br/><br/>";
-        lblQuestoes.CssClass = "texto";
-        div_questoes.Controls.Add(lblQuestoes);
-       
+        
 
         //Carregar questões
         for (int i = 0; i < modelo.Pergunta.Count; i++)

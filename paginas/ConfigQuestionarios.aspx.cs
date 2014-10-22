@@ -77,10 +77,10 @@ public partial class paginas_ConfigQuestionarios : System.Web.UI.Page
             Mod_modelos mod = new Mod_modelos();
             mod = Mod_modelosDB.Select(Convert.ToInt32(e.CommandArgument));
             Mod_modelosDB mod_db = new Mod_modelosDB();
-            if (mod.Habilitado.Equals("Habilitado"))
+            if (mod.AtivoModelo == true)
             {
-                
-                switch (mod_db.Desabilitar(mod))
+
+                switch (mod_db.Habilitar(mod, 0))
                 {
 
                     case -2:
@@ -93,9 +93,9 @@ public partial class paginas_ConfigQuestionarios : System.Web.UI.Page
                         break;
                 }
             }
-            if (mod.Habilitado.Equals("Desabilitado"))
+            else if (mod.AtivoModelo == false)
             {
-                switch (mod_db.Habilitar(mod))
+                switch (mod_db.Habilitar(mod, 1))
                 {
                     case -2:
                         ClientScript.RegisterStartupScript(GetType(), "alerta", "alert('Status não Alterado.');", true);
@@ -127,11 +127,12 @@ public partial class paginas_ConfigQuestionarios : System.Web.UI.Page
         if (e.CommandName == "Editar")
         {
             int id = Convert.ToInt32(e.CommandArgument);
-            Mod_modelos mod = Mod_modelosDB.Select(id);
+            Mod_modelos mod = Mod_modelosDB.Aplicar(id);
 
             if (mod != null)
             {
-                Session["Modelo"] = mod;
+                Session["modelo"] = mod;
+                Session["editar"] = true;
                 Response.Redirect("ConfirmarModelo.aspx");
             }
             else
@@ -141,5 +142,11 @@ public partial class paginas_ConfigQuestionarios : System.Web.UI.Page
 
         }
 
+    }
+    protected void grvQ2_PageIndexChanging(object sender, GridViewPageEventArgs e)
+    {
+        grvQ2.PageIndex = e.NewPageIndex;
+        CarregaGrid();
+        ModalInvestidor.Show();
     }
 }

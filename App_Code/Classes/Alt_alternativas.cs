@@ -19,6 +19,11 @@ public class Alt_alternativas
         this._pesoAlternativa = pontos;
     }
 
+    public Alt_alternativas()
+    {
+        
+    }
+
     public int PerguntaCodigo
     {
         get { return _perguntaCodigo; }
