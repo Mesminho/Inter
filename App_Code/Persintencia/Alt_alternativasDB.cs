@@ -9,7 +9,7 @@ using System.Data;
 /// </summary>
 public class Alt_alternativasDB
 {
-    public int Update(Alt_alternativas alternativas)
+    public static int Update(Alt_alternativas alternativas)
     {
         int retorno = 0; 
         try
@@ -24,7 +24,6 @@ public class Alt_alternativasDB
             objcommand.Parameters.Add(Mapped.Parameter("?alt_codigo", alternativas.CodigoAlternativa));
             objcommand.Parameters.Add(Mapped.Parameter("?alt_alternativa", alternativas.AlternativaAlternativa));
             objcommand.Parameters.Add(Mapped.Parameter("?alt_peso", alternativas.PesoAlternativa));
-            objcommand.Parameters.Add(Mapped.Parameter("?per_codigo", alternativas.PerguntaCodigo));
             objcommand.ExecuteNonQuery();
             objConexao.Close();
             objcommand.Dispose();

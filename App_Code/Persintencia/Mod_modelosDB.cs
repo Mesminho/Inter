@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Web;
 using System.Data;
 using System.Collections;
@@ -11,14 +10,14 @@ using System.Collections;
 public class Mod_modelosDB
 {
 
-    public int Update(Mod_modelos modelos)
+    public static int Update(Mod_modelos modelos)
     {
         int retorno = 0;
         try
         {
             IDbConnection objConexao;
             IDbCommand objcommand;
-            String sql = "CALL mod_update(?mod_codigo INTEGER, ?mod_nome, ?mod_descricao, ?mod_tipo)";
+            String sql = "CALL mod_update(?mod_codigo, ?mod_nome, ?mod_descricao, ?mod_tipo)";
 
             objConexao = Mapped.Connection();
             objcommand = Mapped.Command(sql, objConexao);
@@ -199,6 +198,10 @@ public class Mod_modelosDB
             Clas_classificacoes objClassificacoes = null;
             ArrayList alternativa = new ArrayList();
             ArrayList pergunta = new ArrayList();
+
+            string[] classificacao = null;
+            string[] classificacaoN = null;
+
             IDbConnection objConexao;
             IDbCommand objcommand;
             IDataReader objDatareader;
@@ -223,6 +226,9 @@ public class Mod_modelosDB
                 objClassificacoes.DescricaoClassificacao = objDatareader["cla_descricao"].ToString();
                 objClassificacoes.NomeClassificacao = objDatareader["cla_nome"].ToString();
 
+                classificacao = objDatareader["classificacao"].ToString().Split(',');
+
+
                 objPerguntas = new Per_perguntas();
                 objPerguntas.PerguntaPergunta = objDatareader["per_pergunta"].ToString();
                 objPerguntas.CodigoPergunta = Convert.ToInt32(objDatareader["per_codigo"]);
@@ -237,6 +243,7 @@ public class Mod_modelosDB
                 alternativa.Add(objAlternativas);
                 pergunta.Add(objPerguntas);
                 objModelos.Classificacoes.Add(objClassificacoes);
+
             }
 
             int perant = 0;
@@ -260,6 +267,17 @@ public class Mod_modelosDB
                 }
             }
 
+            for (int i2 = 0; i2 < classificacao.Length; i2++)
+            {
+                classificacaoN = classificacao[i2].Split('-');
+                objClassificacoes = new Clas_classificacoes();
+                objClassificacoes.CodigoClassificacao = Convert.ToInt32(classificacaoN[0]);
+                objClassificacoes.NomeClassificacao = classificacaoN[1];
+                objClassificacoes.DescricaoClassificacao = classificacaoN[2];
+                objClassificacoes.PontoClassificacao = Convert.ToDouble(classificacaoN[3]);
+                objModelos.Classificacoes.Add(objClassificacoes);
+            }
+
 
             objDatareader.Close();
             objConexao.Close();
@@ -274,6 +292,7 @@ public class Mod_modelosDB
         }
 
     }
+
 
 
 
@@ -306,6 +325,7 @@ public class Mod_modelosDB
     //    }
     //    return errNumber;
     //}
+
 
     public int Habilitar(Mod_modelos modelo, int habilitado)
     {

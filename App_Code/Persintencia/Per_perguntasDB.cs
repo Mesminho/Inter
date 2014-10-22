@@ -11,7 +11,7 @@ using System.Data;
 public class Per_perguntasDB
 {
 
-    public int Update(Per_perguntas perguntas)
+    public static int Update(Per_perguntas perguntas)
     {
         int retorno = 0;
         try
@@ -24,7 +24,7 @@ public class Per_perguntasDB
             objcommand = Mapped.Command(sql, objConexao);
             // variavel alternativa tambem?
             objcommand.Parameters.Add(Mapped.Parameter("?per_pergunta", perguntas.PerguntaPergunta));
-            objcommand.Parameters.Add(Mapped.Parameter("?mod_codigo", perguntas.CodigoModelo));
+            objcommand.Parameters.Add(Mapped.Parameter("?mod_codigo", perguntas.CodigoPergunta));
             
             objcommand.ExecuteNonQuery();
             objConexao.Close();

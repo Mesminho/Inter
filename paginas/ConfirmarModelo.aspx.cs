@@ -20,10 +20,13 @@ public partial class paginas_ConfirmarQuestionario : System.Web.UI.Page
         {
             if (Convert.ToBoolean(Session["editar"]))
             {
-
                 btn_confirmar.Visible = false;
                 btn_atualizar.Visible = true;
-
+            }
+            else
+            {
+                btn_confirmar.Visible = true;
+                btn_atualizar.Visible = false;
             }
         }
 
@@ -227,28 +230,45 @@ public partial class paginas_ConfirmarQuestionario : System.Web.UI.Page
     }
     protected void btn_atualizar_Click(object sender, EventArgs e)
     {
-        // Mod_modelos mod = (Mod_modelos)Session["EditarModelo"];
-        //    mod.NomeModelo = txb_nomeModelo.Value;
-        //    mod.DescricaoModelo = txt_descricao.InnerText;
+        string script;
 
+        int idModelo, idPergunta;
+        modelo = (Mod_modelos)Session["modelo"];
+        idModelo = Mod_modelosDB.Update(modelo);
+        
+        if (idModelo != -2)
+        {
+            for (int i = 0; i < modelo.Pergunta.Count; i++)
+            {
+                pergunta = (Per_perguntas)modelo.Pergunta[i];
+           
+                idPergunta = Per_perguntasDB.Update(pergunta);
+                for (int n = 0; n < pergunta.Alternativa.Count; n++)
+                {
+                    alternativa = (Alt_alternativas)pergunta.Alternativa[n];
+                
+                    Alt_alternativasDB.Update(alternativa);
+                }
+            }
+            for (int i = 0; i < modelo.Classificacoes.Count; i++)
+            {
+                Clas_classificacoes classificacao = new Clas_classificacoes();
+                Moc_modeloClassificacao moc = new Moc_modeloClassificacao();
+                classificacao = (Clas_classificacoes)modelo.Classificacoes[i];
+                classificacao.CodigoClassificacao = Clas_classificacoesDB.Update(classificacao);
+               
+            }
+            script = "<script language='javascript'>alert('USER Deleted Sucessfully');</script>";
+            ClientScript.RegisterStartupScript(GetType(), "alerta1", script, false);
+            //Page.ClientScript.RegisterClientScriptBlock(Page.GetType(), "alert", script); 
 
-        //    Mod_modelosDB modDB = new Mod_modelosDB();
-        //    switch (modDB.Update(mod))
-        //    {
-        //        case -2:
-        //            Label1.Text = "Erro ao editar";
-        //            break;
-        //        case 0:
-        //            ClientScript.RegisterStartupScript(GetType(), "alerta", "alert('Atualização realizada com sucesso!');", true);
-        //            Label1.Text = "Atualização realizada";
-
-        //            txb_nomeModelo.Value = string.Empty;
-        //            txt_descricao.InnerText=string.Empty;
-
-        //            btn_atualizar.Visible = false;
-        //            btn_continuar.Visible = true;
-        //            break;
-        //    }
-        //}
+        }
+        else
+        {
+            script = "<script language='javascript'>alert('USER Deleted Sucessfully');</script>";
+            ClientScript.RegisterStartupScript(GetType(), "alerta2", script, false);
+            //Page.ClientScript.RegisterClientScriptBlock(Page.GetType(), "alert", script); 
+        }
+        Response.Redirect("home.aspx");
     }
 }
