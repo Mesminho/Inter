@@ -78,6 +78,12 @@ public partial class paginas_ConfirmarQuestionario : System.Web.UI.Page
         Response.Redirect("Home.aspx");
     }
 
+    public static String TextoComQuebraDeLinha(string texto)
+    {
+        var text = string.Join("<br/>", texto.Split(new[] { Environment.NewLine }, StringSplitOptions.None).Select(x => HttpUtility.HtmlEncode(x)));
+        return text;
+    }
+
     private void carregaModelo()
     {
         modelo = (Mod_modelos)Session["modelo"]; //Istancia o obj questionario passando a sessao
@@ -85,7 +91,9 @@ public partial class paginas_ConfirmarQuestionario : System.Web.UI.Page
         Button btn_modificarModelo = new Button();
 
         lbl_nomeModelo.Text = modelo.NomeModelo;
-        lbl_descricaoModelo.Text = modelo.DescricaoModelo;
+        txa_descricaoModelo.Value = modelo.DescricaoModelo;
+     
+        
 
         btn_modificarModelo.CommandName = "Modificar";
         btn_modificarModelo.Text = "Modificar";
@@ -128,9 +136,9 @@ public partial class paginas_ConfirmarQuestionario : System.Web.UI.Page
             btn_excluir.Text = "Excluir";
             btn_excluir.CommandArgument = i.ToString();
 
-            lbl_titulo.Text = ""+classicacao.NomeClassificacao;
-            lbl_descricao.Text = "Descrição: "+classicacao.DescricaoClassificacao;
-            lbl_ponto.Text = "Pontuação Máxima: "+classicacao.PontoClassificacao.ToString();
+            lbl_titulo.Text = "" + classicacao.NomeClassificacao;
+            lbl_descricao.Text = "Descrição: " + TextoComQuebraDeLinha(classicacao.DescricaoClassificacao);
+            lbl_ponto.Text = "Pontuação Máxima: " + classicacao.PontoClassificacao.ToString();
             //css
             lbl_titulo.CssClass = "tituloQuestao";
             lbl_descricao.CssClass = "textoCorrido";
@@ -148,7 +156,7 @@ public partial class paginas_ConfirmarQuestionario : System.Web.UI.Page
 
         }
 
-        
+
 
         //Carregar questões
         for (int i = 0; i < modelo.Pergunta.Count; i++)
@@ -235,18 +243,18 @@ public partial class paginas_ConfirmarQuestionario : System.Web.UI.Page
         int idModelo, idPergunta;
         modelo = (Mod_modelos)Session["modelo"];
         idModelo = Mod_modelosDB.Update(modelo);
-        
+
         if (idModelo != -2)
         {
             for (int i = 0; i < modelo.Pergunta.Count; i++)
             {
                 pergunta = (Per_perguntas)modelo.Pergunta[i];
-           
+
                 idPergunta = Per_perguntasDB.Update(pergunta);
                 for (int n = 0; n < pergunta.Alternativa.Count; n++)
                 {
                     alternativa = (Alt_alternativas)pergunta.Alternativa[n];
-                
+
                     Alt_alternativasDB.Update(alternativa);
                 }
             }
@@ -256,7 +264,7 @@ public partial class paginas_ConfirmarQuestionario : System.Web.UI.Page
                 Moc_modeloClassificacao moc = new Moc_modeloClassificacao();
                 classificacao = (Clas_classificacoes)modelo.Classificacoes[i];
                 classificacao.CodigoClassificacao = Clas_classificacoesDB.Update(classificacao);
-               
+
             }
             script = "<script language='javascript'>alert('USER Deleted Sucessfully');</script>";
             ClientScript.RegisterStartupScript(GetType(), "alerta1", script, false);

@@ -24,7 +24,7 @@
             display: table;
             margin-bottom: 20px;
             margin-left: 20px;
-            margin-right: 100px;
+            margin-right: 10px;
             margin-top: 25px;
         }
     </style>
@@ -43,7 +43,8 @@
             <div runat="server" id="div_modelo" class="modelo">
 
                 <asp:Label ID="lbl_desctitulo" runat="server" CssClass="texto" Text="Descrição"></asp:Label><br />
-                <asp:Label ID="lbl_descricaoModelo" runat="server" CssClass="textoCorrido"></asp:Label>
+                <textarea id="txa_descricaoModelo" runat="server" cols="20" rows="20" enableviewstate="false" class="txtArea"></textarea>
+               
                 <br />
                 <br />
             </div>

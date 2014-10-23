@@ -23,7 +23,7 @@
 
             </td>
             <td>
-                <textarea id="txt_descricao" cols="20" name="S1" rows="1" class="txtArea" runat="server"></textarea></td>
+                <textarea id="txt_descricao" cols="20" name="S1" rows="20" class="txtArea" runat="server" wrap="hard"></textarea></td>
         </tr>
     </table>
 
