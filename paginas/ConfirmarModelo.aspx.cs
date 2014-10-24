@@ -28,7 +28,13 @@ public partial class paginas_ConfirmarQuestionario : System.Web.UI.Page
                 btn_confirmar.Visible = true;
                 btn_atualizar.Visible = false;
             }
+
+            if (modelo.Classificacoes.Count == 0)
+            {
+                aside_classificacoes.Visible = false;
+            }
         }
+        
 
     }
 
@@ -54,6 +60,7 @@ public partial class paginas_ConfirmarQuestionario : System.Web.UI.Page
                     Alt_alternativasDB.Insert(alternativa);
                 }
             }
+            
             for (int i = 0; i < modelo.Classificacoes.Count; i++)
             {
                 Clas_classificacoes classificacao = new Clas_classificacoes();
