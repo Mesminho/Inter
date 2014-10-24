@@ -91,7 +91,7 @@ public partial class paginas_ConfirmarQuestionario : System.Web.UI.Page
         Button btn_modificarModelo = new Button();
 
         lbl_nomeModelo.Text = modelo.NomeModelo;
-        txa_descricaoModelo.Value = modelo.DescricaoModelo;
+        txa_descricaoModelo.Text = modelo.DescricaoModelo;
      
         
 
@@ -107,8 +107,15 @@ public partial class paginas_ConfirmarQuestionario : System.Web.UI.Page
         {
             Clas_classificacoes classicacao = (Clas_classificacoes)modelo.Classificacoes[i];
             Label lbl_titulo = new Label();
-            Label lbl_descricao = new Label();
+            //Label lbl_descricao = new Label();
             Label lbl_ponto = new Label();
+
+            TextBox txa_descricao = new TextBox();
+            txa_descricao.TextMode = TextBoxMode.MultiLine;
+            txa_descricao.Enabled = false;
+           
+           
+
 
             Label lbl_espaco = new Label();
             Label lbl_espaco2 = new Label();
@@ -125,6 +132,8 @@ public partial class paginas_ConfirmarQuestionario : System.Web.UI.Page
             Button btn_modificar = new Button();
             Button btn_excluir = new Button();
 
+            
+
             btn_modificar.CommandName = "Modificar";
             btn_modificar.Text = "Modificar";
             btn_modificar.CssClass = "botao";
@@ -137,16 +146,20 @@ public partial class paginas_ConfirmarQuestionario : System.Web.UI.Page
             btn_excluir.CommandArgument = i.ToString();
 
             lbl_titulo.Text = "" + classicacao.NomeClassificacao;
-            lbl_descricao.Text = "Descrição: " + TextoComQuebraDeLinha(classicacao.DescricaoClassificacao);
+            //lbl_descricao.Text = "Descrição: <br/>";
+            txa_descricao.Text = classicacao.DescricaoClassificacao;
             lbl_ponto.Text = "Pontuação Máxima: " + classicacao.PontoClassificacao.ToString();
             //css
             lbl_titulo.CssClass = "tituloQuestao";
-            lbl_descricao.CssClass = "textoCorrido";
+            //lbl_descricao.CssClass = "textoCorrido";
+            txa_descricao.CssClass = "txtArea";
             lbl_ponto.CssClass = "textoCorrido";
 
             div_classificacoes.Controls.Add(lbl_titulo);
             div_classificacoes.Controls.Add(lbl_espaco2);
-            div_classificacoes.Controls.Add(lbl_descricao);
+            //div_classificacoes.Controls.Add(lbl_descricao);
+           
+            div_classificacoes.Controls.Add(txa_descricao);
             div_classificacoes.Controls.Add(lbl_espaco3);
             div_classificacoes.Controls.Add(lbl_ponto);
             div_classificacoes.Controls.Add(lbl_espaco4);

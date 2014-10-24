@@ -41,10 +41,8 @@
     <div class="principal">
         <section>
             <div runat="server" id="div_modelo" class="modelo">
-
                 <asp:Label ID="lbl_desctitulo" runat="server" CssClass="texto" Text="Descrição"></asp:Label><br />
-                <textarea id="txa_descricaoModelo" runat="server" cols="20" rows="20" enableviewstate="false" class="txtArea"></textarea>
-               
+                <asp:TextBox ID="txa_descricaoModelo" CssClass="txtArea" Enabled="false" TextMode="MultiLine" Columns="10" Rows="15" runat="server" />
                 <br />
                 <br />
             </div>
@@ -60,10 +58,8 @@
             <div runat="server" id="div_questoes" class="questoes">
                 <asp:Label ID="Label1" runat="server" CssClass="texto" Text="Questões"></asp:Label><br />
                 <aside runat="server" id="questoesDireita">
-                     
                 </aside>
                 <aside runat="server" id="questoesEsquerda">
-                     
                 </aside>
                 <br />
             </div>
