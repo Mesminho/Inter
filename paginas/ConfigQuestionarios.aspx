@@ -57,26 +57,26 @@
                                     <Columns>
                                         <asp:BoundField DataField="mod_nome" HeaderText="Modelo do Questionário" />
                                         <asp:BoundField DataField="habilitado" HeaderText="Status" />
-                                        
+
                                         <asp:TemplateField HeaderText="Status">
                                             <ItemTemplate>
                                                 <asp:LinkButton ID="lbAlterar" CommandName="Alterar" CausesValidation="false" CommandArgument='<%# Bind("mod_codigo")%>' runat="server"><i class="fa fa-refresh" ></i> Alterar</asp:LinkButton>
                                             </ItemTemplate>
-                                        
+
                                         </asp:TemplateField>
 
                                         <asp:TemplateField HeaderText="Descrição">
                                             <ItemTemplate>
                                                 <asp:LinkButton ID="lbVisualizar" CommandName="Visualizar" CausesValidation="false" CommandArgument='<%# Bind("mod_codigo")%>' runat="server"><i class="fa fa-search" ></i> Visualizar</asp:LinkButton>
                                             </ItemTemplate>
-                                        
+
                                         </asp:TemplateField>
                                     </Columns>
 
                                 </asp:GridView>
                                 <br />
                                 <asp:Label ID="lblTotal" runat="server" CssClass="newStyle2" Visible="false"></asp:Label>
-                                <asp:Button ID="Teste" CssClass="botao" runat="server" visible="false" Text="Button" OnClick="btn_falso_Click" />
+                                <asp:Button ID="Teste" CssClass="botao" runat="server" Visible="false" Text="Button" OnClick="btn_falso_Click" />
                             </Content>
                         </asp:AccordionPane>
                         <asp:AccordionPane ID="AccordionPane1" runat="server">
@@ -91,17 +91,16 @@
                                     AllowPaging="true" PageSize="5" OnPageIndexChanging="grvQ2_PageIndexChanging">
                                     <Columns>
                                         <asp:BoundField DataField="mod_nome" HeaderText="Modelo do Questionário" />
-                                        <asp:BoundField DataField="mod_descricao" HeaderText="Descrição" />
-                                         <asp:TemplateField HeaderText="Descrição">
+                                        <asp:TemplateField HeaderText="Descrição">
                                             <ItemTemplate>
                                                 <asp:LinkButton ID="lbVisualizar" CommandName="Visualizar" CausesValidation="false" CommandArgument='<%# Bind("mod_codigo")%>' runat="server"><i class="fa fa-search"></i> Visualizar</asp:LinkButton>
                                             </ItemTemplate>
                                         </asp:TemplateField>
                                         <asp:TemplateField HeaderText="Modificar">
-                                         <ItemTemplate>
+                                            <ItemTemplate>
                                                 <asp:LinkButton ID="lbEditar" CommandName="Editar" CausesValidation="false" CommandArgument='<%# Bind("mod_codigo")%>' runat="server"><i class="fa fa-pencil" ></i> Editar</asp:LinkButton>
                                             </ItemTemplate>
-                                        
+
                                         </asp:TemplateField>
                                     </Columns>
                                 </asp:GridView>
@@ -124,7 +123,7 @@
             </asp:ModalPopupExtender>
 
             <asp:Panel ID="PanelEducacao" runat="server" CssClass="pnl">
-                <button runat="server" id="btnFechar2" class="fechar" title="fechar" >
+                <button runat="server" id="btnFechar2" class="fechar" title="fechar">
                     <i class="fa fa-times"></i>
                 </button>
                 <asp:Label ID="lblEd" Text="Configuração dos questionários - Educação Financeira" runat="server" CssClass="titulo"></asp:Label>
@@ -163,7 +162,7 @@
 
                 <asp:Label ID="Label3" Text="Descrição do Questionário" runat="server" CssClass="titulo"></asp:Label>
                 <br />
-             
+
                 <p class="text-center ">
                     <asp:Label ID="Descricao" runat="server" CssClass="textoCorrido"></asp:Label>
                 </p>

@@ -41,7 +41,8 @@
     <div class="principal">
         <section>
             <div runat="server" id="div_modelo" class="modelo">
-                <asp:Label ID="lbl_desctitulo" runat="server" CssClass="texto" Text="Descrição"></asp:Label><br />
+                <asp:Label ID="lbl_desctitulo" runat="server" CssClass="texto" Text="Descrição do Modelo"></asp:Label><br />
+                <br />
                 <asp:TextBox ID="txa_descricaoModelo" CssClass="txtArea" Enabled="false" TextMode="MultiLine" Columns="10" Rows="15" runat="server" />
                 <br />
                 <br />

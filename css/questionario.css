@@ -209,7 +209,7 @@ div#config p {
     background-color: White;
     padding: 20px;
     border-radius: 2px 2px;
-    box-shadow: 9px 9px 33px -4px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 21px 0px rgba(0, 0, 0, 0.57);
     transition-delay: 0.1s;
 }
 
