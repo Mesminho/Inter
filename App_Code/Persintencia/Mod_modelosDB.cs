@@ -220,11 +220,6 @@ public class Mod_modelosDB
                 objModelos.AtivoModelo = Convert.ToBoolean(objDatareader["mod_habilitado"]);
                 objModelos.EditarModelo = Convert.ToBoolean(objDatareader["mod_editar"]);
 
-                objClassificacoes = new Clas_classificacoes();
-                objClassificacoes.CodigoClassificacao = Convert.ToInt32(objDatareader["cla_codigo"]);
-                objClassificacoes.PontoClassificacao = Convert.ToDouble(objDatareader["cla_pontosMax"]);
-                objClassificacoes.DescricaoClassificacao = objDatareader["cla_descricao"].ToString();
-                objClassificacoes.NomeClassificacao = objDatareader["cla_nome"].ToString();
 
                 classificacao = objDatareader["classificacao"].ToString().Split(',');
 
@@ -242,8 +237,6 @@ public class Mod_modelosDB
 
                 alternativa.Add(objAlternativas);
                 pergunta.Add(objPerguntas);
-                objModelos.Classificacoes.Add(objClassificacoes);
-
             }
 
             int perant = 0;
@@ -292,39 +285,6 @@ public class Mod_modelosDB
         }
 
     }
-
-
-
-
-
-
-
-    //public int Desabilitar(Mod_modelos modelo)
-    //{
-    //    int errNumber = 0;
-    //    try
-    //    {
-    //        IDbConnection objConexao;
-    //        IDbCommand objCommand;
-    //        string sql = "UPDATE mod_modelos SET ";
-    //        sql += "mod_habilitado = ?mod_habilitado ";
-    //        sql += "WHERE mod_codigo = ?mod_codigo";
-    //        objConexao = Mapped.Connection();
-    //        objCommand = Mapped.Command(sql, objConexao);
-
-    //        objCommand.Parameters.Add(Mapped.Parameter("?mod_habilitado", 0));
-    //        objCommand.Parameters.Add(Mapped.Parameter("?mod_codigo", modelo.CodigoModelo));
-    //        objCommand.ExecuteNonQuery();
-    //        objConexao.Close();
-    //        objCommand.Dispose();
-    //        objConexao.Dispose();
-    //    }
-    //    catch (Exception ex)
-    //    {
-    //        errNumber = -2;
-    //    }
-    //    return errNumber;
-    //}
 
 
     public int Habilitar(Mod_modelos modelo, int habilitado)
