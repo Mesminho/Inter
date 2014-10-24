@@ -99,8 +99,8 @@ public partial class paginas_ConfirmarQuestionario : System.Web.UI.Page
 
         lbl_nomeModelo.Text = modelo.NomeModelo;
         txa_descricaoModelo.Text = modelo.DescricaoModelo;
-     
-        
+
+
 
         btn_modificarModelo.CommandName = "Modificar";
         btn_modificarModelo.Text = "Modificar";
@@ -120,8 +120,8 @@ public partial class paginas_ConfirmarQuestionario : System.Web.UI.Page
             TextBox txa_descricao = new TextBox();
             txa_descricao.TextMode = TextBoxMode.MultiLine;
             txa_descricao.Enabled = false;
-           
-           
+
+
 
 
             Label lbl_espaco = new Label();
@@ -139,7 +139,7 @@ public partial class paginas_ConfirmarQuestionario : System.Web.UI.Page
             Button btn_modificar = new Button();
             Button btn_excluir = new Button();
 
-            
+
 
             btn_modificar.CommandName = "Modificar";
             btn_modificar.Text = "Modificar";
@@ -151,6 +151,7 @@ public partial class paginas_ConfirmarQuestionario : System.Web.UI.Page
             btn_excluir.CssClass = "btn-cancelar";
             btn_excluir.Text = "Excluir";
             btn_excluir.CommandArgument = i.ToString();
+            btn_excluir.Click += btn_excluir_classificacao;
 
             lbl_titulo.Text = "" + classicacao.NomeClassificacao;
             //lbl_descricao.Text = "Descrição: <br/>";
@@ -165,7 +166,7 @@ public partial class paginas_ConfirmarQuestionario : System.Web.UI.Page
             div_classificacoes.Controls.Add(lbl_titulo);
             div_classificacoes.Controls.Add(lbl_espaco2);
             //div_classificacoes.Controls.Add(lbl_descricao);
-           
+
             div_classificacoes.Controls.Add(txa_descricao);
             div_classificacoes.Controls.Add(lbl_espaco3);
             div_classificacoes.Controls.Add(lbl_ponto);
@@ -210,6 +211,8 @@ public partial class paginas_ConfirmarQuestionario : System.Web.UI.Page
             btn_excluir.CommandName = "Excluir";
             btn_excluir.CssClass = "btn-cancelar";
             btn_excluir.Text = "Excluir";
+            btn_excluir.CommandArgument = i.ToString();
+            btn_excluir.Click += btn_excluir_questao;
 
             //titulo da questão
             lbl_pergunta.Text = pergunta.PerguntaPergunta;
@@ -221,14 +224,40 @@ public partial class paginas_ConfirmarQuestionario : System.Web.UI.Page
                 rbl_alternativa.Items.Add(alternativa.AlternativaAlternativa + "; Peso: " + alternativa.PesoAlternativa);
             }
 
-            div_questoes.Controls.Add(lbl_pergunta);
-            div_questoes.Controls.Add(rbl_alternativa);
-            div_questoes.Controls.Add(lbl_espaco2);
-            div_questoes.Controls.Add(btn_excluir);
-            div_questoes.Controls.Add(btn_modificar);
-            div_questoes.Controls.Add(lbl_espaco);
+            if (i % 2 != 0)
+            {
+
+                questoesEsquerda.Controls.Add(lbl_pergunta);
+                questoesEsquerda.Controls.Add(rbl_alternativa);
+                questoesEsquerda.Controls.Add(lbl_espaco2);
+                questoesEsquerda.Controls.Add(btn_excluir);
+                questoesEsquerda.Controls.Add(btn_modificar);
+                questoesEsquerda.Controls.Add(lbl_espaco);
+            }
+            else
+            {
+                questoesDireita.Controls.Add(lbl_pergunta);
+                questoesDireita.Controls.Add(rbl_alternativa);
+                questoesDireita.Controls.Add(lbl_espaco2);
+                questoesDireita.Controls.Add(btn_excluir);
+                questoesDireita.Controls.Add(btn_modificar);
+                questoesDireita.Controls.Add(lbl_espaco);
+            }
 
         }
+    }
+
+    void btn_excluir_questao(object sender, EventArgs e)
+    {
+        Button btn_excluir = (Button)sender;
+        modelo.Pergunta.RemoveAt(Convert.ToInt32(btn_excluir.CommandArgument));
+
+    }
+
+    void btn_excluir_classificacao(object sender, EventArgs e)
+    {
+        Button btn_excluir = (Button)sender;
+        modelo.Classificacoes.RemoveAt(Convert.ToInt32(btn_excluir.CommandArgument));
     }
 
     void btn_modificar_Click(object sender, EventArgs e)
