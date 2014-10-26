@@ -17,7 +17,7 @@
                 <asp:Label ID="lbl_nomeQuestao" runat="server" Text="Título da Questão: " CssClass="texto"></asp:Label>
             </td>
             <td>
-                <input type="text" required="" itemid="txb_nomePergunta" id="txb_nomePergunta" runat="server" style="width: 300px;" />
+                <input type="text" required="" itemid="txb_nomePergunta" id="txb_nomePergunta" runat="server" style="width: 360px;" />
                 <asp:RequiredFieldValidator ID="rfvTitulo" runat="server" ControlToValidate="txb_nomePergunta" ErrorMessage=""></asp:RequiredFieldValidator>
             </td>
         </tr>

@@ -6,13 +6,12 @@
         }
 
         aside {
-            display: table;
             float: left;
             height: auto;
             left: -50px;
             margin-bottom: 25px;
-            margin-right: 100px;
-            margin-left: 10px;
+            margin-right: 5px;
+            margin-left: 15px;
             margin-top: 25px;
             padding-left: 15px;
             border-left: 1px solid #000;
@@ -31,10 +30,9 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
-    <center>
+    <div style="display: block; text-align: -webkit-center">
         <asp:Label ID="lbl_nomeModelo" runat="server" CssClass="titulo"></asp:Label>
-
-    </center>
+    </div>
     <hr />
 
 
@@ -43,7 +41,7 @@
             <div runat="server" id="div_modelo" class="modelo">
                 <asp:Label ID="lbl_desctitulo" runat="server" CssClass="texto" Text="Descrição do Modelo"></asp:Label><br />
                 <br />
-                <asp:TextBox ID="txa_descricaoModelo" CssClass="txtArea" Enabled="false" TextMode="MultiLine" Columns="10" Rows="15" runat="server" />
+                <asp:TextBox ID="txa_descricaoModelo" CssClass="txtArea" Enabled="false" TextMode="MultiLine" Width="200" runat="server" />
                 <br />
                 <br />
             </div>
@@ -58,9 +56,9 @@
         <aside>
             <div runat="server" id="div_questoes" class="questoes">
                 <asp:Label ID="Label1" runat="server" CssClass="texto" Text="Questões"></asp:Label><br />
-                <aside runat="server" id="questoesDireita">
-                </aside>
                 <aside runat="server" id="questoesEsquerda">
+                </aside>
+                <aside runat="server" id="questoesDireita" style="float: none">
                 </aside>
                 <br />
             </div>

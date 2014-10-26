@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Data;
 using System.Web.UI.WebControls;
+using System.Text;
 
 /// <summary>
 /// Summary description for Function
@@ -50,5 +51,52 @@ namespace FuncoesBasicas
                 ddl.Items.Insert(0, new ListItem("Selecione", "0"));
             }
         }
+
+        public static String TextoComQuebraDeLinha(string texto)
+        {
+            var text = string.Join("<br/>", texto.Split(new[] { Environment.NewLine }, StringSplitOptions.None).Select(x => HttpUtility.HtmlEncode(x)));
+            return text;
+        }
+
+        public static string DiminuirTexto(string texto, int max)
+        {
+            if (texto.Length <= max)
+            {
+                return texto;
+            }
+            else
+            {
+                return texto.Substring(0, max) + "...";
+            }
+        }
+
+        public static string QuebrarLinha(string texto, int max)
+        {
+            StringBuilder sbTexto = new StringBuilder(texto);
+            int espaco;
+
+            if (texto.Length <= max)
+            {
+
+                return texto;
+            }
+            else
+            {
+               
+                for (int i = 1; i<=texto.Length/max; i++ )
+                {
+                    espaco = texto.LastIndexOf(" ", max*i);
+                    if (espaco > 0)
+                    {
+                        sbTexto.Insert(espaco, "<br/>");                       
+                    }
+                    
+                }
+
+                texto = sbTexto.ToString();
+                return texto;
+            }
+        }
+
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FuncoesBasicas;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,13 +30,19 @@ public partial class paginas_ConfirmarQuestionario : System.Web.UI.Page
                 btn_atualizar.Visible = false;
             }
 
-            if (modelo.Classificacoes.Count == 0)
+            if (isEmpresarial())
             {
                 aside_classificacoes.Visible = false;
+                questoesDireita.Style["float"] = "left";
             }
         }
-        
 
+
+    }
+
+    public bool isEmpresarial()
+    {
+        return modelo.Classificacoes.Count == 0;
     }
 
     protected void bnt_confirmar_Click(object sender, EventArgs e)
@@ -60,7 +67,7 @@ public partial class paginas_ConfirmarQuestionario : System.Web.UI.Page
                     Alt_alternativasDB.Insert(alternativa);
                 }
             }
-            
+
             for (int i = 0; i < modelo.Classificacoes.Count; i++)
             {
                 Clas_classificacoes classificacao = new Clas_classificacoes();
@@ -85,11 +92,6 @@ public partial class paginas_ConfirmarQuestionario : System.Web.UI.Page
         Response.Redirect("Home.aspx");
     }
 
-    public static String TextoComQuebraDeLinha(string texto)
-    {
-        var text = string.Join("<br/>", texto.Split(new[] { Environment.NewLine }, StringSplitOptions.None).Select(x => HttpUtility.HtmlEncode(x)));
-        return text;
-    }
 
     private void carregaModelo()
     {
@@ -120,8 +122,8 @@ public partial class paginas_ConfirmarQuestionario : System.Web.UI.Page
             TextBox txa_descricao = new TextBox();
             txa_descricao.TextMode = TextBoxMode.MultiLine;
             txa_descricao.Enabled = false;
-
-
+            txa_descricao.Width = 200;
+            txa_descricao.Height = 120;
 
 
             Label lbl_espaco = new Label();
@@ -153,7 +155,7 @@ public partial class paginas_ConfirmarQuestionario : System.Web.UI.Page
             btn_excluir.CommandArgument = i.ToString();
             btn_excluir.Click += btn_excluir_classificacao;
 
-            lbl_titulo.Text = "" + classicacao.NomeClassificacao;
+            lbl_titulo.Text = classicacao.NomeClassificacao;
             //lbl_descricao.Text = "Descrição: <br/>";
             txa_descricao.Text = classicacao.DescricaoClassificacao;
             lbl_ponto.Text = "Pontuação Máxima: " + classicacao.PontoClassificacao.ToString();
@@ -215,7 +217,12 @@ public partial class paginas_ConfirmarQuestionario : System.Web.UI.Page
             btn_excluir.Click += btn_excluir_questao;
 
             //titulo da questão
-            lbl_pergunta.Text = pergunta.PerguntaPergunta;
+            if (isEmpresarial())
+            {
+                lbl_pergunta.Text = Function.QuebrarLinha(pergunta.PerguntaPergunta, 58);
+            }else
+                lbl_pergunta.Text = Function.QuebrarLinha(pergunta.PerguntaPergunta, 72);
+           
             lbl_pergunta.CssClass = "tituloQuestao";
 
             for (int n = 0; n < pergunta.Alternativa.Count; n++)
@@ -226,22 +233,23 @@ public partial class paginas_ConfirmarQuestionario : System.Web.UI.Page
 
             if (i % 2 != 0)
             {
-
-                questoesEsquerda.Controls.Add(lbl_pergunta);
-                questoesEsquerda.Controls.Add(rbl_alternativa);
-                questoesEsquerda.Controls.Add(lbl_espaco2);
-                questoesEsquerda.Controls.Add(btn_excluir);
-                questoesEsquerda.Controls.Add(btn_modificar);
-                questoesEsquerda.Controls.Add(lbl_espaco);
-            }
-            else
-            {
                 questoesDireita.Controls.Add(lbl_pergunta);
                 questoesDireita.Controls.Add(rbl_alternativa);
                 questoesDireita.Controls.Add(lbl_espaco2);
                 questoesDireita.Controls.Add(btn_excluir);
                 questoesDireita.Controls.Add(btn_modificar);
                 questoesDireita.Controls.Add(lbl_espaco);
+
+            }
+            else
+            {
+                questoesEsquerda.Controls.Add(lbl_pergunta);
+                questoesEsquerda.Controls.Add(rbl_alternativa);
+                questoesEsquerda.Controls.Add(lbl_espaco2);
+                questoesEsquerda.Controls.Add(btn_excluir);
+                questoesEsquerda.Controls.Add(btn_modificar);
+                questoesEsquerda.Controls.Add(lbl_espaco);
+
             }
 
         }
