@@ -20,6 +20,12 @@ public class Mod_modelos
     int _eventoCodigo;
     string _descricaoModelo;
 
+
+    public bool isEmpresarial()
+    {
+        return TipoModelo == 3;
+    }
+
     public string Habilitado
     {
         get { return _habilitado; }

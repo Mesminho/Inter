@@ -30,7 +30,7 @@ public partial class paginas_ConfirmarQuestionario : System.Web.UI.Page
                 btn_atualizar.Visible = false;
             }
 
-            if (isEmpresarial())
+            if (modelo.isEmpresarial())
             {
                 aside_classificacoes.Visible = false;
                 questoesDireita.Style["float"] = "left";
@@ -40,10 +40,6 @@ public partial class paginas_ConfirmarQuestionario : System.Web.UI.Page
 
     }
 
-    public bool isEmpresarial()
-    {
-        return modelo.Classificacoes.Count == 0;
-    }
 
     protected void bnt_confirmar_Click(object sender, EventArgs e)
     {
@@ -217,18 +213,25 @@ public partial class paginas_ConfirmarQuestionario : System.Web.UI.Page
             btn_excluir.Click += btn_excluir_questao;
 
             //titulo da questão
-            if (isEmpresarial())
+            if (modelo.isEmpresarial())
             {
                 lbl_pergunta.Text = Function.QuebrarLinha(pergunta.PerguntaPergunta, 58);
-            }else
-                lbl_pergunta.Text = Function.QuebrarLinha(pergunta.PerguntaPergunta, 72);
-           
+            }
+            else
+                lbl_pergunta.Text = Function.QuebrarLinha(pergunta.PerguntaPergunta, 70);
+
             lbl_pergunta.CssClass = "tituloQuestao";
 
             for (int n = 0; n < pergunta.Alternativa.Count; n++)
             {
                 alternativa = (Alt_alternativas)pergunta.Alternativa[n];
-                rbl_alternativa.Items.Add(alternativa.AlternativaAlternativa + "; Peso: " + alternativa.PesoAlternativa);
+                if (modelo.isEmpresarial())
+                {
+                    rbl_alternativa.Items.Add(alternativa.AlternativaAlternativa);                
+                   
+                }
+                else
+                    rbl_alternativa.Items.Add(alternativa.AlternativaAlternativa + "; Peso: " + alternativa.PesoAlternativa);
             }
 
             if (i % 2 != 0)

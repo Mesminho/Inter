@@ -146,27 +146,66 @@ public partial class paginas_ModificarPergunta : System.Web.UI.Page
 
     private void validarEmpresarial()
     {
-        if (txb_pontos1.Text == "0")
+        if (modelo.isEmpresarial())
         {
+            if (pergunta.Discertativa)
+            {
+                lbl_alter1.Visible = false;
+                txb_alter1.Enabled = false;
+                txb_alter1.Visible = false;
+
+                lbl_alter2.Visible = false;
+                txb_alter2.Enabled = false;
+                txb_alter2.Visible = false;
+
+                lbl_alter3.Visible = false;
+                txb_alter3.Enabled = false;
+                txb_alter3.Visible = false;
+
+                lbl_alter4.Visible = false;
+                txb_alter4.Enabled = false;
+                txb_alter4.Visible = false;
+
+                lbl_alter5.Visible = false;
+                txb_alter5.Enabled = false;
+                txb_alter5.Visible = false;
+
+                lbl_alter6.Visible = false;
+                txb_alter6.Enabled = false;
+                txb_alter6.Visible = false;
+
+                lbl_alter7.Visible = false;
+                txb_alter7.Enabled = false;
+                txb_alter7.Visible = false;
+
+            }
+           
             lbl_pontos1.Visible = false;
+            txb_pontos1.Enabled = false;
             txb_pontos1.Visible = false;
 
             lbl_pontos2.Visible = false;
+            txb_pontos2.Enabled = false;
             txb_pontos2.Visible = false;
 
             lbl_pontos3.Visible = false;
+            txb_pontos3.Enabled = false;
             txb_pontos3.Visible = false;
 
             lbl_pontos4.Visible = false;
+            txb_pontos4.Enabled = false;
             txb_pontos4.Visible = false;
 
             lbl_pontos5.Visible = false;
+            txb_pontos5.Enabled = false;
             txb_pontos5.Visible = false;
 
             lbl_pontos6.Visible = false;
+            txb_pontos6.Enabled = false;
             txb_pontos6.Visible = false;
 
             lbl_pontos7.Visible = false;
+            txb_pontos7.Enabled = false;
             txb_pontos7.Visible = false;
 
         }

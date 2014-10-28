@@ -13,6 +13,14 @@ public class Per_perguntas
     int _codigoPergunta;
     string _perguntaPergunta;
     int _codigoModelo;
+    bool _discertativa;
+
+    public bool Discertativa
+    {
+        get { return _discertativa; }
+        set { _discertativa = value; }
+    }
+
 
     public int CodigoModelo
     {

@@ -116,8 +116,9 @@ public partial class paginas_CriarPerguntaEmpresarial : System.Web.UI.Page
             pergunta.PerguntaPergunta = txb_nomePergunta.Value;
 
             nomeAlternativa = "Dissertativa";
-            pontos = 0;
+            pontos = -1;
             alternativa = new Alt_alternativas(nomeAlternativa, pontos);
+            pergunta.Discertativa = true;
             pergunta.Alternativa.Add(alternativa);
         }
         else
