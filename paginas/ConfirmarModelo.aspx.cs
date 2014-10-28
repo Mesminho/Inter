@@ -220,15 +220,22 @@ public partial class paginas_ConfirmarQuestionario : System.Web.UI.Page
             if (isEmpresarial())
             {
                 lbl_pergunta.Text = Function.QuebrarLinha(pergunta.PerguntaPergunta, 58);
-            }else
+            }
+            else
                 lbl_pergunta.Text = Function.QuebrarLinha(pergunta.PerguntaPergunta, 72);
-           
+
             lbl_pergunta.CssClass = "tituloQuestao";
 
             for (int n = 0; n < pergunta.Alternativa.Count; n++)
             {
                 alternativa = (Alt_alternativas)pergunta.Alternativa[n];
-                rbl_alternativa.Items.Add(alternativa.AlternativaAlternativa + "; Peso: " + alternativa.PesoAlternativa);
+                if (isEmpresarial())
+                {
+                    rbl_alternativa.Items.Add(alternativa.AlternativaAlternativa);
+
+                }
+                else
+                    rbl_alternativa.Items.Add(alternativa.AlternativaAlternativa + "; Peso: " + alternativa.PesoAlternativa);
             }
 
             if (i % 2 != 0)

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FuncoesBasicas;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -66,7 +67,7 @@ public partial class paginas_ConfigQuestionarios : System.Web.UI.Page
         {
 
             Mod_modelos mod = Mod_modelosDB.Select(Convert.ToInt32(e.CommandArgument));
-            Descricao.Text = mod.DescricaoModelo;
+            Descricao.Text = mod.DescricaoModelo; //Function.QuebrarLinha(mod.DescricaoModelo, 20);
             ModalPopupExtenderDesc.Show();
             ModalInvestidor.Show();
 
