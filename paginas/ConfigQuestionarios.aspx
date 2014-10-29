@@ -98,7 +98,7 @@
                                         </asp:TemplateField>
                                         <asp:TemplateField HeaderText="Modificar">
                                             <ItemTemplate>
-                                                <asp:LinkButton ID="lbEditar" CommandName="Editar" CausesValidation="false" CommandArgument='<%# Bind("mod_codigo")%>' runat="server"><i class="fa fa-pencil" ></i> Editar</asp:LinkButton>
+                                                <asp:LinkButton ID="lbEditar" Target="_blank" CommandName="Editar" CausesValidation="false" CommandArgument='<%# Bind("mod_codigo")%>' runat="server"><i class="fa fa-pencil" ></i> Editar</asp:LinkButton>
                                             </ItemTemplate>
 
                                         </asp:TemplateField>

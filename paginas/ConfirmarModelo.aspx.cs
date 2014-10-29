@@ -215,17 +215,17 @@ public partial class paginas_ConfirmarQuestionario : System.Web.UI.Page
             //titulo da questão
             if (modelo.isEmpresarial())
             {
-                lbl_pergunta.Text = Function.QuebrarLinha(pergunta.PerguntaPergunta, 58);
+                lbl_pergunta.Text = Function.QuebrarLinha(pergunta.PerguntaPergunta, 56);
             }
             else
-                lbl_pergunta.Text = Function.QuebrarLinha(pergunta.PerguntaPergunta, 72);
+                lbl_pergunta.Text = Function.QuebrarLinha(pergunta.PerguntaPergunta, 70);
 
             lbl_pergunta.CssClass = "tituloQuestao";
 
             for (int n = 0; n < pergunta.Alternativa.Count; n++)
             {
                 alternativa = (Alt_alternativas)pergunta.Alternativa[n];
-                if (isEmpresarial())
+                if (modelo.isEmpresarial())
                 {
                     rbl_alternativa.Items.Add(alternativa.AlternativaAlternativa);
                 }
