@@ -16,9 +16,10 @@ public partial class paginas_ConfirmarQuestionario : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         carregaModelo();
-        btn_cancelar.Attributes.Add("onclick", "cancelar()");
+        //btn_cancelar.Attributes.Add("onclick", "cancelar()");
         if (!IsPostBack)
         {
+            
             if (Convert.ToBoolean(Session["editar"]))
             {
                 btn_confirmar.Visible = false;
@@ -35,6 +36,7 @@ public partial class paginas_ConfirmarQuestionario : System.Web.UI.Page
                 aside_classificacoes.Visible = false;
                 questoesDireita.Style["float"] = "left";
             }
+            
         }
 
 
@@ -261,13 +263,15 @@ public partial class paginas_ConfirmarQuestionario : System.Web.UI.Page
     {
         Button btn_excluir = (Button)sender;
         modelo.Pergunta.RemoveAt(Convert.ToInt32(btn_excluir.CommandArgument));
-
+        Session["modelo"] = modelo;
     }
 
     void btn_excluir_classificacao(object sender, EventArgs e)
     {
         Button btn_excluir = (Button)sender;
         modelo.Classificacoes.RemoveAt(Convert.ToInt32(btn_excluir.CommandArgument));
+        Response.Cache.SetNoStore();
+        Session["modelo"] = modelo;
     }
 
     void btn_modificar_Click(object sender, EventArgs e)

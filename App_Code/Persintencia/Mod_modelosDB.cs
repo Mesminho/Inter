@@ -116,8 +116,70 @@ public class Mod_modelosDB
         return ds;
     }
 
-    public static DataSet SelectNaoEditado()
+    public static DataSet SelectAll(int tipo)
     {
+        string sql = "";
+        DataSet ds = new DataSet();
+        IDbConnection objConexao;
+        IDbCommand objcommand;
+        IDataAdapter objDataAdapter;
+        objConexao = Mapped.Connection();
+        switch (tipo)
+        {
+            case 1:
+                sql = "SELECT * FROM mod_investidor_view";
+                break;
+            case 2:
+                sql = "SELECT * FROM mod_financeira_view";
+                break;
+            case 3:
+                sql = "SELECT * FROM mod_empresarial_view";
+                break;
+            default:
+                break;
+        }
+        objcommand = Mapped.Command(sql, objConexao);
+        objDataAdapter = Mapped.Adapter(objcommand);
+        objDataAdapter.Fill(ds);
+        objConexao.Close();
+        objcommand.Dispose();
+        objConexao.Dispose();
+        return ds;
+    }
+
+    public static DataSet SelectEditar()
+    {
+        DataSet ds = new DataSet();
+        IDbConnection objConexao;
+        IDbCommand objcommand;
+        IDataAdapter objDataAdapter;
+        objConexao = Mapped.Connection();
+        switch (tipo)
+        {
+            case 1:
+                sql = "SELECT * FROM mod_investidor_editar_view";
+                break;
+            case 2:
+                sql = "SELECT * FROM mod_financeira_editar_view";
+                break;
+            case 3:
+                sql = "SELECT * FROM mod_empresarial_editar_view";
+                break;
+            default:
+                break;
+        }
+        objcommand = Mapped.Command(sql, objConexao);
+        objDataAdapter = Mapped.Adapter(objcommand);
+        objDataAdapter.Fill(ds);
+        objConexao.Close();
+        objcommand.Dispose();
+        objConexao.Dispose();
+        return ds;
+    }
+
+    public static DataSet SelectEditar(int tipo)
+    {
+        string sql = "";
         DataSet ds = new DataSet();
         IDbConnection objConexao;
         IDbCommand objcommand;
@@ -260,9 +322,9 @@ public class Mod_modelosDB
                 }
             }
 
-            for (int i2 = 0; i2 < classificacao.Length; i2++)
+            for (int n = 0; n < classificacao.Length; n++)
             {
-                classificacaoN = classificacao[i2].Split('-');
+                classificacaoN = classificacao[n].Split('-');
                 objClassificacoes = new Clas_classificacoes();
                 objClassificacoes.CodigoClassificacao = Convert.ToInt32(classificacaoN[0]);
                 objClassificacoes.NomeClassificacao = classificacaoN[1];

@@ -25,8 +25,8 @@ public partial class paginas_ConfigQuestionarios : System.Web.UI.Page
 
     private void CarregaGrid()
     {
-        DataSet ds = Mod_modelosDB.SelectAll();
-        DataSet ds2 = Mod_modelosDB.SelectNaoEditado();
+        DataSet ds = Mod_modelosDB.SelectAll(1);
+        DataSet ds2 = Mod_modelosDB.SelectEditar();
 
         FuncoesBasicas.Function.CarregaGrid(ds, grvQ, lblTotal);
         FuncoesBasicas.Function.CarregaGrid(ds2, grvQ2, lblTotal);

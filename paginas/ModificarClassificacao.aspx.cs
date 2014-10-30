@@ -30,6 +30,7 @@ public partial class paginas_ModificarClassificacao : System.Web.UI.Page
         classificacaoN.NomeClassificacao = txtTitulo.Text;
         classificacaoN.DescricaoClassificacao = txtClassificacao.Value;
         classificacaoN.PontoClassificacao = Convert.ToDouble(txtPontuacao.Value);
+        classificacaoN.CodigoClassificacao = classificacao.CodigoClassificacao;
         modelo.Classificacoes[index] = classificacaoN;
         Session["modelo"] = modelo;
     }

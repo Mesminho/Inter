@@ -18,13 +18,13 @@ public class Per_perguntasDB
         {
             IDbConnection objConexao;
             IDbCommand objcommand;
-            String sql = "CALL per_update(?mod_codigo, ?per_pergunta)";
+            String sql = "CALL per_update(?per_codigo, ?per_pergunta)";
 
             objConexao = Mapped.Connection();
             objcommand = Mapped.Command(sql, objConexao);
             // variavel alternativa tambem?
             objcommand.Parameters.Add(Mapped.Parameter("?per_pergunta", perguntas.PerguntaPergunta));
-            objcommand.Parameters.Add(Mapped.Parameter("?mod_codigo", perguntas.CodigoPergunta));
+            objcommand.Parameters.Add(Mapped.Parameter("?per_codigo", perguntas.CodigoPergunta));
             
             objcommand.ExecuteNonQuery();
             objConexao.Close();
