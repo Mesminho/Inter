@@ -99,7 +99,7 @@ public partial class paginas_CriarPerguntaEd : System.Web.UI.Page
             pergunta.Alternativa.Add(alternativa);
         }
 
-        modelo.Pergunta.Add(pergunta); //Adiciona o ojb questão ao questionario
+        modelo.Pergunta.Add(pergunta); //Adiciona o obj questão ao questionario
         Session["modelo"] = modelo; //Passa o obj modelo para a sessao
     }
 
