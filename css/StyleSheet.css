@@ -113,7 +113,6 @@ footer#rodape {
 
     .tabela tr {
         vertical-align: top;
-   
     }
 
     .tabela input {
@@ -382,6 +381,7 @@ div#box-toggle {
 
     .Grid td {
         padding: 5px;
+        border-color: white;
     }
 
 

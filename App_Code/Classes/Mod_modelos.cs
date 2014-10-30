@@ -31,7 +31,10 @@ public class Mod_modelos
         get { return _habilitado; }
         set { _habilitado = value; }
     }
+    //public List<Clas_classificacoes> Class
+    //{
 
+    //}
     public ArrayList Classificacoes
     {
         get { return classificacoes; }

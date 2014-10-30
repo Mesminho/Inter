@@ -30,7 +30,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
 
-    <div style="display: block; text-align: -webkit-center">
+    <div style="display: block; text-align: -webkit-center; text-align: center">
         <asp:Label ID="lbl_nomeModelo" runat="server" CssClass="titulo"></asp:Label>
     </div>
     <hr />
