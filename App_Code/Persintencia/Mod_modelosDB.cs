@@ -147,8 +147,9 @@ public class Mod_modelosDB
         return ds;
     }
 
-    public static DataSet SelectEditar()
+    public static DataSet SelectEditar(int tipo)
     {
+        string sql = "";
         DataSet ds = new DataSet();
         IDbConnection objConexao;
         IDbCommand objcommand;
@@ -177,15 +178,14 @@ public class Mod_modelosDB
         return ds;
     }
 
-    public static DataSet SelectEditar(int tipo)
+    public static DataSet SelectEditar()
     {
-        string sql = "";
         DataSet ds = new DataSet();
         IDbConnection objConexao;
         IDbCommand objcommand;
         IDataAdapter objDataAdapter;
         objConexao = Mapped.Connection();
-        objcommand = Mapped.Command("SELECT * FROM mod_modelos where mod_editar=true", objConexao);
+        objcommand = Mapped.Command("SELECT * FROM mod_editar_view", objConexao);
         objDataAdapter = Mapped.Adapter(objcommand);
         objDataAdapter.Fill(ds);
         objConexao.Close();
