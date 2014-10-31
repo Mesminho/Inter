@@ -22,7 +22,7 @@ public partial class paginas_ConfirmarQuestionario : System.Web.UI.Page
         //btn_cancelar.Attributes.Add("onclick", "cancelar()");
         if (!IsPostBack)
         {
-
+            
             if (Convert.ToBoolean(Session["editar"]))
             {
                 btn_confirmar.Visible = false;
@@ -39,7 +39,7 @@ public partial class paginas_ConfirmarQuestionario : System.Web.UI.Page
                 aside_classificacoes.Visible = false;
                 questoesDireita.Style["float"] = "left";
             }
-
+            
         }
 
 
@@ -326,6 +326,7 @@ public partial class paginas_ConfirmarQuestionario : System.Web.UI.Page
                 for (int n = 0; n < pergunta.Alternativa.Count; n++)
                 {
                     alternativa = (Alt_alternativas)pergunta.Alternativa[n];
+
                     if (alternativa.CodigoAlternativa == 0)
                     {
                         

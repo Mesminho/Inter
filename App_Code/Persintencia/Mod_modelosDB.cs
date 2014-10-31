@@ -374,5 +374,38 @@ public class Mod_modelosDB
         return errNumber;
     }
 
+    public static DataSet Buscar(string titulo, int tipo)
+    {
+        string sql = "";
+        DataSet ds = new DataSet();
+        IDbConnection objConexao;
+        IDbCommand objCommand;
+        IDataAdapter objDataAdapter;
+        objConexao = Mapped.Connection();
+        switch (tipo)
+        {
+            case 1:
+                sql = "SELECT * FROM mod_investidor_view where mod_nome like '%" + titulo + "%' order by mod_nome";
+                break;
+            case 2:
+                sql = "SELECT * FROM mod_financeira_view where mod_nome like '%" + titulo + "%' order by mod_nome";
+                break;
+            case 3:
+                sql = "SELECT * FROM mod_empresarial_view where mod_nome like '%" + titulo + "%' order by mod_nome";
+                break;
+            default:
+                break;
+        }
+      
+        objCommand = Mapped.Command(sql, objConexao);
+        objDataAdapter = Mapped.Adapter(objCommand);
+        objDataAdapter.Fill(ds);
+        objConexao.Close();
+        objCommand.Dispose();
+        objConexao.Dispose();
+        return ds;
+    }
+
+
 
 }

@@ -29,7 +29,11 @@ namespace FuncoesBasicas
             {
                 grv.DataSource = ds.Tables[0].DefaultView;
                 grv.DataBind();
-                lbl.Text = "Foram encontrados " + qtde.ToString() + " registros";
+                if (qtde > 1)
+                    lbl.Text = "Foram encontrados " + qtde.ToString() + " registros";
+                else
+                    lbl.Text = "Foi encontrado um registro";
+
                 grv.Visible = true;
             }
             else
@@ -82,15 +86,15 @@ namespace FuncoesBasicas
             }
             else
             {
-               
-                for (int i = 1; i<=texto.Length/max; i++ )
+
+                for (int i = 1; i <= texto.Length / max; i++)
                 {
-                    espaco = texto.LastIndexOf(" ", max*i);
+                    espaco = texto.LastIndexOf(" ", max * i);
                     if (espaco > 0)
                     {
-                        sbTexto.Insert(espaco, "<br/>");                       
+                        sbTexto.Insert(espaco, "<br/>");
                     }
-                    
+
                 }
 
                 texto = sbTexto.ToString();
