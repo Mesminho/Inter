@@ -12,6 +12,9 @@ public partial class paginas_ConfirmarQuestionario : System.Web.UI.Page
     Mod_modelos modelo;
     Per_perguntas pergunta;
     Alt_alternativas alternativa;
+    ArrayList alternativaDel;
+    ArrayList perguntaDel;
+    ArrayList classificacaoDel;
 
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -19,7 +22,7 @@ public partial class paginas_ConfirmarQuestionario : System.Web.UI.Page
         //btn_cancelar.Attributes.Add("onclick", "cancelar()");
         if (!IsPostBack)
         {
-            
+
             if (Convert.ToBoolean(Session["editar"]))
             {
                 btn_confirmar.Visible = false;
@@ -36,7 +39,7 @@ public partial class paginas_ConfirmarQuestionario : System.Web.UI.Page
                 aside_classificacoes.Visible = false;
                 questoesDireita.Style["float"] = "left";
             }
-            
+
         }
 
 
@@ -262,16 +265,22 @@ public partial class paginas_ConfirmarQuestionario : System.Web.UI.Page
     void btn_excluir_questao(object sender, EventArgs e)
     {
         Button btn_excluir = (Button)sender;
+        perguntaDel.Add(Convert.ToInt32(btn_excluir.CommandArgument));
         modelo.Pergunta.RemoveAt(Convert.ToInt32(btn_excluir.CommandArgument));
         Session["modelo"] = modelo;
+        Session["perguntaDel"] = perguntaDel;
+        Response.Redirect("ConfirmarModelo.aspx");
     }
 
     void btn_excluir_classificacao(object sender, EventArgs e)
     {
         Button btn_excluir = (Button)sender;
+        classificacaoDel.Add(Convert.ToInt32(btn_excluir.CommandArgument));
         modelo.Classificacoes.RemoveAt(Convert.ToInt32(btn_excluir.CommandArgument));
         Response.Cache.SetNoStore();
         Session["modelo"] = modelo;
+        Session["classificacaoDel"] = classificacaoDel;
+        Response.Redirect("ConfirmarModelo.aspx");
     }
 
     void btn_modificar_Click(object sender, EventArgs e)
@@ -317,8 +326,15 @@ public partial class paginas_ConfirmarQuestionario : System.Web.UI.Page
                 for (int n = 0; n < pergunta.Alternativa.Count; n++)
                 {
                     alternativa = (Alt_alternativas)pergunta.Alternativa[n];
-
-                    Alt_alternativasDB.Update(alternativa);
+                    if (alternativa.CodigoAlternativa == 0)
+                    {
+                        
+                        Alt_alternativasDB.Insert(alternativa);
+                    }
+                    else
+                    {
+                        Alt_alternativasDB.Update(alternativa);
+                    }
                 }
             }
             for (int i = 0; i < modelo.Classificacoes.Count; i++)

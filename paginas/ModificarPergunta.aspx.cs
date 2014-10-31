@@ -51,71 +51,133 @@ public partial class paginas_ModificarPergunta : System.Web.UI.Page
         perguntaN.PerguntaPergunta = txb_nomePergunta.Value;
         if (txb_alter1.Text != String.Empty && txb_pontos1.Text != String.Empty)
         {
-            Alt_alternativas alternativaV = (Alt_alternativas)pergunta.Alternativa[0];
             nomeAlternativa = txb_alter1.Text;
             pontos = Convert.ToDouble(txb_pontos1.Text);
             alternativa = new Alt_alternativas(nomeAlternativa, pontos);
-            alternativa.CodigoAlternativa = alternativaV.CodigoAlternativa;
+            try
+            {
+                Alt_alternativas alternativaV = (Alt_alternativas)pergunta.Alternativa[0];
+                alternativa.CodigoAlternativa = alternativaV.CodigoAlternativa;
+            }
+            catch (Exception)
+            {
+                alternativa.PerguntaCodigo = pergunta.CodigoPergunta;
+            }
             perguntaN.Alternativa.Add(alternativa);
         }
 
         if (txb_alter2.Text != String.Empty && txb_pontos2.Text != String.Empty)
         {
-            Alt_alternativas alternativaV = (Alt_alternativas)pergunta.Alternativa[1];
             nomeAlternativa = txb_alter2.Text;
             pontos = Convert.ToDouble(txb_pontos2.Text);
             alternativa = new Alt_alternativas(nomeAlternativa, pontos);
-            alternativa.CodigoAlternativa = alternativaV.CodigoAlternativa;
+            
+            try
+            {
+                Alt_alternativas alternativaV = (Alt_alternativas)pergunta.Alternativa[1];
+                alternativa.CodigoAlternativa = alternativaV.CodigoAlternativa;
+            }
+            catch (Exception)
+            {
+                alternativa.PerguntaCodigo = pergunta.CodigoPergunta;
+            }
+            
             perguntaN.Alternativa.Add(alternativa);
         }
 
         if (txb_alter3.Text != String.Empty && txb_pontos3.Text != String.Empty)
         {
-            Alt_alternativas alternativaV = (Alt_alternativas)pergunta.Alternativa[2];
             nomeAlternativa = txb_alter3.Text;
             pontos = Convert.ToDouble(txb_pontos3.Text);
             alternativa = new Alt_alternativas(nomeAlternativa, pontos);
-            alternativa.CodigoAlternativa = alternativaV.CodigoAlternativa;
+            
+            try
+            {
+                Alt_alternativas alternativaV = (Alt_alternativas)pergunta.Alternativa[2];
+                alternativa.CodigoAlternativa = alternativaV.CodigoAlternativa;
+            }
+            catch (Exception)
+            {
+                alternativa.PerguntaCodigo = pergunta.CodigoPergunta;
+            }
+
             perguntaN.Alternativa.Add(alternativa);
         }
 
         if (txb_alter4.Text != String.Empty && txb_pontos4.Text != String.Empty)
         {
-            Alt_alternativas alternativaV = (Alt_alternativas)pergunta.Alternativa[3];
             nomeAlternativa = txb_alter4.Text;
             pontos = Convert.ToDouble(txb_pontos4.Text);
             alternativa = new Alt_alternativas(nomeAlternativa, pontos);
-            alternativa.CodigoAlternativa = alternativaV.CodigoAlternativa;
+            try
+            {
+                Alt_alternativas alternativaV = (Alt_alternativas)pergunta.Alternativa[3];
+                alternativa.CodigoAlternativa = alternativaV.CodigoAlternativa;
+            }
+            catch (Exception)
+            {
+                alternativa.PerguntaCodigo = pergunta.CodigoPergunta;
+            }
+            
+
             perguntaN.Alternativa.Add(alternativa);
         }
 
         if (txb_alter5.Text != String.Empty && txb_pontos5.Text != String.Empty)
         {
-            Alt_alternativas alternativaV = (Alt_alternativas)pergunta.Alternativa[4];
             nomeAlternativa = txb_alter5.Text;
             pontos = Convert.ToDouble(txb_pontos5.Text);
             alternativa = new Alt_alternativas(nomeAlternativa, pontos);
-            alternativa.CodigoAlternativa = alternativaV.CodigoAlternativa;            
+            
+            try
+            {
+                Alt_alternativas alternativaV = (Alt_alternativas)pergunta.Alternativa[4];
+                alternativa.CodigoAlternativa = alternativaV.CodigoAlternativa;           
+            }
+            catch (Exception)
+            {
+                alternativa.PerguntaCodigo = pergunta.CodigoPergunta;
+            }
+            
             perguntaN.Alternativa.Add(alternativa);
         }
 
         if (txb_alter6.Text != String.Empty && txb_pontos6.Text != String.Empty)
         {
-            Alt_alternativas alternativaV = (Alt_alternativas)pergunta.Alternativa[5];
             nomeAlternativa = txb_alter6.Text;
             pontos = Convert.ToDouble(txb_pontos6.Text);
             alternativa = new Alt_alternativas(nomeAlternativa, pontos);
-            alternativa.CodigoAlternativa = alternativaV.CodigoAlternativa;            
+            
+            try
+            {
+                Alt_alternativas alternativaV = (Alt_alternativas)pergunta.Alternativa[5];
+                alternativa.CodigoAlternativa = alternativaV.CodigoAlternativa;            
+            }
+            catch (Exception)
+            {
+                alternativa.PerguntaCodigo = pergunta.CodigoPergunta;
+            }
+            
             perguntaN.Alternativa.Add(alternativa);
         }
 
         if (txb_alter7.Text != String.Empty && txb_pontos7.Text != String.Empty)
         {
-            Alt_alternativas alternativaV = (Alt_alternativas)pergunta.Alternativa[6];
             nomeAlternativa = txb_alter7.Text;
             pontos = Convert.ToDouble(txb_pontos7.Text);
             alternativa = new Alt_alternativas(nomeAlternativa, pontos);
-            alternativa.CodigoAlternativa = alternativaV.CodigoAlternativa;            
+
+            try
+            {
+                Alt_alternativas alternativaV = (Alt_alternativas)pergunta.Alternativa[6];
+                alternativa.CodigoAlternativa = alternativaV.CodigoAlternativa;            
+            }
+            catch (Exception)
+            {
+                alternativa.PerguntaCodigo = pergunta.CodigoPergunta;
+            }
+            
+
             perguntaN.Alternativa.Add(alternativa);
         }
 
