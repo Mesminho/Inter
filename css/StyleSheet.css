@@ -179,6 +179,33 @@ footer#rodape {
             text-decoration: underline;
         }
 
+
+/*Balao*/
+.balao {
+    position: relative;
+    border-radius: 2px;
+    width: auto;
+    height: auto;
+    line-height: normal;
+    color: white;
+    text-align: center;
+}
+
+    .balao:after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-bottom: 10px solid;
+        border-right: 10px solid transparent;
+        border-left: 10px solid transparent;
+        border-bottom-color: rgb(18,95,118);
+        left: 20%;
+        bottom: 100%;
+        margin-left: -10px; /* ajustar pela largura do balão */
+    }
+/*fim Balao*/
+
 /*MENU*/
 nav#menu {
     margin: 5px auto 5px auto;
@@ -237,7 +264,7 @@ ul {
             padding: 0;
             margin: auto 15px 15px 5px;
             position: absolute;
-            top: 38px;
+            top: 37px;
             left: 0;
             -webkit-box-shadow: none;
             -moz-box-shadow: none;

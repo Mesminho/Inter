@@ -37,21 +37,18 @@
     <section>
         <asp:Label ID="lbl_questoes" runat="server" CssClass="texto" Text="Questões"></asp:Label><br />
         <aside id="div_questoesEsquerda" runat="server">
-
         </aside>
         <aside id="div_questoresDireita" runat="server">
-
         </aside>
-       
+
     </section>
     <aside id="div_Visitante">
         <asp:Label ID="lbl_visitante" runat="server" CssClass="texto" Text="Visitante"></asp:Label><br />
         <br />
-        <div id="div_visitante" runat="server">
-            coisas do visitante
+        <div id="div_visitante" runat="server" style="border: 1px solid rgb(18, 95, 118); border-radius: 2px; margin:5px; padding:5px">
+       
         </div>
     </aside>
-
 
 
     <br />
