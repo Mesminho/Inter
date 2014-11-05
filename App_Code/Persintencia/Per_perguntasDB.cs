@@ -72,7 +72,7 @@ public class Per_perguntasDB
     }
 
 
-    public int Delete(int codigo)
+    public static int Delete(int codigo)
     {
         int retorno = 0;
         try

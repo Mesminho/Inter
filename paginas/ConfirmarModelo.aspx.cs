@@ -19,10 +19,23 @@ public partial class paginas_ConfirmarQuestionario : System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         carregaModelo();
-        //btn_cancelar.Attributes.Add("onclick", "cancelar()");
+        alternativaDel = new ArrayList();
+        perguntaDel = new ArrayList();
+        classificacaoDel = new ArrayList();
+        if (Session["classificacaoDel"] != null)
+        {
+            classificacaoDel = (ArrayList)Session["classificacaoDel"];
+        }
+        if (Session["pesrguntaDel"] != null)
+        {
+            perguntaDel = (ArrayList)Session["perguntaDel"];
+        }
+        if (Session["alternativaDel"] != null)
+        {
+            alternativaDel = (ArrayList)Session["alternativaDel"];
+        }
         if (!IsPostBack)
         {
-            
             if (Convert.ToBoolean(Session["editar"]))
             {
                 btn_confirmar.Visible = false;
@@ -39,7 +52,7 @@ public partial class paginas_ConfirmarQuestionario : System.Web.UI.Page
                 aside_classificacoes.Visible = false;
                 questoesDireita.Style["float"] = "left";
             }
-            
+
         }
 
 
@@ -153,7 +166,7 @@ public partial class paginas_ConfirmarQuestionario : System.Web.UI.Page
             btn_excluir.CommandName = "Excluir";
             btn_excluir.CssClass = "btn-cancelar";
             btn_excluir.Text = "Excluir";
-            btn_excluir.CommandArgument = i.ToString();
+            btn_excluir.CommandArgument = classicacao.CodigoClassificacao.ToString();
             btn_excluir.Click += btn_excluir_classificacao;
 
             lbl_titulo.Text = classicacao.NomeClassificacao;
@@ -214,7 +227,7 @@ public partial class paginas_ConfirmarQuestionario : System.Web.UI.Page
             btn_excluir.CommandName = "Excluir";
             btn_excluir.CssClass = "btn-cancelar";
             btn_excluir.Text = "Excluir";
-            btn_excluir.CommandArgument = i.ToString();
+            btn_excluir.CommandArgument = pergunta.CodigoPergunta.ToString();
             btn_excluir.Click += btn_excluir_questao;
 
             //titulo da questão
@@ -329,7 +342,7 @@ public partial class paginas_ConfirmarQuestionario : System.Web.UI.Page
 
                     if (alternativa.CodigoAlternativa == 0)
                     {
-                        
+
                         Alt_alternativasDB.Insert(alternativa);
                     }
                     else
@@ -345,6 +358,18 @@ public partial class paginas_ConfirmarQuestionario : System.Web.UI.Page
                 classificacao = (Clas_classificacoes)modelo.Classificacoes[i];
                 classificacao.CodigoClassificacao = Clas_classificacoesDB.Update(classificacao);
 
+            }
+            for (int i = 0; i < classificacaoDel.Count; i++)
+            {
+                Clas_classificacoesDB.Delete(Convert.ToInt32(classificacaoDel[i]));
+            }
+            for (int i = 0; i < perguntaDel.Count; i++)
+            {
+                Per_perguntasDB.Delete(Convert.ToInt32(perguntaDel[i]));
+            }
+            for (int i = 0; i < alternativaDel.Count; i++)
+            {
+                Alt_alternativasDB.Delete(Convert.ToInt32(alternativaDel[i]));
             }
             script = "<script language='javascript'>alert('USER Deleted Sucessfully');</script>";
             ClientScript.RegisterStartupScript(GetType(), "alerta1", script, false);

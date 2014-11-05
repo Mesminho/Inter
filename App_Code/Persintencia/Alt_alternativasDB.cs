@@ -71,7 +71,7 @@ public class Alt_alternativasDB
         return retorno;
     }
 
-    public int Delete(int codigo)
+    public static int Delete(int codigo)
     {
         int retorno = 0;
         try
